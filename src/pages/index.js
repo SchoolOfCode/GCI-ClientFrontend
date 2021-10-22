@@ -8,7 +8,7 @@ const IndexPage = () => {
     <ChakraProvider>
       <main>
         <Heading>I'm a Heading</Heading>
-        <MainButton buttonText="red" onClick={() => alert("Wow")} />
+        <MainButton onClick={() => alert("Wow")} />
       </main>
     </ChakraProvider>
   );
