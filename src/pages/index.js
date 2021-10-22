@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ChakraProvider, Heading } from "@chakra-ui/react";
+import { MainButton } from "../components/MainButton";
 
 // markup
 const IndexPage = () => {
@@ -7,6 +8,7 @@ const IndexPage = () => {
     <ChakraProvider>
       <main>
         <Heading>I'm a Heading</Heading>
+        <MainButton buttonText="red" onClick={() => alert("Wow")} />
       </main>
     </ChakraProvider>
   );
