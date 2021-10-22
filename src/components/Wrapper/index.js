@@ -1,7 +1,7 @@
 import { Heading, Image, Flex } from "@chakra-ui/react";
 import React from "react";
 
-export default function Wrapper({ text, textColor, textSize }) {
+export default function Wrapper({ text="SoC Application Portal", textColor="black", textSize="2xl" }) {
   return (
     <Flex align="center" justify="center" bgColor="white">
       <Image

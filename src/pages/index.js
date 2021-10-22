@@ -7,6 +7,7 @@ const IndexPage = () => {
   return (
     <ChakraProvider>
       <main></main>
+      <Wrapper></Wrapper>
     </ChakraProvider>
   );
 };
