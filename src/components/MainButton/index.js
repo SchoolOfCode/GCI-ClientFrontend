@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
 
-// button to be used for general needs
+// button to be used for any needs
 export function MainButton({
   onClick,
   buttonColor = "#4A90E2",
