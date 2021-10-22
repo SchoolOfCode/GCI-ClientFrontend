@@ -6,7 +6,7 @@ export function Welcome({ name = "there" }) {
   return (
     <section>
       <Text className="font-semibold">
-        Hello {name}! Welcome to your School of Code application, our
+        Hello {name}! Welcome to your School of Code application, the
         application has several steps:
       </Text>{" "}
       <div className="flex">
