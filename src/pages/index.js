@@ -1,13 +1,17 @@
 import * as React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
-import Wrapper from "../components/Wrapper";
+import { ChakraProvider, Container } from "@chakra-ui/react";
+import GenericInput from "../components/GenericInput";
+import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
+import Dropdown from "../components/Dropdown";
 
 // markup
 const IndexPage = () => {
   return (
     <ChakraProvider>
-      <main></main>
+      <main>
+      <Dropdown/>
+      </main>
     </ChakraProvider>
   );
 };
