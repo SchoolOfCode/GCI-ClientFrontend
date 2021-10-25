@@ -10,21 +10,64 @@ const IndexPage = () => {
   return (
     <ChakraProvider>
       <main>
-        <Tabs
-          variant="enclosed-colored"
-          align="center"
-          orientation="vertical"
-          isLazy
-        >
+        <Tabs variant="line" align="center" orientation="vertical" isLazy>
           <TabList>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Welcome</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 1</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 2</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 3</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 4</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Interview</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Result</Tab>
-            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>F.A.Q</Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Welcome
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Stage 1
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Stage 2
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Stage 3
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Stage 4
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Interview
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              Result
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              F.A.Q
+            </Tab>
           </TabList>
 
           <TabPanels>
