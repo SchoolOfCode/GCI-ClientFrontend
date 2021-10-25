@@ -15,11 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^1.2.21",
     "@chakra-ui/gatsby-plugin": "^2.0.1",
     "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "autoprefixer": "^10.3.7",
+    "aws-amplify": "^4.3.3",
     "framer-motion": "^4.1.17",
     "gatsby": "^4.0.0",
     "gatsby-plugin-postcss": "^5.0.0",

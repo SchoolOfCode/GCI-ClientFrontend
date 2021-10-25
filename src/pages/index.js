@@ -4,11 +4,17 @@ import GenericInput from "../components/GenericInput";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import Dropdown from "../components/Dropdown";
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from '../aws-exports'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+Amplify.configure(awsconfig);
 
 // markup
 const IndexPage = () => {
   return (
+    
     <ChakraProvider>
+    <AmplifySignOut />
       <main>
       <Dropdown/>
       <GenericInput/>
@@ -17,4 +23,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default withAuthenticator(IndexPage);
