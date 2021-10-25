@@ -26,9 +26,11 @@ export function Welcome({ name = "there" }) {
         Scratch.
       </div>{" "}
       <Text className="font-semibold">
-        More details of each stage will be given when you reach the stage. You
-        have 4 weeks from now on to complete Stages 1 to 4 - each new stage will
-        unlock when you complete the current stage.
+        More details of each stage will be given when you reach the stage.{" "}
+      </Text>
+      <Text className="font-semibold">
+        You have 4 weeks from now on to complete Stages 1 to 4 - each new stage
+        will unlock when you complete the current stage.
       </Text>
     </section>
   );
