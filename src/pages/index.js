@@ -11,6 +11,7 @@ const IndexPage = () => {
     <ChakraProvider>
       <main>
       <Dropdown/>
+      <GenericInput/>
       </main>
     </ChakraProvider>
   );

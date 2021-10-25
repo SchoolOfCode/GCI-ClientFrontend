@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Select } from "@chakra-ui/react";
 
-//Component complete but still researching how to capture the value
+//takes in threee options and placeholder text and props. Can update number of options
+// to suit your needs
 
 export default function Dropdown({
   placeholderText = "select option",
@@ -9,13 +10,15 @@ export default function Dropdown({
   second = "Option 2",
   third = "Option 3",
 }) {
+  //state to hold the value
   const [option, setOption] = useState("");
 
-  const handleSelect=(e)=>{
-    console.log(e);
-    console.log(e.target.value)
-    setOption(e.target.value)
-  }
+  //function to capture the selected value
+  const handleSelect = (e) => {
+    setOption(e.target.value);
+    return option;
+  };
+
   return (
     <Select
       p="2"
@@ -23,7 +26,7 @@ export default function Dropdown({
       width="container.sm"
       variant="filled"
       placeholder={placeholderText}
-      onSelect={handleSelect}
+      onChange={handleSelect}
     >
       <option value={first}>{first}</option>
       <option value={second}>{second}</option>
