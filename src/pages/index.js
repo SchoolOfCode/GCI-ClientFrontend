@@ -2,6 +2,7 @@ import * as React from "react";
 import { ChakraProvider, Heading } from "@chakra-ui/react";
 import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
+import { WelcomeParagraph } from "../components/WelcomeParagraph";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 
 // markup
@@ -28,13 +29,13 @@ const IndexPage = () => {
 
           <TabPanels>
             <TabPanel>
-              <Heading>I'm a Heading</Heading>
+              <WelcomeParagraph />
             </TabPanel>
             <TabPanel>
               <MainButton onClick={() => alert("Wow")} />
             </TabPanel>
             <TabPanel>
-              <p>Stage 2!</p>
+              <Heading>I'm a Heading</Heading>
             </TabPanel>
             <TabPanel>
               <p>Stage 3!</p>
