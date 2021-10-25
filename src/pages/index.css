@@ -1,4 +1,13 @@
 amplify-authenticator {
-    background: #000818;
-    padding: 5px;
-  }
+  background: #000818;
+  padding: 5px;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 78vh;
+  margin-bottom: -100px;
+  padding-bottom: 100px;
+}
