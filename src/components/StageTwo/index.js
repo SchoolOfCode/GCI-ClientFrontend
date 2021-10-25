@@ -2,7 +2,7 @@ import React from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 
-export function Stage2() {
+export function StageTwo() {
   return (
     <section id="stage2section">
       <GenericInput label="Character link here please..." role="stage2text1" />
