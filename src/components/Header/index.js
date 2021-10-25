@@ -2,7 +2,7 @@ import { Heading, Image, Flex } from "@chakra-ui/react";
 import React from "react";
 
 export default function Header({
-  text = "SoC Application Portal",
+  text = "School of Code Application Portal",
   textColor = "#000818",
   textSize = "2xl",
 }) {

@@ -32,7 +32,7 @@ export function StageTwo() {
           alert(
             document.querySelector(".stage2text1").value +
               " has been sent to the cloud!"
-          );
+          ); //
           document.querySelector(".stage3").click();
         }}
       />
