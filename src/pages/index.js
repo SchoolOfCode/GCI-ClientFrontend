@@ -37,7 +37,7 @@ const IndexPage = () => {
               Welcome
             </Tab>
             <Tab
-              className="border-2 border-white text-white font-semibold"
+              className="stage-1 border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >

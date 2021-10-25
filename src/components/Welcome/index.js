@@ -7,7 +7,13 @@ export function Welcome() {
     <section>
       <WelcomeParagraph />
       <br />
-      <MainButton buttonText="To Stage 1"></MainButton>
+      <MainButton
+        onClick={() => {
+          //   document.getElementById("stage-1").click();
+          alert("hello");
+        }}
+        buttonText="To Stage 1"
+      ></MainButton>
     </section>
   );
 }
