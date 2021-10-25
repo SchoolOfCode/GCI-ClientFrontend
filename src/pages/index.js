@@ -4,7 +4,6 @@ import * as React from "react";
 // import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import {
   ChakraProvider,
-  Container,
   Heading,
   Tabs,
   TabList,
@@ -27,56 +26,62 @@ const IndexPage = () => {
       {/* <AmplifySignOut /> */}
       <main className="wrapper">
         <Header />
-        <Tabs variant="line" align="left" orientation="vertical" isLazy>
+        <Tabs
+          className="m-20"
+          variant="line"
+          align="left"
+          orientation="vertical"
+          isLazy
+        >
           <TabList>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Welcome
-            </Tab>
-            <Tab
-              className="stage-1 border-2 border-white text-white font-semibold"
-              bg="#8896A3"
-              _selected={{ color: "white", bg: "#4A90E2" }}
-            >
-              Stage 1
+              <p className="welcome">Welcome</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Stage 2
+              <p className="stage1">Stage 1</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Stage 3
+              <p className="stage2">Stage 2</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Stage 4
+              <p className="stage3">Stage 3</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Interview
+              <p className="stage4">Stage 4</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
             >
-              Result
+              <p className="interview">Interview</p>
+            </Tab>
+            <Tab
+              className="border-2 border-white text-white font-semibold"
+              bg="#8896A3"
+              _selected={{ color: "white", bg: "#4A90E2" }}
+            >
+              <p className="result">Result</p>
             </Tab>
             <Tab
               className="border-2 border-white text-white font-semibold"

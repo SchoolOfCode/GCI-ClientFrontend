@@ -3,14 +3,15 @@ import React from "react";
 
 export default function Header({
   text = "SoC Application Portal",
-  textColor = "black",
+  textColor = "#000818",
   textSize = "2xl",
 }) {
   return (
     <Flex align="center" justify="center" bgColor="white">
       <Image
+        className="m-5"
         display="flex"
-        boxSize="150px"
+        boxSize="120px"
         src="https://i.imgur.com/TsMzmXK.png"
         alt="school of code logo"
       />

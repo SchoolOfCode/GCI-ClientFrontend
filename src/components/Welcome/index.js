@@ -9,8 +9,7 @@ export function Welcome() {
       <br />
       <MainButton
         onClick={() => {
-          //   document.getElementById("stage-1").click();
-          alert("hello");
+          document.querySelector(".stage1").click();
         }}
         buttonText="To Stage 1"
       ></MainButton>
