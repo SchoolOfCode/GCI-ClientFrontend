@@ -11,20 +11,20 @@ const IndexPage = () => {
     <ChakraProvider>
       <main>
         <Tabs
-          variant="solid-rounded"
+          variant="enclosed-colored"
           align="center"
           orientation="vertical"
           isLazy
         >
           <TabList>
-            <Tab>Welcome</Tab>
-            <Tab>Stage 1</Tab>
-            <Tab>Stage 2</Tab>
-            <Tab>Stage 3</Tab>
-            <Tab>Stage 4</Tab>
-            <Tab>Interview</Tab>
-            <Tab>Result</Tab>
-            <Tab>F.A.Q</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Welcome</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 1</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 2</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 3</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Stage 4</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Interview</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>Result</Tab>
+            <Tab _selected={{ color: "white", bg: "#4A90E2" }}>F.A.Q</Tab>
           </TabList>
 
           <TabPanels>
