@@ -21,7 +21,7 @@ export default function Dropdown({
   const handleSelect = (e) => {
     setOption(e.target.value);
     
-    return option;
+   
   };
 
   let array = [first, second, third, fourth, fifth, sixth];

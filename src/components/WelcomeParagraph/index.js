@@ -4,7 +4,7 @@ import { Text } from "@chakra-ui/react";
 export function WelcomeParagraph({ name = "there" }) {
   let val = " - Fill out personal details.";
   return (
-    <section>
+    <section className="text-xl">
       <Text className="font-semibold text-left">
         Hello {name}! Welcome to your School of Code application, the
         application has several steps:

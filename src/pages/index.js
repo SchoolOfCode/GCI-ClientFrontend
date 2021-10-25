@@ -21,10 +21,11 @@ import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
-import { WelcomeParagraph } from "../components/WelcomeParagraph";
+import { Welcome } from "../components/Welcome";
 import "./index.css";
 import StageOne from "../components/StageOne";
 Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 // markup
 const IndexPage = () => {
@@ -115,8 +116,10 @@ const IndexPage = () => {
               <TabPanel>
                 <WelcomeParagraph />
               </TabPanel>
-              <TabPanel className='stage-one'>
-                <h2 className="second-header">Please complete the following application form</h2>
+              <TabPanel className="stage-one">
+                <h2 className="second-header">
+                  Please complete the following application form
+                </h2>
                 <StageOne />
               </TabPanel>
               <TabPanel>
@@ -141,14 +144,14 @@ const IndexPage = () => {
                 <Header text="Result"></Header>
                 <Header text="Result"></Header>
                 <Heading>Frequently asked questions</Heading>
-
                 <ContactForm />
               </TabPanel>
             </TabPanels>
           </Tabs>
-          <AmplifySignOut />
         </main>
         <Footer />
+
+        <AmplifySignOut />
       </AmplifyAuthenticator>
     </ChakraProvider>
   );

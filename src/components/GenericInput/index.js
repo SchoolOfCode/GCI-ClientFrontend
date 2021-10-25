@@ -21,6 +21,7 @@ export default function GenericInput({ label, placeholderText }) {
         type="text"
         placeholder={placeholderText}
         onChange={handleChange}
+      
       />
     </FormControl>
   );
