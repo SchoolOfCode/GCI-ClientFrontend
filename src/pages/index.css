@@ -11,3 +11,10 @@ body {
   margin-bottom: -100px;
   padding-bottom: 100px;
 }
+
+:root {
+  --amplify-primary-color: #4a90e2;
+  --amplify-primary-tint: #4a90e2;
+  --amplify-primary-shade: #4a90e2;
+}
+
