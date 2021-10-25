@@ -106,9 +106,7 @@ const IndexPage = () => {
               <Header text="Result"></Header>
               <Header text="Result"></Header>
               <Heading>Frequently asked questions</Heading>
-              Novella coloro alcun cospetto dico 'l tutte il fosse intendo
-              mente, di mortali credere piú sogiacere. Per facciamo beati
-              grazia.
+
               <ContactForm />
             </TabPanel>
           </TabPanels>
