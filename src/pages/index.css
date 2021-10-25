@@ -7,7 +7,7 @@ body {
   height: 100%;
 }
 .wrapper {
-  min-height: 78vh;
+  min-height: 55rem;
   margin-bottom: -100px;
   padding-bottom: 100px;
 }

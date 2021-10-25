@@ -1,7 +1,7 @@
 import * as React from "react";
-import Amplify, { Auth } from "aws-amplify";
-import awsconfig from "../aws-exports";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+// import Amplify, { Auth } from "aws-amplify";
+// import awsconfig from "../aws-exports";
+// import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import {
   ChakraProvider,
   Container,
@@ -16,16 +16,17 @@ import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
-import { WelcomeParagraph } from "../components/WelcomeParagraph";
+import { Welcome } from "../components/Welcome";
 import "./index.css";
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
 // markup
 const IndexPage = () => {
   return (
     <ChakraProvider>
-      <AmplifySignOut />
+      {/* <AmplifySignOut /> */}
       <main className="wrapper">
+        <Header />
         <Tabs variant="line" align="left" orientation="vertical" isLazy>
           <TabList>
             <Tab
@@ -88,7 +89,7 @@ const IndexPage = () => {
 
           <TabPanels>
             <TabPanel>
-              <WelcomeParagraph />
+              <Welcome />
             </TabPanel>
             <TabPanel>
               <Header text="Stage 1"></Header>
@@ -127,4 +128,5 @@ const IndexPage = () => {
   );
 };
 
-export default withAuthenticator(IndexPage);
+// export default withAuthenticator(IndexPage);
+export default IndexPage;
