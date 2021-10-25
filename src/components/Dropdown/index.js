@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Select, FormControl, FormLabel } from "@chakra-ui/react";
 
 //takes in up to 6 options and placeholder text and props.
-// if more options are needed, then add more props here. 
+// if more options are needed, then add more props here.
 
 export default function Dropdown({
   label = "dropdown",
@@ -20,8 +20,6 @@ export default function Dropdown({
   //function to capture the selected value
   const handleSelect = (e) => {
     setOption(e.target.value);
-    
-   
   };
 
   let array = [first, second, third, fourth, fifth, sixth];
@@ -31,7 +29,7 @@ export default function Dropdown({
       list.push({ label: e, value: e });
     }
   });
-  
+
   console.log("this is the option selected", option);
   return (
     <FormControl>

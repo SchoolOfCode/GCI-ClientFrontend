@@ -114,7 +114,7 @@ const IndexPage = () => {
 
             <TabPanels>
               <TabPanel>
-                <WelcomeParagraph />
+                <Welcome />
               </TabPanel>
               <TabPanel className="stage-one">
                 <h2 className="second-header">
