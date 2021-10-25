@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GenericInput from "../GenericInput";
-import DropDown from "../Dropdown";
-import { Radio, RadioGroup } from "@chakra-ui/react";
+import Dropdown from "../Dropdown";
+import { Radio, RadioGroup, Image, Box } from "@chakra-ui/react";
 import "./index.css";
 
 export default function StageOne() {
@@ -10,7 +10,7 @@ export default function StageOne() {
   return (
     <div>
       <RadioGroup onChange={setValue} value={value}>
-        <label>
+        <label className="form">
           <h2>
             The next bootcamp starts on 15th November 2021. To be eligible you
             must: *
@@ -49,6 +49,50 @@ export default function StageOne() {
         label="What is your email address? *"
         placeholderText="name@example.com"
       />
+      <br></br>
+      <GenericInput
+        label="What is your phone number? *"
+        placeholderText="12345 678 912"
+      />
+      <br></br>
+      <GenericInput
+        label="What is your date of birth (format dd/mm/yyyy)? *"
+        placeholderText="dd/mm/yyyy"
+      />
+      <br></br>
+      <Dropdown
+        label="What is your gender? *"
+        placeholderText="Please make your selection"
+        first="Male"
+        second="Female"
+        third="Non-binary"
+        fourth="Prefer not to say"
+        fifth="Other"
+      />
+      <br></br>
+      <GenericInput
+        label="What is your current Post Code? *"
+        placeholderText="Type your answer here..."
+      />
+      <br></br>
+      <Box className="box">
+        <Dropdown
+          label="Which region are your applying for? *"
+          placeholderText="Pick a region from the School of Code Bootcamp areas listed below"
+          first="North West"
+          second="West Midlands"
+          third="East Midlands"
+          fourth="London"
+          fifth="South East"
+          sixth="Other"
+        />
+        <Image
+          boxSize="500px"
+          objectFit="cover"
+          src="https://images.typeform.com/images/BCHhJYBU6Vg8/image/default-firstframe.png"
+          alt="regional map of England"
+        />
+      </Box>
     </div>
   );
 }

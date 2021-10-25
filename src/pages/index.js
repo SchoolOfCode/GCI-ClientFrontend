@@ -1,7 +1,12 @@
 import * as React from "react";
 import Amplify, { Auth } from "aws-amplify";
 import awsconfig from "../aws-exports";
-import { withAuthenticator, AmplifySignOut, AmplifyAuthenticator, AmplifySignIn } from "@aws-amplify/ui-react";
+import {
+  withAuthenticator,
+  AmplifySignOut,
+  AmplifyAuthenticator,
+  AmplifySignIn,
+} from "@aws-amplify/ui-react";
 import {
   ChakraProvider,
   Container,
@@ -38,7 +43,6 @@ const IndexPage = () => {
             width: "100%",
             backgroundSize: "1800px 1800px",
             marginBottom: "20px",
-          
           }}
         >
           <Header />
@@ -111,9 +115,9 @@ const IndexPage = () => {
               <TabPanel>
                 <WelcomeParagraph />
               </TabPanel>
-              <TabPanel>
-                <Header text="Stage 1"></Header>
-                <StageOne/>
+              <TabPanel className='stage-one'>
+                <h2 className="second-header">Please complete the following application form</h2>
+                <StageOne />
               </TabPanel>
               <TabPanel>
                 <Header text="Stage 2"></Header>
