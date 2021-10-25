@@ -4,13 +4,19 @@ import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
 import { WelcomeParagraph } from "../components/WelcomeParagraph";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+// import GenericInput from "../components/GenericInput";
+import Header from "../components/Header";
+import ContactForm from "../components/ContactForm";
+// import Dropdown from "../components/Dropdown";
+import "./index.css";
 
 // markup
 const IndexPage = () => {
   return (
     <ChakraProvider>
-      <main>
-        <Tabs variant="line" align="center" orientation="vertical" isLazy>
+      <Header />
+      <main className="wrapper">
+        <Tabs variant="line" align="left" orientation="vertical" isLazy>
           <TabList>
             <Tab
               className="border-2 border-white text-white font-semibold"
@@ -75,25 +81,35 @@ const IndexPage = () => {
               <WelcomeParagraph />
             </TabPanel>
             <TabPanel>
+              <Header text="Stage 1"></Header>
               <MainButton onClick={() => alert("Wow")} />
             </TabPanel>
             <TabPanel>
-              <Heading>I'm a Heading</Heading>
+              <Header text="Stage 2"></Header>
             </TabPanel>
             <TabPanel>
-              <p>Stage 3!</p>
+              <Header text="Stage 3"></Header>
             </TabPanel>
             <TabPanel>
-              <p>Stage 4!</p>
+              <Header text="Stage 4"></Header>
             </TabPanel>
             <TabPanel>
-              <p>Interview!</p>
+              <Header text="Interview"></Header>
             </TabPanel>
             <TabPanel>
-              <p>Result!</p>
+              <Header text="Result"></Header>
             </TabPanel>
             <TabPanel>
-              <p>FAQ!</p>
+              <Header text="Result"></Header>
+              <Header text="Result"></Header>
+              <Header text="Result"></Header>
+              <Header text="Result"></Header>
+              <Header text="Result"></Header>
+              <Heading>Frequently asked questions</Heading>
+              Novella coloro alcun cospetto dico 'l tutte il fosse intendo
+              mente, di mortali credere piú sogiacere. Per facciamo beati
+              grazia.
+              <ContactForm />
             </TabPanel>
           </TabPanels>
         </Tabs>
