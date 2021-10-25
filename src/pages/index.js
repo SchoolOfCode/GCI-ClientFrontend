@@ -16,6 +16,7 @@ import ContactForm from "../components/ContactForm";
 import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
+import { Stage2 } from "../components/Stage2";
 import "./index.css";
 // Amplify.configure(awsconfig);
 
@@ -101,7 +102,7 @@ const IndexPage = () => {
               <MainButton onClick={() => alert("Wow")} />
             </TabPanel>
             <TabPanel>
-              <Header text="Stage 2"></Header>
+              <Stage2 />
             </TabPanel>
             <TabPanel>
               <Header text="Stage 3"></Header>
