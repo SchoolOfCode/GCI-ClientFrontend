@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "@chakra-ui/react";
 
-export function Welcome({ name = "there" }) {
+export function WelcomeParagraph({ name = "there" }) {
   let val = " - Fill out personal details.";
   return (
     <section>
