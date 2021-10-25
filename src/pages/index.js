@@ -1,6 +1,6 @@
 import * as React from "react";
 import Amplify, { Auth } from "aws-amplify";
-import awsconfig from "../aws-exports";
+import awsconfig from "../aws.exports";
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import {
   ChakraProvider,
@@ -18,6 +18,7 @@ import { MainButton } from "../components/MainButton";
 import { Footer } from "../components/Footer";
 import { WelcomeParagraph } from "../components/WelcomeParagraph";
 import "./index.css";
+import StageOne from "../components/StageOne";
 Amplify.configure(awsconfig);
 
 // markup
@@ -92,7 +93,7 @@ const IndexPage = () => {
             </TabPanel>
             <TabPanel>
               <Header text="Stage 1"></Header>
-              <MainButton onClick={() => alert("Wow")} />
+              <StageOne/>
             </TabPanel>
             <TabPanel>
               <Header text="Stage 2"></Header>
