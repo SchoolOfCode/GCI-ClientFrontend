@@ -9,6 +9,7 @@ export default function StageOne() {
 
   return (
     <div>
+    <h2 className="second-header">Please complete the below application form</h2>
       <RadioGroup onChange={setValue} value={value}>
         <label className="form">
           <h2>
@@ -92,7 +93,42 @@ export default function StageOne() {
           src="https://images.typeform.com/images/BCHhJYBU6Vg8/image/default-firstframe.png"
           alt="regional map of England"
         />
+         <br></br>
       </Box>
+      <Dropdown
+          label="What best describes your current situation? *"
+          placeholderText="Please make your selection..."
+          first="Self-employed, but looking to change career"
+          second="unemployed and looking to start a career"
+          third="employed but looking to change career"
+          fourth="finishing college/school and looking to start a career"
+          fifth="graduating university and looking to start a career"
+          sixth="leaving military service and looking for a new career"
+          seventh="Other"
+        />
+         <br></br>
+      <GenericInput
+        label="Why do you want to join the School of Code? *"
+        placeholderText="Type your answer here..."
+      />
+       <br></br>
+       <RadioGroup onChange={setValue} value={value}>
+        <label className="form">
+          <h2>
+          Please read this Privacy Notice and Q&A, which indicate how data is used as part of our process. After reading those documents (or alternatively the text below), please indicate that you understand and accept them by clicking "I accept" at the bottom of this page. *
+          </h2>
+
+          <ul>
+            <li>
+            https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view
+            </li>
+            <li>https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view</li>
+            
+          </ul>
+        </label>
+        <Radio value="accept">I accept</Radio>
+        <Radio value="decline">I don't accept</Radio>
+      </RadioGroup>
     </div>
   );
 }

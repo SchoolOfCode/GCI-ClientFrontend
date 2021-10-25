@@ -13,6 +13,7 @@ export default function Dropdown({
   fourth = "Option 4",
   fifth = "Option 5",
   sixth = "",
+  seventh = ""
 }) {
   //state to hold the value
   const [option, setOption] = useState("");
@@ -22,7 +23,7 @@ export default function Dropdown({
     setOption(e.target.value);
   };
 
-  let array = [first, second, third, fourth, fifth, sixth];
+  let array = [first, second, third, fourth, fifth, sixth, seventh];
   let list = [];
   array.forEach(function (e) {
     if (e.length > 1) {

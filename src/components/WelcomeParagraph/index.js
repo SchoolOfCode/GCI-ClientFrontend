@@ -2,16 +2,15 @@ import React from "react";
 import { Text } from "@chakra-ui/react";
 
 export function WelcomeParagraph({ name = "there" }) {
-  let val = " - Fill out personal details.";
   return (
-    <section className="text-xl">
+    <section className="text-xl m-5">
       <Text className="font-semibold text-left">
         Hello {name}! Welcome to your School of Code application, the
         application has several steps:
       </Text>{" "}
       <div className="flex text-left">
         <Text className="font-semibold">Stage 1 </Text>
-        <Text>{val}</Text>
+        <Text>- Fill out personal details.</Text>
       </div>{" "}
       <div className="flex text-left">
         <Text className="font-semibold">Stage 2 </Text>- Create a pixel

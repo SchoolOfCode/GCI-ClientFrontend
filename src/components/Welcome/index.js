@@ -7,7 +7,12 @@ export function Welcome() {
     <section>
       <WelcomeParagraph />
       <br />
-      <MainButton buttonText="To Stage 1"></MainButton>
+      <MainButton
+        onClick={() => {
+          document.querySelector(".stage1").click();
+        }}
+        buttonText="To Stage 1"
+      ></MainButton>
     </section>
   );
 }
