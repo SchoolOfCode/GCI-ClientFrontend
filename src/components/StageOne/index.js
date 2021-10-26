@@ -11,6 +11,9 @@ import {
   Link,
   Heading,
   Text,
+  UnorderedList,
+  ListItem,
+  Stack,
 } from "@chakra-ui/react";
 import "./index.css";
 
@@ -19,7 +22,7 @@ export default function StageOne() {
 
   return (
     <div>
-         <br></br>
+      <br></br>
       <Heading as="h3" size="lg">
         For this stage, we will ask you to fill out a combined application
         form/demographics survey
@@ -32,28 +35,31 @@ export default function StageOne() {
       <br></br>
       <RadioGroup onChange={setValue} value={value}>
         <label className="form">
-          <h2>
+          <Text>
             The next bootcamp starts on 15th November 2021. To be eligible you
             must: *
-          </h2>
-
-          <ul>
-            <li>
+          </Text>
+          <UnorderedList>
+            <ListItem>
               be able to attend remote lectures 9am-5pm on Monday-Friday for the
               duration of the 16 week course
-            </li>
-            <li>have access to the internet for that time</li>
-            <li>
+            </ListItem>
+            <ListItem>have access to the internet for that time</ListItem>
+            <ListItem>
               live in, and be able to work in, the North West, East Midlands,
               West Midlands, London, or the South East of England
-            </li>
-            <li>be 19+ years of age</li>
-            <li>be eligible to live and work in the UK</li>
-            <li>be ready to start a new career in tech after the bootcamp</li>
-          </ul>
+            </ListItem>
+            <ListItem>be 19+ years of age</ListItem>
+            <ListItem>be eligible to live and work in the UK</ListItem>
+            <ListItem>
+              be ready to start a new career in tech after the bootcamp
+            </ListItem>
+          </UnorderedList>
         </label>
-        <Radio value="accept">I accept</Radio>
-        <Radio value="decline">I don't accept</Radio>
+        <Stack spacing={5} direction="row">
+          <Radio value="accept">I accept</Radio>
+          <Radio value="decline">I don't accept</Radio>
+        </Stack>
       </RadioGroup>
       <br></br>
       <GenericInput
@@ -116,10 +122,7 @@ export default function StageOne() {
       <br></br>
       <GenericInput label="Where were you born? (City/Country)" />
       <br></br>
-      <GenericInput
-        label="What is your current Post Code?"
-        placeholderText="Type your answer here..."
-      />
+      <GenericInput label="What is your current Post Code?" />
       <br></br>
       <GenericInput
         label="What is your National Insurance number (if you have one)"
@@ -247,39 +250,6 @@ export default function StageOne() {
         placeholderText="Type your answer here..."
       />
       <br></br>
-      <RadioGroup onChange={setValue} value={value}>
-        <label className="form">
-          <h2 className="second-header">
-            Please read this Privacy Notice and Q&A, which indicate how data is
-            used as part of our process. After reading those documents, please
-            indicate that you understand and accept them by selecting "I
-            accept"..
-          </h2>
-
-          <ul>
-            <li>
-              <Link
-                target="_blank"
-                href="https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view"
-                isExternal
-              >
-                Privacy Notice
-              </Link>
-            </li>
-            <li>
-              <Link
-                target="_blank"
-                href="https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view"
-              >
-                Q&A
-              </Link>
-            </li>
-          </ul>
-        </label>
-        <Radio value="accept">I accept</Radio>
-        <Radio value="decline">I don't accept</Radio>
-      </RadioGroup>
-      <br></br>
       <Dropdown
         label="Where did you hear about School of Code?"
         placeholderText="Please make your selection..."
@@ -296,7 +266,50 @@ export default function StageOne() {
         eleventh="Other"
       />
       <br></br>
-      <MainButton buttonText="Submit and go to the next stage" />
+      <RadioGroup onChange={setValue} value={value}>
+        <label className="form">
+          <Heading as="h2" size="md">
+            Please read this Privacy Notice and Q&A, which indicate how data is
+            used as part of our process. After reading those documents, please
+            indicate that you understand and accept them by selecting "I
+            accept"..
+          </Heading>
+
+          <UnorderedList>
+            <ListItem>
+              <Link
+                color="#4A90E2"
+                target="_blank"
+                href="https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view"
+                isExternal
+              >
+                Privacy Notice
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                color="#4A90E2"
+                target="_blank"
+                href="https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view"
+              >
+                Q&A
+              </Link>
+            </ListItem>
+          </UnorderedList>
+        </label>
+        <Stack spacing={5} direction="row">
+          <Radio value="accept">I accept</Radio>
+          <Radio value="decline">I don't accept</Radio>
+        </Stack>
+      </RadioGroup>
+      <br></br>
+
+      <MainButton
+        onClick={() => {
+          document.querySelector(".stage2").click();
+        }}
+        buttonText="Submit and go to the next stage"
+      />
     </div>
   );
 }

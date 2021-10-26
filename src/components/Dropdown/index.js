@@ -8,22 +8,22 @@ export default function Dropdown({
   label = "dropdown",
   placeholderText = "select option",
   first = "Option 1",
-  second = "Option 2",
-  third = "Option 3",
-  fourth = "Option 4",
-  fifth = "Option 5",
+  second = "",
+  third = "",
+  fourth = "",
+  fifth = "",
   sixth = "",
   seventh = "",
-  eighth ="", 
-  ninth = "", 
-  tenth ="", 
-  eleventh ="",
-  twelfth="", 
-  thirteenth="", 
-  fourteenth="", 
-  fifteenth="", 
-  sixteenth="", 
-  seventeenth="",
+  eighth = "",
+  ninth = "",
+  tenth = "",
+  eleventh = "",
+  twelfth = "",
+  thirteenth = "",
+  fourteenth = "",
+  fifteenth = "",
+  sixteenth = "",
+  seventeenth = "",
 }) {
   //state to hold the value
   const [option, setOption] = useState("");
@@ -33,7 +33,25 @@ export default function Dropdown({
     setOption(e.target.value);
   };
 
-  let array = [first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth];
+  let array = [
+    first,
+    second,
+    third,
+    fourth,
+    fifth,
+    sixth,
+    seventh,
+    eighth,
+    ninth,
+    tenth,
+    eleventh,
+    twelfth,
+    thirteenth,
+    fourteenth,
+    fifteenth,
+    sixteenth,
+    seventeenth,
+  ];
   let list = [];
   array.forEach(function (e) {
     if (e.length > 1) {
