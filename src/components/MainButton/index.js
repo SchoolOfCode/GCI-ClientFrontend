@@ -7,9 +7,11 @@ export function MainButton({
   buttonColor = "#4A90E2",
   textColor = "white",
   buttonText = "CLICK ME!",
+  m = "m-0",
 }) {
   return (
     <Button
+      className={m}
       onClick={onClick}
       bg={buttonColor}
       color={textColor}

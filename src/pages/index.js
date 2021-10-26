@@ -17,11 +17,11 @@ import {
 } from "@aws-amplify/ui-react";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
-
 import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
 import StageOne from "../components/StageOne";
+import { MainButton } from "../components/MainButton";
 import "./index.css";
 Amplify.configure(awsconfig);
 
@@ -112,7 +112,7 @@ const IndexPage = () => {
                 bg="#8896A3"
                 _selected={{ color: "white", bg: "#4A90E2" }}
               >
-                <p className="precourse">Pre-Course</p>
+                <p className="precourse">Learn</p>
               </Tab>
               <Tab
                 className="border-2 border-white text-white font-semibold"
@@ -135,8 +135,7 @@ const IndexPage = () => {
                 <Welcome />
               </TabPanel>
               <TabPanel>
-                <Header text="Stage 1"></Header>
-                <MainButton onClick={() => alert("Wow")} />
+                <StageOne />
               </TabPanel>
               <TabPanel>
                 <StageTwo />
