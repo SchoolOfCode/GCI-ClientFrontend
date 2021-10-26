@@ -7,7 +7,7 @@ export default function GenericInput({
   label,
   role,
   placeholderText = "Please type your answer here...",
-  width = "25%",
+  width = "40%",
   m = "m-0",
   isRequired = true,
 }) {
