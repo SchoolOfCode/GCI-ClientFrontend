@@ -9,41 +9,15 @@ import {
 } from "@chakra-ui/react";
 import GenericInput from "../GenericInput";
 import { MainButton } from "../MainButton";
+import PrecourseText from "../PrecourseText";
 
 export default function StageFour() {
+  const [render, setRender] = useState(false);
+
   function handleClick() {
-    return (
-      <section>
-        <Text>
-          Thank you for completing your application, there are no further
-          actions required. Your application will be assessed and we will let
-          you know if you have been successful as soon as possible.
-        </Text>
-        <br></br>
-        <Text>
-          If you are successful you will be required to complete some pre-course
-          material. You are free to start them now, but please note by doing so
-          you are not guaranteed a place on the course.
-        </Text>
-        <br></br>
-        <Text>
-          Even if you are unsuccessful in this application, studying the
-          pre-course material will be helpful for future applications to the
-          School of Code and to your overall journey into tech!
-        </Text>
-        <br></br>
-        <Text>
-          You can find the pre-course material here{" "}
-          <Link
-            color="#4A90E2"
-            target="_blank"
-            href="https://github.com/SchoolOfCode/bootcamp-pre-course"
-          >
-            https://github.com/SchoolOfCode/bootcamp-pre-course
-          </Link>
-        </Text>
-      </section>
-    );
+    setRender(true);
+
+    return;
   }
 
   return (
@@ -123,7 +97,9 @@ export default function StageFour() {
         placeholderText="Please paste your link here..."
       />
       <br></br>
-      <MainButton buttonText="Submit" onClike={handleClick} />
+      <MainButton buttonText="Submit" onClick={handleClick} />
+      <br></br>
+      {render ? <PrecourseText /> : "testing"}
     </section>
   );
 }
