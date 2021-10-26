@@ -2,7 +2,6 @@ import * as React from "react";
 import Amplify from "aws-amplify";
 import awsconfig from "../aws-exports";
 import {
-
   AmplifySignOut,
   AmplifyAuthenticator,
   AmplifySignIn,
@@ -22,7 +21,7 @@ import ContactForm from "../components/ContactForm";
 import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
-import  StageOne  from "../components/StageOne";
+import StageOne from "../components/StageOne";
 import "./index.css";
 
 Amplify.configure(awsconfig);
@@ -32,6 +31,7 @@ Amplify.configure(awsconfig);
 const IndexPage = () => {
   return (
     <ChakraProvider>
+      <AmplifySignOut />
       <main>
         <AmplifyAuthenticator>
           <div
