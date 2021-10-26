@@ -3,3 +3,9 @@ li {
   margin-left: 10px;
   list-style-type: circle;
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

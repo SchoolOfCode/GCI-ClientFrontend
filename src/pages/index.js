@@ -9,6 +9,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
+  Text,
 } from "@chakra-ui/react";
 import {
   AmplifySignOut,
@@ -31,26 +32,26 @@ const IndexPage = () => {
   return (
     <ChakraProvider>
       <AmplifyAuthenticator>
-        <div
-          className="App"
-          slot="sign-in"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            height: "100vh",
-            width: "100%",
-            backgroundSize: "1800px 1800px",
-            marginBottom: "20px",
-          }}
-        >
-          <Header />
-          <AmplifySignIn headerText="Sign in to access your SoC application" />
-        </div>
-        <main className="wrapper">
-          <Header />
+        <main>
+          <div
+            className="App"
+            slot="sign-in"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+              height: "100vh",
+              width: "100%",
+              backgroundSize: "1800px 1800px",
+              marginBottom: "20px",
+            }}
+          >
+            <Header />
+            <AmplifySignIn headerText="Sign in to access your SoC application" />
+          </div>
 
+          <Header bgColor="#000818" textColor="white" />
           <Tabs
             className="m-20"
             variant="line"
@@ -129,6 +130,13 @@ const IndexPage = () => {
               >
                 <p className="logouttab">Log Out</p>
               </Tab>
+              <Tab
+                className="border-2 border-white text-white font-semibold"
+                bg="#8896A3"
+                _selected={{ color: "white", bg: "#4A90E2" }}
+              >
+                Sign Out
+              </Tab>
             </TabList>
 
             <TabPanels>
@@ -145,7 +153,7 @@ const IndexPage = () => {
                 <StageThree />
               </TabPanel>
               <TabPanel>
-                <Header text="Stage 4"></Header>
+                <StageFour />
               </TabPanel>
               <TabPanel>
                 <Header text="Interview"></Header>

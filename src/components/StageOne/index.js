@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
-import { Radio, RadioGroup, Image, Box } from "@chakra-ui/react";
+import GenericTextarea from "../GenericTextarea";
+import { MainButton } from "../MainButton";
+import { Radio, RadioGroup, Image, Box, Link } from "@chakra-ui/react";
 import "./index.css";
 
 export default function StageOne() {
@@ -39,32 +41,32 @@ export default function StageOne() {
       </RadioGroup>
       <br></br>
       <GenericInput
-        label="What is your first name? *"
+        label="What is your first name?"
         placeholderText="Type your answer here..."
       />
       <br></br>
       <GenericInput
-        label="What is your last name? *"
+        label="What is your last name?"
         placeholderText="Type your answer here..."
       />
       <br></br>
       <GenericInput
-        label="What is your email address? *"
+        label="What is your email address?"
         placeholderText="name@example.com"
       />
       <br></br>
       <GenericInput
-        label="What is your phone number? *"
+        label="What is your phone number?"
         placeholderText="12345 678 912"
       />
       <br></br>
       <GenericInput
-        label="What is your date of birth (format dd/mm/yyyy)? *"
+        label="What is your date of birth (format dd/mm/yyyy)?"
         placeholderText="dd/mm/yyyy"
       />
       <br></br>
       <Dropdown
-        label="What is your gender? *"
+        label="What is your gender?"
         placeholderText="Please make your selection"
         first="Male"
         second="Female"
@@ -74,13 +76,13 @@ export default function StageOne() {
       />
       <br></br>
       <GenericInput
-        label="What is your current Post Code? *"
+        label="What is your current Post Code?"
         placeholderText="Type your answer here..."
       />
       <br></br>
       <Box className="box">
         <Dropdown
-          label="Which region are your applying for? *"
+          label="Which region are your applying for?"
           placeholderText="Pick a region from the School of Code Bootcamp areas listed below"
           first="North West"
           second="West Midlands"
@@ -98,7 +100,7 @@ export default function StageOne() {
         <br></br>
       </Box>
       <Dropdown
-        label="What best describes your current situation? *"
+        label="What best describes your current situation?"
         placeholderText="Please make your selection..."
         first="Self-employed, but looking to change career"
         second="unemployed and looking to start a career"
@@ -109,32 +111,63 @@ export default function StageOne() {
         seventh="Other"
       />
       <br></br>
-      <GenericInput
-        label="Why do you want to join the School of Code? *"
+      <GenericTextarea
+        label="Why do you want to join the School of Code?"
         placeholderText="Type your answer here..."
       />
       <br></br>
       <RadioGroup onChange={setValue} value={value}>
         <label className="form">
-          <h2>
+          <h2 className="second-header">
             Please read this Privacy Notice and Q&A, which indicate how data is
-            used as part of our process. After reading those documents (or
-            alternatively the text below), please indicate that you understand
-            and accept them by clicking "I accept" at the bottom of this page. *
+            used as part of our process. After reading those documents, please
+            indicate that you understand and accept them by selecting "I
+            accept"..
           </h2>
 
           <ul>
             <li>
-              https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view
+              <Link
+                target="_blank"
+                href="https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view"
+                isExternal
+              >
+                Privacy Notice
+              </Link>
             </li>
             <li>
-              https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view
+              <Link
+                target="_blank"
+                href="https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view"
+              >
+                Q&A
+              </Link>
             </li>
           </ul>
         </label>
         <Radio value="accept">I accept</Radio>
         <Radio value="decline">I don't accept</Radio>
       </RadioGroup>
+      <br></br>
+      <Dropdown
+        label="Where did you hear about School of Code?"
+        placeholderText="Please make your selection..."
+        first="Internet search (e.g. Google, Bing, DuckDuckGo)"
+        second="Facebook"
+        third="Twitter"
+        fourth="Instagram"
+        fifth="Linkedin"
+        sixth="Word of mouth (family/friends/colleagues)"
+        seventh="Referral from a previous bootcamper"
+        eight="A blog post"
+        ninth="Newspaper"
+        tenth="Email newsletter"
+        eleventh="Other"
+      />
+      <br></br>
+      <MainButton buttonText="Submit and go to the next stage" />
     </div>
   );
 }
+
+// mainbutton onclick need to be added

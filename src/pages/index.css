@@ -38,8 +38,12 @@ body {
   margin-left: "20px";
 }
 
+<<<<<<< HEAD
 .box {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
+=======
+
+>>>>>>> origin/tomandjoy
