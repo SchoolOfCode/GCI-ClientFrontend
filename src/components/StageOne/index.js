@@ -62,15 +62,9 @@ export default function StageOne() {
         </Stack>
       </RadioGroup>
       <br></br>
-      <GenericInput
-        label="What is your first name?"
-        placeholderText="Type your answer here..."
-      />
+      <GenericInput label="What is your first name?" />
       <br></br>
-      <GenericInput
-        label="What is your last name?"
-        placeholderText="Type your answer here..."
-      />
+      <GenericInput label="What is your last name?" />
       <br></br>
       <GenericInput
         label="What is your email address?"
@@ -247,7 +241,7 @@ export default function StageOne() {
       <br></br>
       <GenericTextarea
         label="Why do you want to join the School of Code?"
-        placeholderText="Type your answer here..."
+        placeholderText="Please type your answer here..."
       />
       <br></br>
       <Dropdown
