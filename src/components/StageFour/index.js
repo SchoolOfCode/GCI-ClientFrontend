@@ -99,7 +99,7 @@ export default function StageFour() {
       <br></br>
       <MainButton buttonText="Submit" onClick={handleClick} />
       <br></br>
-      {render ? <PrecourseText /> : "testing"}
+      {render ? <PrecourseText /> : null}
     </section>
   );
 }

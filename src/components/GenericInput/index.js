@@ -3,7 +3,13 @@ import React, { useState } from "react";
 
 //takes in the label for the input as a prop. This can be just a label or a question to the user
 
-export default function GenericInput({ label, role, placeholderText="Please type your answer here..." }) {
+export default function GenericInput({
+  label,
+  role,
+  placeholderText = "Please type your answer here...",
+  width = "25%",
+  m = "m-0",
+}) {
   //state to hold the value
   const [text, setText] = useState("");
 
@@ -21,8 +27,9 @@ export default function GenericInput({ label, role, placeholderText="Please type
         value={text}
         onChange={handleChange}
         className={role}
-        size='md'
-        width="500px"
+        size="md"
+        width={width}
+        m={m}
       />
     </FormControl>
   );
