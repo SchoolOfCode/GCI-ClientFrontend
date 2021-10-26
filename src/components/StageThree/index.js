@@ -51,7 +51,7 @@ export function StageThree() {
 
       <GenericInput
         m="m-5"
-        label="Your video url (please put as unlisted on Youtube) *"
+        label="Your video url (please put as unlisted on Youtube)"
         role="stage3text1"
         placeholderText="Link here please..."
       />

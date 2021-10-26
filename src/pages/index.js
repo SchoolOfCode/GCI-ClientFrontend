@@ -1,6 +1,6 @@
 import * as React from "react";
-import Amplify from "aws-amplify";
-import awsconfig from "../aws-exports";
+// import Amplify from "aws-amplify";
+// import awsconfig from "../aws-exports";
 import {
   ChakraProvider,
   Heading,
@@ -10,11 +10,11 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
-import {
-  AmplifySignOut,
-  AmplifyAuthenticator,
-  AmplifySignIn,
-} from "@aws-amplify/ui-react";
+// import {
+//   AmplifySignOut,
+//   AmplifyAuthenticator,
+//   AmplifySignIn,
+// } from "@aws-amplify/ui-react";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import { Footer } from "../components/Footer";
@@ -121,13 +121,6 @@ const IndexPage = () => {
             _selected={{ color: "white", bg: "#4A90E2" }}
           >
             <p className="faq">F.A.Q.</p>
-          </Tab>
-          <Tab
-            className="border-2 border-white text-white font-semibold"
-            bg="#8896A3"
-            _selected={{ color: "white", bg: "#4A90E2" }}
-          >
-            <p className="logouttab">Log Out</p>
           </Tab>
           <Tab
             className="border-2 border-white text-white font-semibold"

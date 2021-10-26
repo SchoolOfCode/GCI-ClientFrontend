@@ -4,9 +4,9 @@ export function sendToDB(tableName = "client", id = null, data) {
     id: id,
     data: data,
   };
-  fetch("databaseurlhere", {
+  fetch(env.process.API_URL, {
     method: "POST",
-    mode: "cors",
+    mode: "no-cors",
     cache: "no-cache",
     credentials: "same-origin",
     headers: {
@@ -23,9 +23,9 @@ export function getFromDB(tableName = "client", id = null) {
     tableName: tableName,
     id: id,
   };
-  fetch("databaseurlhere", {
+  fetch(env.process.API_URL, {
     method: "GET",
-    mode: "cors",
+    mode: "no-cors",
     cache: "no-cache",
     credentials: "same-origin",
     headers: {
