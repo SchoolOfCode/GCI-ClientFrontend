@@ -1,9 +1,9 @@
-import { FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { FormControl, FormLabel, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 //takes in the label for the input as a prop. This can be just a label or a question to the user
 
-export default function GenericInput({ label, role, placeholderText="Please type your answer here..." }) {
+export default function GenericTextarea({ label, role, placeholderText="Please type your answer here..." }) {
   //state to hold the value
   const [text, setText] = useState("");
 
@@ -15,7 +15,7 @@ export default function GenericInput({ label, role, placeholderText="Please type
   return (
     <FormControl isRequired>
       <FormLabel>{label}</FormLabel>
-      <Input
+      <Textarea
         type="text"
         placeholder={placeholderText}
         value={text}

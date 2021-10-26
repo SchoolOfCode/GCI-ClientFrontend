@@ -13,7 +13,11 @@ export default function Dropdown({
   fourth = "Option 4",
   fifth = "Option 5",
   sixth = "",
-  seventh = ""
+  seventh = "",
+  eighth ="", 
+  ninth = "", 
+  tenth ="", 
+  eleventh =""
 }) {
   //state to hold the value
   const [option, setOption] = useState("");
@@ -23,7 +27,7 @@ export default function Dropdown({
     setOption(e.target.value);
   };
 
-  let array = [first, second, third, fourth, fifth, sixth, seventh];
+  let array = [first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh];
   let list = [];
   array.forEach(function (e) {
     if (e.length > 1) {
@@ -33,7 +37,7 @@ export default function Dropdown({
 
   console.log("this is the option selected", option);
   return (
-    <FormControl>
+    <FormControl isRequired>
       <FormLabel>{label}</FormLabel>
       <Select
         p="2"

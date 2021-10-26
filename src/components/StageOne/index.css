@@ -4,8 +4,8 @@ li {
   list-style-type: circle;
 }
 
-.second-header{
-  font-size: 16pt;
-  font-weight: bold;
-  
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

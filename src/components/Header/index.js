@@ -1,13 +1,14 @@
 import { Heading, Image, Flex } from "@chakra-ui/react";
 import React from "react";
+import "./index.css";
 
 export default function Header({
   text = "SoC Application Portal",
-  textColor = "#000818",
+  textColor = "white",
   textSize = "2xl",
 }) {
   return (
-    <Flex align="center" justify="center" bgColor="white">
+    <Flex align="center" justify="center" bgColor="#000818">
       <Image
         className="m-5"
         display="flex"
