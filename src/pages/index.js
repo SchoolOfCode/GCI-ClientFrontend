@@ -48,6 +48,7 @@ const IndexPage = () => {
         </div>
         <main className="wrapper">
           <Header />
+
           <Tabs
             className="m-20"
             variant="line"
@@ -110,21 +111,21 @@ const IndexPage = () => {
                 bg="#8896A3"
                 _selected={{ color: "white", bg: "#4A90E2" }}
               >
-                Pre-Course
+                <p className="precourse">Pre-Course</p>
               </Tab>
               <Tab
                 className="border-2 border-white text-white font-semibold"
                 bg="#8896A3"
                 _selected={{ color: "white", bg: "#4A90E2" }}
               >
-                F.A.Q
+                <p className="faq">F.A.Q.</p>
               </Tab>
               <Tab
                 className="border-2 border-white text-white font-semibold"
                 bg="#8896A3"
                 _selected={{ color: "white", bg: "#4A90E2" }}
               >
-                Sign out
+                <p className="logouttab">Log Out</p>
               </Tab>
             </TabList>
 
@@ -158,8 +159,9 @@ const IndexPage = () => {
               <TabPanel>
                 <Heading>Frequently asked questions</Heading>
               </TabPanel>
+
               <TabPanel>
-                <AmplifySignOut />
+                <AmplifySignOut buttonText="Log out" />
               </TabPanel>
             </TabPanels>
           </Tabs>
