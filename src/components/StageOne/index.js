@@ -302,13 +302,11 @@ export default function StageOne() {
           <Radio value="decline">I don't accept</Radio>
         </Stack>
       </RadioGroup>
-      <br></br>
 
+      <br></br>
       <MainButton
-        onClick={() => {
-          document.querySelector(".stage2").click();
-        }}
-        buttonText="Submit and go to the next stage"
+        buttonText="Submit"
+        onClick={() => document.querySelector(".stage2").click()}
       />
     </div>
   );

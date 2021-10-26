@@ -9,7 +9,7 @@ export default function GenericInput({
   placeholderText = "Please type your answer here...",
   width = "25%",
   m = "m-0",
-  isRequired=true
+  isRequired = true,
 }) {
   //state to hold the value
   const [text, setText] = useState("");
@@ -20,7 +20,7 @@ export default function GenericInput({
   };
 
   return (
-    <FormControl isRequired={isRequired}>
+    <FormControl isRequired={isRequired} className={m}>
       <FormLabel>{label}</FormLabel>
       <Input
         type="text"
@@ -30,7 +30,6 @@ export default function GenericInput({
         className={role}
         size="md"
         width={width}
-        m={m}
       />
     </FormControl>
   );

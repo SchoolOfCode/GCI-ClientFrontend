@@ -3,7 +3,7 @@ import React from "react";
 import "./index.css";
 
 export default function Header({
-  text = "SoC Application Portal",
+  text = "School of Code Application Portal",
   textColor = "#000818",
   textSize = "2xl",
   bgColor = "white",
