@@ -3,7 +3,15 @@ import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
 import { MainButton } from "../MainButton";
-import { Radio, RadioGroup, Image, Box, Link } from "@chakra-ui/react";
+import {
+  Radio,
+  RadioGroup,
+  Image,
+  Box,
+  Link,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import "./index.css";
 
 export default function StageOne() {
@@ -11,9 +19,17 @@ export default function StageOne() {
 
   return (
     <div>
-      <h2 className="second-header">
-        Please complete the below application form:
-      </h2>
+         <br></br>
+      <Heading as="h3" size="lg">
+        For this stage, we will ask you to fill out a combined application
+        form/demographics survey
+      </Heading>
+      <br></br>
+      <Text>
+        The information given will not be shared outside of the School of
+        Code/Government partnership and will be for statistical purposes only.{" "}
+      </Text>
+      <br></br>
       <RadioGroup onChange={setValue} value={value}>
         <label className="form">
           <h2>
@@ -75,10 +91,48 @@ export default function StageOne() {
         fifth="Other"
       />
       <br></br>
+      <Dropdown
+        label="To which of the following groups do you feel you belong?"
+        placeholderText="Please make your selection..."
+        first="White-British"
+        second="White-Irish"
+        third="White-any other White background"
+        fourth="Mixed - White & Black Caribbean"
+        fifth="Mixed - White & Black African"
+        sixth="Mixed - White & Asian"
+        seventh="Mixed - any other Mixed background"
+        eight="Black or Black British - African"
+        ninth="Black or Black British - Caribbean"
+        tenth="Black or Black British - any other Black background"
+        eleventh="Asian or Asian British - Indian"
+        twelfth="Asian or Asian British - Pakistani"
+        thirteenth="Asian or Asian British - Bangladeshi"
+        fourteenth="Asian or Asian British - Any other Asian background"
+        fifteenth="Chinese"
+        sixteenth="Other"
+      />
+      <br></br>
+      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <br></br>
+      <GenericInput label="Where were you born? (City/Country)" />
+      <br></br>
       <GenericInput
         label="What is your current Post Code?"
         placeholderText="Type your answer here..."
       />
+      <br></br>
+      <GenericInput
+        label="What is your National Insurance number (if you have one)"
+        isRequired={false}
+      />
+      <br></br>
+      <Dropdown
+        label="Do you have any long-standing illness, disability or infirmity?"
+        first="yes"
+        second="no"
+      />
+      <br></br>
+      <GenericInput label="If 'yes' please specify..." isRequired={false} />
       <br></br>
       <Box className="box">
         <Dropdown
@@ -104,12 +158,89 @@ export default function StageOne() {
         placeholderText="Please make your selection..."
         first="Self-employed, but looking to change career"
         second="unemployed and looking to start a career"
-        third="employed but looking to change career"
-        fourth="finishing college/school and looking to start a career"
-        fifth="graduating university and looking to start a career"
-        sixth="leaving military service and looking for a new career"
-        seventh="Other"
+        third="employed full-time but looking to change career"
+        fourth="employed part-time but looking to change career"
+        fifth="finishing college/school and looking to start a career"
+        sixth="graduating university and looking to start a career"
+        seventh="leaving military service and looking for a new career"
+        eight="Current student, looking for a new career"
+        ninth="Other"
       />
+      <br></br>
+      <GenericInput
+        label="If employed, what industry do you currently work in?"
+        isRequired={false}
+      />
+      <br></br>
+      <GenericInput
+        label="If employed, what is your current annual income (£)?"
+        isRequired={false}
+      />
+      <br></br>
+      <GenericInput label="What is your current household annual income? (£)" />
+      <br></br>
+      <GenericInput label="What is your primary language?" />
+      <br></br>
+      <Dropdown
+        label="What is your highest qualification in education?"
+        first="no GCSEs"
+        second="GCSEs or equivalent"
+        third="Vocational/technical college"
+        fourth="A-Levels/BTEC National Diploma"
+        fifth="Bachelor's Degree"
+        sixth="Master's Degree"
+        seventh="Doctorate"
+        eight="Other"
+      />
+      <br></br>
+      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <br></br>
+      <GenericInput
+        label="If you have a university degree, what subject is it in?"
+        isRequired={false}
+      />
+      <br></br>
+      <Dropdown
+        label="What is your martial status?"
+        first="Single"
+        second="Co-habiting"
+        third="Married"
+        fourth="Separated/Divorced"
+        fifth="Widowed"
+      />
+      <br></br>
+      <Dropdown label="Do you have any children?" first="Yes" second="No" />
+      <br></br>
+      <GenericInput label="If 'Yes' how many?" isRequired={false} />
+      <br></br>
+      <Dropdown
+        label="Do you practice a religion and if so, which one?"
+        first="None (atheism)"
+        second="Buddhism"
+        third="Christianity"
+        fourth="Hinduism"
+        fifth="Hinduism"
+        sixth="Islam"
+        seventh="Judaism"
+        eight="Sikhism"
+        ninth="Other"
+      />
+      <br></br>
+      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <br></br>
+      <Dropdown
+        label="What is your current housing status?"
+        first="Owned outright"
+        second="Buying on a mortgage"
+        third="Rent from council"
+        fourth="Rent from Housing Association/Trust"
+        fifth="Rent from private landlord"
+        sixth="Homeless"
+        seventh="Staying with friends or family"
+        eight="Other"
+      />
+      <br></br>
+      <GenericInput label="If 'Other' please specify..." isRequired={false} />
       <br></br>
       <GenericTextarea
         label="Why do you want to join the School of Code?"

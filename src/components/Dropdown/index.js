@@ -17,7 +17,13 @@ export default function Dropdown({
   eighth ="", 
   ninth = "", 
   tenth ="", 
-  eleventh =""
+  eleventh ="",
+  twelfth="", 
+  thirteenth="", 
+  fourteenth="", 
+  fifteenth="", 
+  sixteenth="", 
+  seventeenth="",
 }) {
   //state to hold the value
   const [option, setOption] = useState("");
@@ -27,7 +33,7 @@ export default function Dropdown({
     setOption(e.target.value);
   };
 
-  let array = [first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh];
+  let array = [first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth, thirteenth, fourteenth, fifteenth, sixteenth, seventeenth];
   let list = [];
   array.forEach(function (e) {
     if (e.length > 1) {
