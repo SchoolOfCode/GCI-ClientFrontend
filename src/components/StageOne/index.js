@@ -165,7 +165,10 @@ export default function StageOne() {
         eleventh="Other"
       />
       <br></br>
-      <MainButton buttonText="Submit and go to the next stage" />
+      <MainButton
+        buttonText="Submit"
+        onClick={() => document.querySelector(".stage2").click()}
+      />
     </div>
   );
 }
