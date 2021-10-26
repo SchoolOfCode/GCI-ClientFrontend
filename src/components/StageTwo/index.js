@@ -80,13 +80,13 @@ export function StageTwo() {
       </p>
       <GenericInput
         m="m-5"
-        label="Character link here please..."
+        label="Your username here please..."
         role="stage2text1"
-        placeholderText="Link here please..."
+        placeholderText="Username..."
       />
       <MainButton
         m="m-5"
-        buttonText="To Stage 3"
+        buttonText="Submit"
         onClick={() => {
           alert(
             document.querySelector(".stage2text1").value +

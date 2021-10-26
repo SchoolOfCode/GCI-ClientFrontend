@@ -12,7 +12,7 @@ export function Welcome() {
         onClick={() => {
           document.querySelector(".stage1").click();
         }}
-        buttonText="To Stage 1"
+        buttonText="Start!"
       ></MainButton>
     </section>
   );
