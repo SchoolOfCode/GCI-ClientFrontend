@@ -32,6 +32,7 @@ Amplify.configure(awsconfig);
 const IndexPage = () => {
   return (
     <ChakraProvider>
+      <AmplifySignOut />
       <main>
         <AmplifyAuthenticator>
           <div
