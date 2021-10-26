@@ -4,11 +4,12 @@ import "./index.css";
 
 export default function Header({
   text = "SoC Application Portal",
-  textColor = "white",
+  textColor = "#000818",
   textSize = "2xl",
+  bgColor = "white",
 }) {
   return (
-    <Flex align="center" justify="center" bgColor="#000818">
+    <Flex align="center" justify="center" bgColor={bgColor}>
       <Image
         className="m-5"
         display="flex"

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
+import { MainButton } from "../MainButton";
 import { Radio, RadioGroup, Image, Box, Link } from "@chakra-ui/react";
 import "./index.css";
 
@@ -11,7 +12,7 @@ export default function StageOne() {
   return (
     <div>
       <h2 className="second-header">
-        Please complete the below application form: 
+        Please complete the below application form:
       </h2>
       <RadioGroup onChange={setValue} value={value}>
         <label className="form">
@@ -119,8 +120,9 @@ export default function StageOne() {
         <label className="form">
           <h2 className="second-header">
             Please read this Privacy Notice and Q&A, which indicate how data is
-            used as part of our process. After reading those documents, please indicate that you understand
-            and accept them by selecting "I accept".. 
+            used as part of our process. After reading those documents, please
+            indicate that you understand and accept them by selecting "I
+            accept"..
           </h2>
 
           <ul>
@@ -162,6 +164,10 @@ export default function StageOne() {
         tenth="Email newsletter"
         eleventh="Other"
       />
+      <br></br>
+      <MainButton buttonText="Submit and go to the next stage" />
     </div>
   );
 }
+
+// mainbutton onclick need to be added

@@ -14,7 +14,7 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Text
+  Text,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
@@ -23,6 +23,7 @@ import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
 import StageOne from "../components/StageOne";
+import StageFour from "../components/StageFour";
 import "./index.css";
 
 Amplify.configure(awsconfig);
@@ -32,7 +33,6 @@ Amplify.configure(awsconfig);
 const IndexPage = () => {
   return (
     <ChakraProvider>
-      <AmplifySignOut />
       <main>
         <AmplifyAuthenticator>
           <div
@@ -53,7 +53,7 @@ const IndexPage = () => {
             <AmplifySignIn headerText="Sign in to access your SoC application" />
           </div>
 
-          <Header />
+          <Header bgColor="#000818" textColor="white" />
           <Tabs
             className="m-20"
             variant="line"
@@ -141,7 +141,7 @@ const IndexPage = () => {
                 <Header text="Stage 3"></Header>
               </TabPanel>
               <TabPanel>
-                <Header text="Stage 4"></Header>
+                <StageFour />
               </TabPanel>
               <TabPanel>
                 <Header text="Interview"></Header>
@@ -159,12 +159,14 @@ const IndexPage = () => {
                 <ContactForm />
               </TabPanel>
               <TabPanel>
-                <Heading>Please confirm you wish to sign out by clicking the below button</Heading>
+                <Heading>
+                  Please confirm you wish to sign out by clicking the below
+                  button
+                </Heading>
                 <AmplifySignOut />
               </TabPanel>
             </TabPanels>
           </Tabs>
-         
         </AmplifyAuthenticator>
       </main>
       <Footer />
