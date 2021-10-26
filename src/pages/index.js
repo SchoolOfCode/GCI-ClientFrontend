@@ -17,10 +17,11 @@ import {
 } from "@aws-amplify/ui-react";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
-import { MainButton } from "../components/MainButton";
+
 import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
+import StageOne from "../components/StageOne";
 import "./index.css";
 Amplify.configure(awsconfig);
 

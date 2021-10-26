@@ -17,3 +17,32 @@ body {
   --amplify-primary-tint: #4a90e2;
   --amplify-primary-shade: #4a90e2;
 }
+<<<<<<< HEAD
+=======
+
+.second-header{
+  font-size: 16pt;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: '3px';
+  margin-bottom: '20px';
+}
+
+.stage-one{
+  align-items: center;
+  justify-content: center;
+  padding: '3px';
+  margin-bottom: '20px';
+}
+
+.form{
+  margin-left: '20px';
+}
+
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+>>>>>>> origin/tomandjoy
