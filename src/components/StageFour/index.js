@@ -32,18 +32,20 @@ export default function StageFour() {
         due course).
       </Text>
       <br></br>
+      <iframe
+        width="480"
+        height="270"
+        src="https://www.youtube.com/embed/YoXxevp1WRQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <br></br>
       <Text>
-        Once you have watched the lecture{" "}
-        <Link
-          color="#4A90E2"
-          target="_blank"
-          href="https://www.youtube.com/watch?v=YoXxevp1WRQ"
-        >
-          https://www.youtube.com/watch?v=YoXxevp1WRQ
-        </Link>
-        , your task is to make a project using Scratch, a visual coding language
-        which allows you to engage with programming concepts without needing to
-        know the syntax of coding.
+        Once you have watched the lecture, your task is to make a project using
+        Scratch, a visual coding language which allows you to engage with
+        programming concepts without needing to know the syntax of coding.
       </Text>
       <br></br>
       <Text>
