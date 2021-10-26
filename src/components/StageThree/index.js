@@ -4,53 +4,66 @@ import GenericInput from "../GenericInput";
 
 export function StageThree() {
   return (
-    <section id="stage2section" className="m-5">
-      <p className="text-xl font-bold mb-5">Stage 3 - Character creation!</p>
+    <section id="stage3section" className="m-5">
+      <p className="text-xl font-bold mb-5">Stage 3 - Video Intro Stage!</p>
+      <br />
       <p>
-        This isn't your standard application process because this isn't your
-        standard course!
+        Being a good communicator is an essential skill for a modern developer -
+        especially in a world of remote working. The video will show us that you
+        can confidently express yourself.
+      </p>
+      <br />
+      <p>Watch the video below for more information.</p>
+      <br />
+      <iframe
+        width="480"
+        height="270"
+        src="https://www.youtube.com/embed/7RE2z1yEymU"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <br />
+      <p className="text-lg font-bold">Your Questions.</p>
+      <p>
+        Please record you answers to the following questions. You should try to
+        answer each question within 1 minute.{" "}
+      </p>
+      <br />
+      <p>
+        1. Tell us about a time you had to work in a team to solve a problem
+        (1m){" "}
       </p>
       <p>
-        Get your first taste of coding with our School of Code Avatar Challenge.{" "}
+        2. Tell us about something which is a passion of yours (can be anything,
+        from stamps, to TV, to pets, to watching clouds) - why do you like it,
+        and what’s the most interesting part? (1m)
       </p>
       <p>
-        This task gently introduces you to HTML and CSS - show us how creative
-        you can be with a little coding knowledge!{" "}
+        3. Explain something that is complex to us (but that you know well) in a
+        simple way (1m)
       </p>
       <p>
-        {" "}
-        Step 1 - Visit{" "}
-        <a className="text-blue-500" href="http://application.schoolofcode.io">
-          https://application.schoolofcode.io
-        </a>{" "}
-        - we recommend using a laptop/desktop computer with Google's Chrome
-        browser.
-      </p>
-      <p>
-        Step 2 - Register an account - please use the same email address you
-        applied with if possible.{" "}
-      </p>
-      <p>
-        Once you've registered and are logged in to the home page, click on your
-        Character Building room, click “Join” (see images below), and start
-        building your very own cute little pixel character with code!
+        4. Why do you want to join the School of Code? Why is it right for you?
+        (1m)
       </p>
 
       <GenericInput
         m="m-5"
-        label="Character link here please..."
-        role="stage2text1"
+        label="Your video url (please put as unlisted on Youtube) *"
+        role="stage3text1"
         placeholderText="Link here please..."
       />
       <MainButton
         m="m-5"
-        buttonText="To Stage 3"
+        buttonText="Submit"
         onClick={() => {
           alert(
-            document.querySelector(".stage2text1").value +
+            document.querySelector(".stage3text1").value +
               " has been sent to the cloud!"
           ); //
-          document.querySelector(".stage3").click();
+          document.querySelector(".stage4").click();
         }}
       />
     </section>

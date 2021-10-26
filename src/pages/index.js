@@ -20,6 +20,7 @@ import ContactForm from "../components/ContactForm";
 import { Footer } from "../components/Footer";
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
+import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
 import { MainButton } from "../components/MainButton";
 import "./index.css";
@@ -141,7 +142,7 @@ const IndexPage = () => {
                 <StageTwo />
               </TabPanel>
               <TabPanel>
-                <Header text="Stage 3"></Header>
+                <StageThree />
               </TabPanel>
               <TabPanel>
                 <Header text="Stage 4"></Header>
