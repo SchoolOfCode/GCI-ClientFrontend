@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
+import GenericRadio from "../GenericRadio";
 import { MainButton } from "../MainButton";
 import {
   Radio,
@@ -18,7 +19,12 @@ import {
 import "./index.css";
 
 export default function StageOne() {
-  const [value, setValue] = useState("");
+
+function handleClick(){
+  console.log("test value", document.querySelector(".stage1question1").xxxvalue, document.querySelector(".stage1question1"))
+}
+
+
 
   return (
     <div>
@@ -33,34 +39,29 @@ export default function StageOne() {
         Code/Government partnership and will be for statistical purposes only.{" "}
       </Text>
       <br></br>
-      <RadioGroup onChange={setValue} value={value}>
-        <label className="form">
-          <Text>
-            The next bootcamp starts on 15th November 2021. To be eligible you
-            must: *
-          </Text>
-          <UnorderedList>
-            <ListItem>
-              be able to attend remote lectures 9am-5pm on Monday-Friday for the
-              duration of the 16 week course
-            </ListItem>
-            <ListItem>have access to the internet for that time</ListItem>
-            <ListItem>
-              live in, and be able to work in, the North West, East Midlands,
-              West Midlands, London, or the South East of England
-            </ListItem>
-            <ListItem>be 19+ years of age</ListItem>
-            <ListItem>be eligible to live and work in the UK</ListItem>
-            <ListItem>
-              be ready to start a new career in tech after the bootcamp
-            </ListItem>
-          </UnorderedList>
-        </label>
-        <Stack spacing={5} direction="row">
-          <Radio value="accept">I accept</Radio>
-          <Radio value="decline">I don't accept</Radio>
-        </Stack>
-      </RadioGroup>
+      <label className="form">
+        <Text>
+          The next bootcamp starts on 15th November 2021. To be eligible you
+          must: *
+        </Text>
+        <UnorderedList>
+          <ListItem>
+            be able to attend remote lectures 9am-5pm on Monday-Friday for the
+            duration of the 16 week course
+          </ListItem>
+          <ListItem>have access to the internet for that time</ListItem>
+          <ListItem>
+            live in, and be able to work in, the North West, East Midlands, West
+            Midlands, London, or the South East of England
+          </ListItem>
+          <ListItem>be 19+ years of age</ListItem>
+          <ListItem>be eligible to live and work in the UK</ListItem>
+          <ListItem>
+            be ready to start a new career in tech after the bootcamp
+          </ListItem>
+        </UnorderedList>
+      </label>
+      <GenericRadio role="stage1question1" valueOne="accept" valueTwo="decline" />
       <br></br>
       <GenericInput label="What is your first name?" />
       <br></br>
@@ -260,44 +261,38 @@ export default function StageOne() {
         eleventh="Other"
       />
       <br></br>
-      <RadioGroup onChange={setValue} value={value}>
-        <label className="form">
-          <Heading as="h2" size="md">
-            Please read this Privacy Notice and Q&A, which indicate how data is
-            used as part of our process. After reading those documents, please
-            indicate that you understand and accept them by selecting "I
-            accept"..
-          </Heading>
+      <label className="form">
+        <Heading as="h2" size="md">
+          Please read this Privacy Notice and Q&A, which indicate how data is
+          used as part of our process. After reading those documents, please
+          indicate that you understand and accept them by selecting "I accept"..
+        </Heading>
 
-          <UnorderedList>
-            <ListItem>
-              <Link
-                color="#4A90E2"
-                target="_blank"
-                href="https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view"
-                isExternal
-              >
-                Privacy Notice
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                color="#4A90E2"
-                target="_blank"
-                href="https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view"
-              >
-                Q&A
-              </Link>
-            </ListItem>
-          </UnorderedList>
-        </label>
-        <Stack spacing={5} direction="row">
-          <Radio value="accept">I accept</Radio>
-          <Radio value="decline">I don't accept</Radio>
-        </Stack>
-      </RadioGroup>
-
+        <UnorderedList>
+          <ListItem>
+            <Link
+              color="#4A90E2"
+              target="_blank"
+              href="https://drive.google.com/file/d/1fwoD7ZKVFPHbQtmdSoYyzqHsxBb1EPpa/view"
+              isExternal
+            >
+              Privacy Notice
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link
+              color="#4A90E2"
+              target="_blank"
+              href="https://drive.google.com/file/d/1oRTCXXsOX0jGIaH4bL_S0vQClM5NH4iG/view"
+            >
+              Q&A
+            </Link>
+          </ListItem>
+        </UnorderedList>
+      </label>
+      <GenericRadio valueOne="accept" valueTwo="decline" />
       <br></br>
+      <MainButton buttonText="TESTER" onClick={handleClick}/>
       <MainButton
         buttonText="Submit"
         onClick={() => document.querySelector(".stage2").click()}
