@@ -22,41 +22,42 @@ export default function StageOne() {
   function handleClick() {
     let answers = [];
     answers.push(document.querySelector(".stage1question1").id);
-    answers.push(document.querySelector(".stage1question2").value)
-    answers.push(document.querySelector(".stage1question3").value)
-    answers.push(document.querySelector(".stage1question4").value)
-    answers.push(document.querySelector(".stage1question5").value)
-    answers.push(document.querySelector(".stage1question6").value)
-    answers.push(document.querySelector(".stage1question7").value)
-    answers.push(document.querySelector(".stage1question8").value)
-    answers.push(document.querySelector(".stage1question9").value)
-    answers.push(document.querySelector(".stage1question10").value)
-    answers.push(document.querySelector(".stage1question11").value)
-    answers.push(document.querySelector(".stage1question12").value)
-    answers.push(document.querySelector(".stage1question13").value)
-    answers.push(document.querySelector(".stage1question14").value)
-    answers.push(document.querySelector(".stage1question15").value)
-    answers.push(document.querySelector(".stage1question16").value)
-    answers.push(document.querySelector(".stage1question17").value)
-    answers.push(document.querySelector(".stage1question18").value)
-    answers.push(document.querySelector(".stage1question19").value)
-    answers.push(document.querySelector(".stage1question20").value)
-    answers.push(document.querySelector(".stage1question21").value)
-    answers.push(document.querySelector(".stage1question22").value)
-    answers.push(document.querySelector(".stage1question23").value)
-    answers.push(document.querySelector(".stage1question24").value)
-    answers.push(document.querySelector(".stage1question25").value)
-    answers.push(document.querySelector(".stage1question26").value)
-    answers.push(document.querySelector(".stage1question27").value)
-    answers.push(document.querySelector(".stage1question28").value)
-    answers.push(document.querySelector(".stage1question29").value)
-    answers.push(document.querySelector(".stage1question30").value)
-    answers.push(document.querySelector(".stage1question31").value)
-    answers.push(document.querySelector(".stage1question32").value)
-    answers.push(document.querySelector(".stage1question33").id)
+    answers.push(document.querySelector(".stage1question2").value);
+    answers.push(document.querySelector(".stage1question3").value);
+    answers.push(document.querySelector(".stage1question4").value);
+    answers.push(document.querySelector(".stage1question5").value);
+    answers.push(document.querySelector(".stage1question6").value);
+    answers.push(document.querySelector(".stage1question7").value);
+    answers.push(document.querySelector(".stage1question8").value);
+    answers.push(document.querySelector(".stage1question9").value);
+    answers.push(document.querySelector(".stage1question10").value);
+    answers.push(document.querySelector(".stage1question11").value);
+    answers.push(document.querySelector(".stage1question12").value);
+    answers.push(document.querySelector(".stage1question13").value);
+    answers.push(document.querySelector(".stage1question14").value);
+    answers.push(document.querySelector(".stage1question15").value);
+    answers.push(document.querySelector(".stage1question16").value);
+    answers.push(document.querySelector(".stage1question17").value);
+    answers.push(document.querySelector(".stage1question18").value);
+    answers.push(document.querySelector(".stage1question19").value);
+    answers.push(document.querySelector(".stage1question20").value);
+    answers.push(document.querySelector(".stage1question21").value);
+    answers.push(document.querySelector(".stage1question22").value);
+    answers.push(document.querySelector(".stage1question23").value);
+    answers.push(document.querySelector(".stage1question24").value);
+    answers.push(document.querySelector(".stage1question25").value);
+    answers.push(document.querySelector(".stage1question26").value);
+    answers.push(document.querySelector(".stage1question27").value);
+    answers.push(document.querySelector(".stage1question28").value);
+    answers.push(document.querySelector(".stage1question29").value);
+    answers.push(document.querySelector(".stage1question30").value);
+    answers.push(document.querySelector(".stage1question31").value);
+    answers.push(document.querySelector(".stage1question32").value);
+    answers.push(document.querySelector(".stage1question33").id);
 
-    answers = Object.assign({}, answers)
+    answers = Object.assign({}, answers);
     console.log(answers);
+    document.querySelector(".stage2").click();
   }
 
   return (
@@ -388,18 +389,11 @@ export default function StageOne() {
       </label>
       <GenericRadio
         role="stage1question33"
-        
         valueOne="accept"
         valueTwo="decline"
       />
       <br></br>
-      <MainButton buttonText="TESTER" onClick={handleClick} />
-      <MainButton
-        buttonText="Submit"
-        onClick={() => document.querySelector(".stage2").click()}
-      />
+      <MainButton buttonText="Submit" onClick={handleClick} />
     </div>
   );
 }
-
-// mainbutton onclick need to be added
