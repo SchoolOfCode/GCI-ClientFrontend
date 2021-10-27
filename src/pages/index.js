@@ -25,6 +25,7 @@ import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
+import FAQ from "../components/FAQ";
 import { Learn } from "../components/Learn";
 import "./index.css";
 Amplify.configure(awsconfig);
@@ -157,10 +158,9 @@ const IndexPage = () => {
             </TabPanel>
             <TabPanel>
               <Learn />
-              {/* <ContactForm /> */}
             </TabPanel>
             <TabPanel>
-              <Heading>Frequently asked questions</Heading>
+              <FAQ />
             </TabPanel>
 
             <TabPanel>
