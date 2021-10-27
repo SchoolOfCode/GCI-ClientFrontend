@@ -1,33 +1,38 @@
 import React from "react";
-import { Text } from "@chakra-ui/react";
+import { Text, Heading } from "@chakra-ui/react";
 
 export function WelcomeParagraph({ name = "there" }) {
   return (
-    <section className="text-xl m-5">
-      <Text className="font-semibold text-left">
+    <section>
+      <Heading as="h3" size="lg">
         Hello {name}! Welcome to your School of Code application, the
         application has several steps:
-      </Text>{" "}
-      <div className="flex text-left">
-        <Text className="font-semibold">Stage 1 </Text>
-        <Text>- Fill out personal details.</Text>
-      </div>{" "}
-      <div className="flex text-left">
-        <Text className="font-semibold">Stage 2 </Text>- Create a pixel
-        character.
-      </div>{" "}
-      <div className="flex text-left">
-        <Text className="font-semibold">Stage 3 </Text>- Record a video
-        interview.
-      </div>{" "}
-      <div className="flex text-left">
-        <Text className="font-semibold">Stage 4 </Text>- Create a game with
-        Scratch.
-      </div>{" "}
-      <Text className="font-semibold text-left">
+      </Heading>
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        Stage 1
+      </Text>
+      <Text>Fill out application form & demographics survey.</Text>
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        Stage 2
+      </Text>
+      <Text>Create a pixel character.</Text>
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        Stage 3
+      </Text>
+      <Text>Record a video interview.</Text>
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        Stage 4
+      </Text>
+      <Text>Create a game with Scratch.</Text>
+      <br></br>
+      <Text className="font-semibold">
         More details of each stage will be given when you reach the stage.{" "}
       </Text>
-      <Text className="font-semibold text-left">
+      <Text className="font-semibold">
         You have 4 weeks from now on to complete Stages 1 to 4 - each new stage
         will unlock when you complete the current stage.
       </Text>

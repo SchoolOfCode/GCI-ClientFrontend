@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import "./index.css";
 
-
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
 export default function StageOne() {
@@ -79,8 +78,7 @@ export default function StageOne() {
     answers.push(document.querySelector(".stage1question33").id);
     requiredAnswers.push(document.querySelector(".stage1question33").value);
 
-
-      //validity check. This checks that all required questions have an answer
+    //validity check. This checks that all required questions have an answer
     let valid = !requiredAnswers.includes("");
     console.log("validity check", valid);
 
@@ -106,15 +104,15 @@ export default function StageOne() {
 
   return (
     <div>
-      <br></br>
       <Heading as="h3" size="lg">
-        For this stage, we will ask you to fill out a combined application
-        form/demographics survey
+        Application form & Demographics survey
       </Heading>
       <br></br>
       <Text>
-        The information given will not be shared outside of the School of
-        Code/Government partnership and will be for statistical purposes only.{" "}
+        For this stage, we will ask you to fill out a combined application form
+        / demographics survey. The information given will not be shared outside
+        of the School of Code/Government partnership and will be for statistical
+        purposes only.{" "}
       </Text>
       <br></br>
       <label className="form">
