@@ -72,6 +72,7 @@ export default function Dropdown({
         placeholder={placeholderText}
         onChange={handleSelect}
         className={role}
+        value={option}
       >
         {list.map((i) => {
           return <option value={i.value}>{i.value}</option>;

@@ -19,12 +19,45 @@ import {
 import "./index.css";
 
 export default function StageOne() {
+  function handleClick() {
+    let answers = [];
+    answers.push(document.querySelector(".stage1question1").id);
+    answers.push(document.querySelector(".stage1question2").value)
+    answers.push(document.querySelector(".stage1question3").value)
+    answers.push(document.querySelector(".stage1question4").value)
+    answers.push(document.querySelector(".stage1question5").value)
+    answers.push(document.querySelector(".stage1question6").value)
+    answers.push(document.querySelector(".stage1question7").value)
+    answers.push(document.querySelector(".stage1question8").value)
+    answers.push(document.querySelector(".stage1question9").value)
+    answers.push(document.querySelector(".stage1question10").value)
+    answers.push(document.querySelector(".stage1question11").value)
+    answers.push(document.querySelector(".stage1question12").value)
+    answers.push(document.querySelector(".stage1question13").value)
+    answers.push(document.querySelector(".stage1question14").value)
+    answers.push(document.querySelector(".stage1question15").value)
+    answers.push(document.querySelector(".stage1question16").value)
+    answers.push(document.querySelector(".stage1question17").value)
+    answers.push(document.querySelector(".stage1question18").value)
+    answers.push(document.querySelector(".stage1question19").value)
+    answers.push(document.querySelector(".stage1question20").value)
+    answers.push(document.querySelector(".stage1question21").value)
+    answers.push(document.querySelector(".stage1question22").value)
+    answers.push(document.querySelector(".stage1question23").value)
+    answers.push(document.querySelector(".stage1question24").value)
+    answers.push(document.querySelector(".stage1question25").value)
+    answers.push(document.querySelector(".stage1question26").value)
+    answers.push(document.querySelector(".stage1question27").value)
+    answers.push(document.querySelector(".stage1question28").value)
+    answers.push(document.querySelector(".stage1question29").value)
+    answers.push(document.querySelector(".stage1question30").value)
+    answers.push(document.querySelector(".stage1question31").value)
+    answers.push(document.querySelector(".stage1question32").value)
+    answers.push(document.querySelector(".stage1question33").id)
 
-function handleClick(){
-  console.log("test value", document.querySelector(".stage1question1").xxxvalue, document.querySelector(".stage1question1"))
-}
-
-
+    answers = Object.assign({}, answers)
+    console.log(answers);
+  }
 
   return (
     <div>
@@ -61,28 +94,36 @@ function handleClick(){
           </ListItem>
         </UnorderedList>
       </label>
-      <GenericRadio role="stage1question1" valueOne="accept" valueTwo="decline" />
+      <GenericRadio
+        role="stage1question1"
+        valueOne="accept"
+        valueTwo="decline"
+      />
       <br></br>
-      <GenericInput label="What is your first name?" />
+      <GenericInput role="stage1question2" label="What is your first name?" />
       <br></br>
-      <GenericInput label="What is your last name?" />
+      <GenericInput role="stage1question3" label="What is your last name?" />
       <br></br>
       <GenericInput
+        role="stage1question4"
         label="What is your email address?"
         placeholderText="name@example.com"
       />
       <br></br>
       <GenericInput
+        role="stage1question5"
         label="What is your phone number?"
         placeholderText="12345 678 912"
       />
       <br></br>
       <GenericInput
+        role="stage1question6"
         label="What is your date of birth (format dd/mm/yyyy)?"
         placeholderText="dd/mm/yyyy"
       />
       <br></br>
       <Dropdown
+        role="stage1question7"
         label="What is your gender?"
         placeholderText="Please make your selection"
         first="Male"
@@ -93,6 +134,7 @@ function handleClick(){
       />
       <br></br>
       <Dropdown
+        role="stage1question8"
         label="To which of the following groups do you feel you belong?"
         placeholderText="Please make your selection..."
         first="White-British"
@@ -113,27 +155,44 @@ function handleClick(){
         sixteenth="Other"
       />
       <br></br>
-      <GenericInput label="If 'Other' please specify..." isRequired={false} />
-      <br></br>
-      <GenericInput label="Where were you born? (City/Country)" />
-      <br></br>
-      <GenericInput label="What is your current Post Code?" />
+      <GenericInput
+        role="stage1question9"
+        label="If 'Other' please specify..."
+        isRequired={false}
+      />
       <br></br>
       <GenericInput
+        role="stage1question10"
+        label="Where were you born? (City/Country)"
+      />
+      <br></br>
+      <GenericInput
+        role="stage1question11"
+        label="What is your current Post Code?"
+      />
+      <br></br>
+      <GenericInput
+        role="stage1question12"
         label="What is your National Insurance number (if you have one)"
         isRequired={false}
       />
       <br></br>
       <Dropdown
+        role="stage1question13"
         label="Do you have any long-standing illness, disability or infirmity?"
         first="yes"
         second="no"
       />
       <br></br>
-      <GenericInput label="If 'yes' please specify..." isRequired={false} />
+      <GenericInput
+        role="stage1question14"
+        label="If 'yes' please specify..."
+        isRequired={false}
+      />
       <br></br>
       <Box className="box">
         <Dropdown
+          role="stage1question15"
           label="Which region are your applying for?"
           placeholderText="Pick a region from the School of Code Bootcamp areas listed below"
           first="North West"
@@ -152,6 +211,7 @@ function handleClick(){
         <br></br>
       </Box>
       <Dropdown
+        role="stage1question16"
         label="What best describes your current situation?"
         placeholderText="Please make your selection..."
         first="Self-employed, but looking to change career"
@@ -166,20 +226,29 @@ function handleClick(){
       />
       <br></br>
       <GenericInput
+        role="stage1question17"
         label="If employed, what industry do you currently work in?"
         isRequired={false}
       />
       <br></br>
       <GenericInput
+        role="stage1question18"
         label="If employed, what is your current annual income (£)?"
         isRequired={false}
       />
       <br></br>
-      <GenericInput label="What is your current household annual income? (£)" />
+      <GenericInput
+        role="stage1question19"
+        label="What is your current household annual income? (£)"
+      />
       <br></br>
-      <GenericInput label="What is your primary language?" />
+      <GenericInput
+        role="stage1question20"
+        label="What is your primary language?"
+      />
       <br></br>
       <Dropdown
+        role="stage1question21"
         label="What is your highest qualification in education?"
         first="no GCSEs"
         second="GCSEs or equivalent"
@@ -191,14 +260,20 @@ function handleClick(){
         eight="Other"
       />
       <br></br>
-      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <GenericInput
+        role="stage1question22"
+        label="If 'Other' please specify..."
+        isRequired={false}
+      />
       <br></br>
       <GenericInput
+        role="stage1question23"
         label="If you have a university degree, what subject is it in?"
         isRequired={false}
       />
       <br></br>
       <Dropdown
+        role="stage1question24"
         label="What is your martial status?"
         first="Single"
         second="Co-habiting"
@@ -207,11 +282,21 @@ function handleClick(){
         fifth="Widowed"
       />
       <br></br>
-      <Dropdown label="Do you have any children?" first="Yes" second="No" />
+      <Dropdown
+        role="stage1question25"
+        label="Do you have any children?"
+        first="Yes"
+        second="No"
+      />
       <br></br>
-      <GenericInput label="If 'Yes' how many?" isRequired={false} />
+      <GenericInput
+        role="stage1question26"
+        label="If 'Yes' how many?"
+        isRequired={false}
+      />
       <br></br>
       <Dropdown
+        role="stage1question27"
         label="Do you practice a religion and if so, which one?"
         first="None (atheism)"
         second="Buddhism"
@@ -224,9 +309,14 @@ function handleClick(){
         ninth="Other"
       />
       <br></br>
-      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <GenericInput
+        role="stage1question28"
+        label="If 'Other' please specify..."
+        isRequired={false}
+      />
       <br></br>
       <Dropdown
+        role="stage1question29"
         label="What is your current housing status?"
         first="Owned outright"
         second="Buying on a mortgage"
@@ -238,14 +328,20 @@ function handleClick(){
         eight="Other"
       />
       <br></br>
-      <GenericInput label="If 'Other' please specify..." isRequired={false} />
+      <GenericInput
+        role="stage1question30"
+        label="If 'Other' please specify..."
+        isRequired={false}
+      />
       <br></br>
       <GenericTextarea
+        role="stage1question31"
         label="Why do you want to join the School of Code?"
         placeholderText="Please type your answer here..."
       />
       <br></br>
       <Dropdown
+        role="stage1question32"
         label="Where did you hear about School of Code?"
         placeholderText="Please make your selection..."
         first="Internet search (e.g. Google, Bing, DuckDuckGo)"
@@ -290,9 +386,14 @@ function handleClick(){
           </ListItem>
         </UnorderedList>
       </label>
-      <GenericRadio valueOne="accept" valueTwo="decline" />
+      <GenericRadio
+        role="stage1question33"
+        
+        valueOne="accept"
+        valueTwo="decline"
+      />
       <br></br>
-      <MainButton buttonText="TESTER" onClick={handleClick}/>
+      <MainButton buttonText="TESTER" onClick={handleClick} />
       <MainButton
         buttonText="Submit"
         onClick={() => document.querySelector(".stage2").click()}
