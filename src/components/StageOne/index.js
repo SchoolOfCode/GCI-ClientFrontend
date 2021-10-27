@@ -5,8 +5,6 @@ import GenericTextarea from "../GenericTextarea";
 import GenericRadio from "../GenericRadio";
 import { MainButton } from "../MainButton";
 import {
-  Radio,
-  RadioGroup,
   Image,
   Box,
   Link,
@@ -14,7 +12,6 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  Stack,
 } from "@chakra-ui/react";
 import "./index.css";
 

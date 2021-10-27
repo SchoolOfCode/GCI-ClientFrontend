@@ -15,7 +15,10 @@ export default function StageFour() {
   const [render, setRender] = useState(false);
 
   function handleClick() {
-    console.log("this is the value", document.querySelector(".stage4question1").value)
+    console.log(
+      "this is the value",
+      document.querySelector(".stage4question1").value
+    );
     setRender(true);
 
     return;
@@ -96,7 +99,7 @@ export default function StageFour() {
       <Divider />
       <br></br>
       <GenericInput
-      role="stage4question1"
+        role="stage4question1"
         label="Scratch Task URL (make sure it is public!)"
         placeholderText="Please paste your link here..."
       />
