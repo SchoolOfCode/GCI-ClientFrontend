@@ -3,5 +3,8 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "client-frontend",
   },
-  plugins: ["@chakra-ui/gatsby-plugin", "gatsby-plugin-postcss"],
+  plugins: ["gatsby-plugin-postcss"],
 };
+
+
+// "@chakra-ui/gatsby-plugin"
