@@ -44,13 +44,13 @@ export function StageTwo() {
         <img
           className="max-w-lg"
           src="https://lh5.googleusercontent.com/GkFCBCaraux1R1ndd9TMzTQ9PJcfAnsdsjNXqz0i2lep7o8Or2x39YGbq8V1BIA3spthHxMWqlsS9zZVRcomU5WrnTItNH3cHM3yjSz6vX-OK3x2sjqV454NIE-HaGf_=w1600"
-          alt="image describing joining a room"
+          alt="instructions describing joining a room"
         />
         <p>And then click join to start coding!</p>
         <img
           className="max-w-lg"
           src="https://lh4.googleusercontent.com/iiXyoTuzKTr44N_HpH2f9Tl_iVb05pptwxchERSwGC6_MhAeGbKIpOUgO97sSc_zocuqhiM9TmZQq8JLSZV3lpBwuDyHG2HVBwf8naqZ1Uw60G0mcQ_vm6FSlpBhDIix=w1600"
-          alt="image describing joining a room"
+          alt="instructions describing joining a room"
         />
         <p>
           Step 3 - You'll be taken to a coding "game" where you'll be taught the

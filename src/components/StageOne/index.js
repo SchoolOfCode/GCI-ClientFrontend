@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
@@ -89,9 +89,9 @@ export default function StageOne() {
     //if they have, it then uses the validity check to confirm all required answers have a value
     // if all checks pass, it passes all of the answers into an object saved in a variable called 'answers'
 
-    if (document.querySelector(".stage1question1").id == "decline") {
+    if (document.querySelector(".stage1question1").id === "decline") {
       alert("please accept the eligibility criteria (question 1)");
-    } else if (document.querySelector(".stage1question33").id == "decline") {
+    } else if (document.querySelector(".stage1question33").id === "decline") {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
       answers = Object.assign({}, answers);
