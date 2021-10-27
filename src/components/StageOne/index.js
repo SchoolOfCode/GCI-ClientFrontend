@@ -104,6 +104,8 @@ export default function StageOne() {
     }
   }
 
+  //returns form with 33 questions from application & demographics form
+
   return (
     <div>
       <br></br>
