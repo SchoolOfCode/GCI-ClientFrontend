@@ -24,9 +24,30 @@ export function Learn() {
           },
           img: {
             props: {
-              src: "./images/soc-logo.png",
+              src: "https://i.imgur.com/TsMzmXK.png",
             },
           },
+          h2: {
+            props: {
+              className: "font-bold text-2xl pt-4",
+            },
+          },
+          p: {
+            props: {
+              className: "font-semibold text-lg pt-6",
+            },
+          },
+          h3: {
+            props: {
+              className: "font-bold text-2xl pt-4",
+            },
+          },
+          li: {
+            props: {
+              className: "list-disc ml-5",
+            },
+          },
+          
         },
       }}
     >
