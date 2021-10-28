@@ -36,6 +36,25 @@ export function WelcomeParagraph({ name = "there" }) {
         You have 4 weeks from now on to complete Stages 1 to 4 - each new stage
         will unlock when you complete the current stage.
       </Text>
+
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        1-1 Interview
+      </Text>
+      <Text>
+        Once you have completed the 4 stages, your applicattion will be assessed
+        and we will let you know if we would like to invite you to an interview.
+        At this stage, the interview tab will be unlocked.
+      </Text>
+      <br></br>
+      <Text fontSize="lg" className="font-semibold">
+        Confirmation
+      </Text>
+      <Text>
+        If your application is successful, we'll send you confirmation. It's
+        then time to congratulate yourself on making it through a highly
+        competitive process
+      </Text>
     </section>
   );
 }

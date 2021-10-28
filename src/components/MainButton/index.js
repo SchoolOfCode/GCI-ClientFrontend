@@ -15,7 +15,7 @@ export function MainButton({
       onClick={onClick}
       bg={buttonColor}
       color={textColor}
-      size="md"
+      size="lg"
       _hover={{ bg: "#000818" }}
       _active={{
         transform: "scale(0.75)",
