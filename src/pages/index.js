@@ -23,6 +23,7 @@ import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
 import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
+import GetUserEmail from "../components/GetUserEmail";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
 import Result from "../components/Result";
@@ -145,6 +146,7 @@ const IndexPage = () => {
             </TabPanel>
             <TabPanel>
               <StageTwo />
+              <GetUserEmail />
             </TabPanel>
             <TabPanel>
               <StageThree />
@@ -171,6 +173,7 @@ const IndexPage = () => {
             </TabPanel>
           </TabPanels>
         </Tabs>
+        
         <Footer />
       </AmplifyAuthenticator>
     </ChakraProvider>
