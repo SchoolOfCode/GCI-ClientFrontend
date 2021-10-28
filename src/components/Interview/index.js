@@ -4,8 +4,8 @@ import { InlineWidget } from "react-calendly";
 
 export default function Interview() {
   return (
-    <section>
-      <Heading>Interview Stage</Heading>
+    <section className="m-5">
+      <Heading as="h3" className="text-xl font-bold mb-5">Interview Stage</Heading>
       <br></br>
       <Text>
         Thanks for completing all the application stages for our bootcamp.

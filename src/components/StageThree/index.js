@@ -1,19 +1,20 @@
 import React from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
+import { Text, Heading } from "@chakra-ui/layout";
 
 export function StageThree() {
   return (
     <section id="stage3section" className="m-5">
-      <p className="text-xl font-bold mb-5">Stage 3 - Video Intro Stage!</p>
+      <Heading as="h3" className="text-xl font-bold mb-5">Video Intro Stage!</Heading>
       <br />
-      <p>
+      <Text>
         Being a good communicator is an essential skill for a modern developer -
         especially in a world of remote working. The video will show us that you
         can confidently express yourself.
-      </p>
+      </Text>
       <br />
-      <p>Watch the video below for more information.</p>
+      <Text>Watch the video below for more information.</Text>
       <br />
       <iframe
         width="480"
@@ -26,28 +27,28 @@ export function StageThree() {
       ></iframe>
       <br />
       <p className="text-lg font-bold">Your Questions.</p>
-      <p>
+      <Text>
         Please record you answers to the following questions. You should try to
         answer each question within 1 minute.{" "}
-      </p>
+      </Text>
       <br />
-      <p>
+      <Text>
         1. Tell us about a time you had to work in a team to solve a problem
         (1m){" "}
-      </p>
-      <p>
+      </Text>
+      <Text>
         2. Tell us about something which is a passion of yours (can be anything,
         from stamps, to TV, to pets, to watching clouds) - why do you like it,
         and what’s the most interesting part? (1m)
-      </p>
-      <p>
+      </Text>
+      <Text>
         3. Explain something that is complex to us (but that you know well) in a
         simple way (1m)
-      </p>
-      <p>
+      </Text>
+      <Text>
         4. Why do you want to join the School of Code? Why is it right for you?
         (1m)
-      </p>
+      </Text>
 
       <GenericInput
         m="m-5"

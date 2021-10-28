@@ -4,7 +4,7 @@ import { WelcomeParagraph } from "../WelcomeParagraph";
 
 export function Welcome() {
   return (
-    <section>
+    <section className="m-5">
       <WelcomeParagraph />
       <br />
       <MainButton

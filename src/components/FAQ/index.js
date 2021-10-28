@@ -12,14 +12,14 @@ import {
 
 export default function FAQ() {
   return (
-    <section>
-      <Heading>Frequently Asked Questions</Heading>
+    <section className="m-5">
+      <Heading as="h3" className="text-xl font-bold mb-5">Frequently Asked Questions</Heading>
       <Divider/>
       <Accordion allowToggle>
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box className="font-semibold" flex="1" textAlign="left">
                 How do I move to the next stage?
               </Box>
               <AccordionIcon />
@@ -35,7 +35,7 @@ export default function FAQ() {
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box className="font-semibold" flex="1" textAlign="left">
                 How do I know if my application is completed?
               </Box>
               <AccordionIcon />

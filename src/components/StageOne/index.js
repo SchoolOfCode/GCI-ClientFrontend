@@ -13,7 +13,7 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
-import "./index.css";
+
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
@@ -103,8 +103,8 @@ export default function StageOne() {
   }
 
   return (
-    <div>
-      <Heading as="h3" size="lg">
+    <div className="m-5">
+      <Heading as="h3" className="text-xl font-bold mb-5">
         Application form & Demographics survey
       </Heading>
       <br></br>

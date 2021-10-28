@@ -1,6 +1,6 @@
 import { Heading, Image, Flex } from "@chakra-ui/react";
 import React from "react";
-import "./index.css";
+
 
 export default function Header({
   text = "School of Code Application Portal",
