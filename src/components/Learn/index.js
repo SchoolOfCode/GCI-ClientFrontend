@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Markdown from "markdown-to-jsx";
-import "./learn.css";
 
 export function Learn() {
   const [text, setText] = useState("");
@@ -25,11 +24,11 @@ export function Learn() {
               className: "font-bold text-4xl",
             },
           },
-          img: {
-            props: {
-              src: "https://i.imgur.com/TsMzmXK.png",
-            },
-          },
+          // img: {
+          //   props: {
+          //     src: "https://i.imgur.com/TsMzmXK.png",
+          //   },
+          // },
           h2: {
             props: {
               className: "font-bold text-2xl pt-4",
@@ -50,6 +49,18 @@ export function Learn() {
               className: "list-disc ml-5",
             },
           },
+          footer: {
+            props: {
+              className: "text-white",
+            },
+          },
+          a: {
+            props: {
+              className: "text-blue-600 font-bold",
+              target: "_blank"
+            },
+          },
+
         },
       }}
     >
