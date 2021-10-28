@@ -146,7 +146,7 @@ const IndexPage = () => {
             </TabPanel>
             <TabPanel>
               <StageTwo />
-              <GetUserEmail />
+              {/* <GetUserEmail /> */}
             </TabPanel>
             <TabPanel>
               <StageThree />
@@ -173,7 +173,7 @@ const IndexPage = () => {
             </TabPanel>
           </TabPanels>
         </Tabs>
-        
+
         <Footer />
       </AmplifyAuthenticator>
     </ChakraProvider>
