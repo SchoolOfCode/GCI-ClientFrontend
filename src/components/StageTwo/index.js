@@ -21,26 +21,25 @@ export function StageTwo() {
         This task gently introduces you to HTML and CSS - show us how creative
         you can be with a little coding knowledge!
       </Text>
-      <br></br>
-      <div className="m-5">
-        <Text>
-          Step 1 -Visit{" "}
-          <Link
-            color="#4A90E2"
-            target="_blank"
-            href="http://application.schoolofcode.io"
-          >
-            https://application.schoolofcode.io
-          </Link>{" "}
-          - we recommend using a laptop/desktop computer with Google's Chrome
-          browser.
-        </Text>
-        <br></br>
-        <Text>
-          Step 2 - Register an account - please use the same email address you
-          applied with if possible.
-        </Text>
-        <br></br>
+      <div>
+        <div className="m-5">
+          <Text>
+            Step 1 -Visit{" "}
+            <Link
+              color="#4A90E2"
+              target="_blank"
+              href="http://application.schoolofcode.io"
+            >
+              https://application.schoolofcode.io
+            </Link>{" "}
+            - we recommend using a laptop/desktop computer with Google's Chrome
+            browser.
+          </Text>
+          <Text>
+            Step 2 - Register an account - please use the same email address you
+            applied with if possible.
+          </Text>
+        </div>
         <Text>
           Once you've registered and are logged in to the home page, click on
           your Character Building room, click “Join” (see images below), and
