@@ -4,7 +4,7 @@ import { Text, Heading } from "@chakra-ui/react";
 export function WelcomeParagraph({ name = "there" }) {
   return (
     <section>
-      <Heading as="h3" className="text-xl font-bold mb-5">
+      <Heading className="text-4xl font-bold mb-5">
         Hello {name}! Welcome to your School of Code application, the
         application has several steps:
       </Heading>

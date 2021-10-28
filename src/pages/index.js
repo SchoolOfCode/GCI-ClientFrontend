@@ -53,7 +53,7 @@ const IndexPage = () => {
           <AmplifySignIn headerText="Sign in to access your SoC application" />
         </div>
 
-        <Header bgColor="#000818" textColor="white" />
+        <Header className="bg-gcinavy text-white"/>
         <Tabs
           className="m-20"
           variant="line"

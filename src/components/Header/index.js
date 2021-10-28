@@ -7,9 +7,10 @@ export default function Header({
   textColor = "#000818",
   textSize = "2xl",
   bgColor = "white",
+  className="m-5"
 }) {
   return (
-    <Flex align="center" justify="center" bgColor={bgColor}>
+    <Flex className={className} align="center" justify="center">
       <Image
         className="m-5"
         display="flex"
@@ -18,7 +19,7 @@ export default function Header({
         alt="school of code logo"
       />
 
-      <Heading as="h1" color={textColor} size={textSize}>
+      <Heading as="h1" size={textSize}>
         {text}
       </Heading>
     </Flex>
