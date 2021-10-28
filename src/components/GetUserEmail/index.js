@@ -15,7 +15,7 @@ export default function GetUserEmail() {
 
   return (
     <section>
-      <MainButton buttonText="TEST" onClick={handleClick}></MainButton>
+      <MainButton buttonText="GET THE EMAIL" onClick={handleClick}></MainButton>
     </section>
   );
 }
