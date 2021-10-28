@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import Markdown from "markdown-to-jsx";
-// import "./index.css";
+import "./learn.css";
 const marked = require("marked");
 
 export function Learn() {
@@ -13,5 +13,24 @@ export function Learn() {
     .then((result) => {
       setText(result);
     });
-  return <Markdown className="text-green-600">{text}</Markdown>;
+  return (
+    <Markdown
+      options={{
+        overrides: {
+          h1: {
+            props: {
+              className: "font-bold text-4xl",
+            },
+          },
+          img: {
+            props: {
+              src: "./images/soc-logo.png",
+            },
+          },
+        },
+      }}
+    >
+      {text}
+    </Markdown>
+  );
 }
