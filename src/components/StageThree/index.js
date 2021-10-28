@@ -6,7 +6,7 @@ import { Text, Heading } from "@chakra-ui/layout";
 export function StageThree() {
   return (
     <section id="stage3section" className="m-5">
-      <Heading as="h3" className="text-xl font-bold mb-5">Video Intro Stage!</Heading>
+      <Heading className="text-4xl font-bold mb-5">Video Intro Stage!</Heading>
       <br />
       <Text>
         Being a good communicator is an essential skill for a modern developer -

@@ -104,7 +104,7 @@ export default function StageOne() {
 
   return (
     <div className="m-5">
-      <Heading as="h3" className="text-xl font-bold mb-5">
+      <Heading className="text-4xl font-bold mb-5">
         Application form & Demographics survey
       </Heading>
       <br></br>

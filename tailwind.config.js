@@ -1,10 +1,14 @@
 const plugin = require('tailwindcss/plugin') 
 
 module.exports = {
-  purge: [],
+  purge: false,
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gcinavy: "#000818"
+      }
+    },
   },
   variants: {
     extend: {},
@@ -20,3 +24,5 @@ module.exports = {
     }),
   ],
 };
+
+//sfdsdfgfds
