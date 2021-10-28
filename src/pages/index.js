@@ -28,6 +28,7 @@ import Interview from "../components/Interview";
 import Result from "../components/Result";
 import FAQ from "../components/FAQ";
 import { Learn } from "../components/Learn";
+// import Testlearn from "../components/Testlearn";
 import "./index.css";
 Amplify.configure(awsconfig);
 
@@ -54,7 +55,7 @@ const IndexPage = () => {
           <AmplifySignIn headerText="Sign in to access your SoC application" />
         </div>
 
-        <Header className="bg-gcinavy text-white"/>
+        <Header className="bg-gcinavy text-white" />
         <Tabs
           className="m-20"
           variant="line"
@@ -159,6 +160,7 @@ const IndexPage = () => {
             </TabPanel>
             <TabPanel>
               <Learn />
+              {/* <Testlearn /> */}
             </TabPanel>
             <TabPanel>
               <FAQ />

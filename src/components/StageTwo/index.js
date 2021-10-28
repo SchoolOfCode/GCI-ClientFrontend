@@ -6,9 +6,7 @@ import { Text, Heading, Link, Image } from "@chakra-ui/react";
 export function StageTwo() {
   return (
     <section id="stage2section" className="m-5">
-      <Heading className="text-4xl font-bold mb-5">
-        Character creation
-      </Heading>
+      <Heading className="text-4xl font-bold mb-5">Character Creation</Heading>
       <br></br>
       <Text>
         This isn't your standard application process because this isn't your

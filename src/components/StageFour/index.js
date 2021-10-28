@@ -26,7 +26,7 @@ export default function StageFour() {
 
   return (
     <section className="m-5">
-      <Heading className="text-4xl font-bold mb-5">CS50 Stage</Heading>
+      <Heading className="text-4xl font-bold mb-5">CS50 & Scratch</Heading>
       <br></br>
       <Text>
         CS50 is Harvard's free online course which serves as a great
