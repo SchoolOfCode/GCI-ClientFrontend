@@ -25,6 +25,7 @@ import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
+import Result from "../components/Result";
 import FAQ from "../components/FAQ";
 import { Learn } from "../components/Learn";
 import "./index.css";
@@ -154,7 +155,7 @@ const IndexPage = () => {
               <Interview />
             </TabPanel>
             <TabPanel>
-              <Header text="Result"></Header>
+              <Result />
             </TabPanel>
             <TabPanel>
               <Learn />
