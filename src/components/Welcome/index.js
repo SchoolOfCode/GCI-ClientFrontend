@@ -6,9 +6,13 @@ import { Auth } from "@aws-amplify/auth";
 export function Welcome({ userId, setUserId, setCurrentStage }) {
   const [email, setEmail] = useState("");
 
+  //Auth function to grab user email 
+
   Auth.currentAuthenticatedUser()
     .then((data) => setEmail(data.attributes.email))
     .catch((err) => console.log(err));
+
+  //fetch request to check if user with that email already exists and return id if so
 
   useEffect(() => {
     fetch(`${process.env.API_URL}/users?email=${email}`, {
@@ -25,6 +29,8 @@ export function Welcome({ userId, setUserId, setCurrentStage }) {
       .then((result) => setUserId(result.payload))
       .catch((err) => console.log(err, "This person doesn't exist"));
   }, []);
+
+  // fetch request to use the ID (if it exists) to return the current stage of the user. if not user exists it will do nothing and throw an err
 
   useEffect(() => {
     fetch(`${process.env.API_URL}/users/${userId}?column=current_stage`, {

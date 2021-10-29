@@ -92,7 +92,8 @@ export default function StageOne({ setCurrentStage }) {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
       answers = Object.assign({}, answers);
-      //fetch
+      
+      //fetch request to add a new user to the database using the answers from their application form. 
 
       fetch(`${process.env.API_URL}/users`, {
         method: "POST",
@@ -120,6 +121,9 @@ export default function StageOne({ setCurrentStage }) {
         }),
       }).then(setCurrentStage(2));
 
+
+      // function to move the user on to the next page when they complete this page 
+      
       document.querySelector(".stage2").click();
     } else {
       alert(
