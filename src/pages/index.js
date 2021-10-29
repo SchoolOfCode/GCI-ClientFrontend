@@ -23,7 +23,6 @@ import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
 import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
-import GetUserEmail from "../components/GetUserEmail";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
 import Result from "../components/Result";
@@ -83,7 +82,7 @@ const IndexPage = () => {
               <p className="stage1">Stage 1</p>
             </Tab>
             <Tab
-              isDisabled={{ currentStage } == 2 ? false : true}
+              isDisabled={{ currentStage } === 2 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -91,7 +90,7 @@ const IndexPage = () => {
               <p className="stage2">Stage 2</p>
             </Tab>
             <Tab
-              isDisabled={{ currentStage } == 3 ? false : true}
+              isDisabled={{ currentStage } === 3 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -99,7 +98,7 @@ const IndexPage = () => {
               <p className="stage3">Stage 3</p>
             </Tab>
             <Tab
-              isDisabled={{ currentStage } == 4 ? false : true}
+              isDisabled={{ currentStage } === 4 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -107,7 +106,7 @@ const IndexPage = () => {
               <p className="stage4">Stage 4</p>
             </Tab>
             <Tab
-              isDisabled={{ currentStage } == 5 ? false : true}
+              isDisabled={{ currentStage } === 5 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -115,7 +114,7 @@ const IndexPage = () => {
               <p className="interview">Interview</p>
             </Tab>
             <Tab
-              isDisabled={{ currentStage } == 6 ? false : true}
+              isDisabled={{ currentStage } === 6 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -123,7 +122,7 @@ const IndexPage = () => {
               <p className="result">Result</p>
             </Tab>
             <Tab
-            isDisabled={{ currentStage } >= 5 ? false : true}
+              isDisabled={{ currentStage } >= 5 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -174,7 +173,6 @@ const IndexPage = () => {
             <TabPanel>
               <FAQ />
             </TabPanel>
-
             <TabPanel>
               <AmplifySignOut buttonText="Log out" />{" "}
             </TabPanel>

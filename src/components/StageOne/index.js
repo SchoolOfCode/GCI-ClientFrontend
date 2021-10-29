@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
@@ -14,10 +14,9 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 
-
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne() {
+export default function StageOne({ setCurrentStage }) {
   function handleClick() {
     let answers = [];
     let requiredAnswers = [];
@@ -87,13 +86,40 @@ export default function StageOne() {
     //if they have, it then uses the validity check to confirm all required answers have a value
     // if all checks pass, it passes all of the answers into an object saved in a variable called 'answers'
 
-    if (document.querySelector(".stage1question1").id == "decline") {
+    if (document.querySelector(".stage1question1").id === "decline") {
       alert("please accept the eligibility criteria (question 1)");
-    } else if (document.querySelector(".stage1question33").id == "decline") {
+    } else if (document.querySelector(".stage1question33").id === "decline") {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
       answers = Object.assign({}, answers);
-      console.log(answers);
+      //fetch
+
+      fetch(`${process.env.API_URL}/users`, {
+        method: "POST",
+        mode: "no-cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({
+          username: answers[3],
+          current_stage: 2,
+          first_name: answers[1],
+          last_name: answers[2],
+          email: answers[3],
+          contact_number: answers[4],
+          created_at: new Date(),
+          stage_1: JSON.stringify(answers),
+          stage_2: null,
+          stage_3: null,
+          stage_4: null,
+          interview: null,
+          final: null,
+        }),
+      }).then(setCurrentStage(2));
+
       document.querySelector(".stage2").click();
     } else {
       alert(
@@ -115,28 +141,27 @@ export default function StageOne() {
         purposes only.{" "}
       </Text>
       <br></br>
-      <label className="form">
-        <Text fontWeight="bold">
-          1. The next bootcamp starts on 15th November 2021. To be eligible you
-          must: *
-        </Text>
-        <UnorderedList>
-          <ListItem>
-            be able to attend remote lectures 9am-5pm on Monday-Friday for the
-            duration of the 16 week course
-          </ListItem>
-          <ListItem>have access to the internet for that time</ListItem>
-          <ListItem>
-            live in, and be able to work in, the North West, East Midlands, West
-            Midlands, London, or the South East of England
-          </ListItem>
-          <ListItem>be 19+ years of age</ListItem>
-          <ListItem>be eligible to live and work in the UK</ListItem>
-          <ListItem>
-            be ready to start a new career in tech after the bootcamp
-          </ListItem>
-        </UnorderedList>
-      </label>
+      <Text fontWeight="bold">
+        1. The next bootcamp starts on 15th November 2021. To be eligible you
+        must: *
+      </Text>
+      <UnorderedList>
+        <ListItem>
+          be able to attend remote lectures 9am-5pm on Monday-Friday for the
+          duration of the 16 week course
+        </ListItem>
+        <ListItem>have access to the internet for that time</ListItem>
+        <ListItem>
+          live in, and be able to work in, the North West, East Midlands, West
+          Midlands, London, or the South East of England
+        </ListItem>
+        <ListItem>be 19+ years of age</ListItem>
+        <ListItem>be eligible to live and work in the UK</ListItem>
+        <ListItem>
+          be ready to start a new career in tech after the bootcamp
+        </ListItem>
+      </UnorderedList>
+
       <GenericRadio
         role="stage1question1"
         valueOne="accept"
