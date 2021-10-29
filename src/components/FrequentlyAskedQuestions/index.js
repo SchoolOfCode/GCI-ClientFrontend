@@ -4,17 +4,17 @@ import {
   Accordion,
   AccordionItem,
   AccordionButton,
-  AccordionIcon, 
-  Box, 
-  AccordionPanel, 
-  Divider
+  AccordionIcon,
+  Box,
+  AccordionPanel,
 } from "@chakra-ui/react";
 
-export default function Faq() {
+export default function FrequentlyAskedQuestions() {
   return (
     <section className="m-5">
-      <Heading as="h3" className="text-xl font-bold mb-5">Frequently Asked Questions</Heading>
-      <Divider/>
+      <Heading as="h3" className="text-xl font-bold mb-5">
+        Frequently Asked Questions
+      </Heading>
       <Accordion allowToggle>
         <AccordionItem>
           <h2>

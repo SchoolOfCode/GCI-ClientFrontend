@@ -25,7 +25,7 @@ import StageOne from "../components/StageOne";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
 import Result from "../components/Result";
-import Faq from "../components/Faq";
+import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestions";
 import { Learn } from "../components/Learn";
 // import Testlearn from "../components/Testlearn";
 import "./index.css";
@@ -170,7 +170,7 @@ const IndexPage = () => {
               <Learn />
             </TabPanel>
             <TabPanel>
-              <Faq />
+              <FrequentlyAskedQuestions />
             </TabPanel>
             <TabPanel>
               <AmplifySignOut buttonText="Log out" />{" "}
