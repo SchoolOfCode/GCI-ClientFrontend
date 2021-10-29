@@ -3,12 +3,12 @@ import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
 
-export function StageTwo({ userId }) {
+export function StageTwo({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage2question1").value;
 
     fetch(`${process.env.API_URL}/users/${userId}`, {
-      method: "POST",
+      method: "PATCH",
       mode: "no-cors",
       cache: "no-cache",
       credentials: "same-origin",
@@ -18,7 +18,7 @@ export function StageTwo({ userId }) {
       redirect: "follow",
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
       body: JSON.stringify(answer),
-    });
+    }).then(setCurrentStage(3));
   }
 
   return (

@@ -57,10 +57,9 @@ export function Learn() {
           a: {
             props: {
               className: "text-blue-600 font-bold",
-              target: "_blank"
+              target: "_blank",
             },
           },
-
         },
       }}
     >
