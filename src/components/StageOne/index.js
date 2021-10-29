@@ -80,7 +80,7 @@ export default function StageOne({ setCurrentStage }) {
     //validity check. This checks that all required questions have an answer
     let valid = !requiredAnswers.includes("");
     console.log("validity check", valid);
-
+    let answerObject = Object.assign({}, answers);
     // this section checks that applicants have selected 'accept' for both the eligibility
     // criteria, the privacy notice and the Q&A
     //if they have, it then uses the validity check to confirm all required answers have a value
@@ -91,40 +91,55 @@ export default function StageOne({ setCurrentStage }) {
     } else if (document.querySelector(".stage1question33").id === "decline") {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
-      answers = Object.assign({}, answers);
-      
-      //fetch request to add a new user to the database using the answers from their application form. 
+      console.log("answers 3", answerObject[3], typeof answerObject[3]);
+      console.log(
+        "this is our body",
+        JSON.stringify({
+          username: answerObject[3],
+          current_stage: 2,
+          first_name: answerObject[1],
+          last_name: answerObject[2],
+          email: answerObject[3],
+          contact_number: answerObject[4],
+          created_at: new Date(),
+          stage_1: JSON.stringify(answerObject),
+          stage_2: null,
+          stage_3: null,
+          stage_4: null,
+          interview: null,
+          final: null,
+        })
+      );
+      //fetch request to add a new user to the database using the answers from their application form.
 
-      fetch(`${process.env.API_URL}/users`, {
+      fetch(`https://gci-backend.herokuapp.com/users`, {
         method: "POST",
         mode: "no-cors",
-        cache: "no-cache",
         headers: {
           "Content-Type": "application/json",
         },
-        redirect: "follow",
-        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+
         body: JSON.stringify({
-          username: answers[3],
+          username: answerObject[3],
           current_stage: 2,
-          first_name: answers[1],
-          last_name: answers[2],
-          email: answers[3],
-          contact_number: answers[4],
+          first_name: answerObject[1],
+          last_name: answerObject[2],
+          email: answerObject[3],
+          contact_number: answerObject[4],
           created_at: new Date(),
-          stage_1: JSON.stringify(answers),
+          stage_1: JSON.stringify(answerObject),
           stage_2: null,
           stage_3: null,
           stage_4: null,
           interview: null,
           final: null,
         }),
-      }).then(setCurrentStage(2));
+      })
+        .then(setCurrentStage(2))
+        .then(document.querySelector(".stage2").click())
+        .catch((err) => console.log("this is the error", err));
 
-
-      // function to move the user on to the next page when they complete this page 
-      
-      document.querySelector(".stage2").click();
+      // function to move the user on to the next page when they complete this page
     } else {
       alert(
         "please complete all required fields. These are marked with a red asterisk"
