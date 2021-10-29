@@ -16,15 +16,6 @@ body {
   padding-bottom: 100px;
 }
 
-<<<<<<< HEAD
-:root {
-  --amplify-primary-color: #4a90e2;
-  --amplify-primary-tint: #4a90e2;
-  --amplify-primary-shade: #4a90e2;
-}
-
-.stage-one {
-=======
 /* .second-header {
   font-size: 16pt;
   align-items: center;
@@ -35,7 +26,6 @@ body {
 } */
 
 /* .stage-one {
->>>>>>> origin/tomandjoy
   align-items: center;
   justify-content: center;
   padding: "3px";
