@@ -7,6 +7,9 @@ export function StageTwo({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage2question1").value;
 
+
+    //fetch to add the stage 2 answer to the DB 
+    
     fetch(`${process.env.API_URL}/users/${userId}`, {
       method: "PATCH",
       mode: "no-cors",
