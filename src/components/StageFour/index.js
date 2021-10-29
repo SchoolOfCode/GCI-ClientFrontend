@@ -15,14 +15,18 @@ export default function StageFour() {
   const [render, setRender] = useState(false);
 
   function handleClick() {
+    console.log(
+      "this is the value",
+      document.querySelector(".stage4question1").value
+    );
     setRender(true);
 
     return;
   }
 
   return (
-    <section>
-      <Heading>CS50 Stage</Heading>
+    <section className="m-5">
+      <Heading className="text-4xl font-bold mb-5">CS50 & Scratch</Heading>
       <br></br>
       <Text>
         CS50 is Harvard's free online course which serves as a great
@@ -95,6 +99,7 @@ export default function StageFour() {
       <Divider />
       <br></br>
       <GenericInput
+        role="stage4question1"
         label="Scratch Task URL (make sure it is public!)"
         placeholderText="Please paste your link here..."
       />

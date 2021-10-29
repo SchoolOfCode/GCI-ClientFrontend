@@ -6,6 +6,7 @@ import { Select, FormControl, FormLabel } from "@chakra-ui/react";
 
 export default function Dropdown({
   label = "dropdown",
+  role, 
   placeholderText = "select option",
   first = "Option 1",
   second = "",
@@ -59,7 +60,7 @@ export default function Dropdown({
     }
   });
 
-  console.log("this is the option selected", option);
+ 
   return (
     <FormControl isRequired>
       <FormLabel>{label}</FormLabel>
@@ -70,6 +71,8 @@ export default function Dropdown({
         variant="filled"
         placeholder={placeholderText}
         onChange={handleSelect}
+        className={role}
+        value={option}
       >
         {list.map((i) => {
           return <option value={i.value}>{i.value}</option>;

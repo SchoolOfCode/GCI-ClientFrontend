@@ -1,6 +1,10 @@
 amplify-authenticator {
   background: #000818;
-  padding: 5px;
+}
+:root {
+  --amplify-primary-color: #4a90e2;
+  --amplify-primary-tint: #4a90e2;
+  --amplify-primary-shade: #4a90e2;
 }
 html,
 body {
@@ -12,6 +16,7 @@ body {
   padding-bottom: 100px;
 }
 
+<<<<<<< HEAD
 :root {
   --amplify-primary-color: #4a90e2;
   --amplify-primary-tint: #4a90e2;
@@ -19,6 +24,18 @@ body {
 }
 
 .stage-one {
+=======
+/* .second-header {
+  font-size: 16pt;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: "3px";
+  margin-bottom: "20px";
+} */
+
+/* .stage-one {
+>>>>>>> origin/tomandjoy
   align-items: center;
   justify-content: center;
   padding: "3px";
@@ -26,4 +43,4 @@ body {
 }
 .form {
   margin-left: "20px";
-}
+} */

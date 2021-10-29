@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, Link } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
+import { MainButton } from "../MainButton";
 
 export default function PrecourseText() {
   return (
@@ -28,16 +29,13 @@ export default function PrecourseText() {
         School of Code and to your overall journey into tech!
       </Text>
       <br></br>
-      <Text>
-        You can find the pre-course material here{" "}
-        <Link
-          color="#4A90E2"
-          target="_blank"
-          href="https://github.com/SchoolOfCode/bootcamp-pre-course"
-        >
-          https://github.com/SchoolOfCode/bootcamp-pre-course
-        </Link>
-      </Text>
+      <MainButton
+        // m="m-5"
+        buttonText="Go to pre-course"
+        onClick={() => {
+          document.querySelector(".precourse").click();
+        }}
+      />
     </section>
   );
 }
