@@ -11,22 +11,31 @@ import GenericInput from "../GenericInput";
 import { MainButton } from "../MainButton";
 import PrecourseText from "../PrecourseText";
 
-export default function StageFour() {
+export default function StageFour({ userId }) {
   const [render, setRender] = useState(false);
 
   function handleClick() {
-    console.log(
-      "this is the value",
-      document.querySelector(".stage4question1").value
-    );
-    setRender(true);
+    let answer = document.querySelector(".stage4question1").value;
+
+    fetch(`${process.env.API_URL}/users/${userId}`, {
+      method: "PATCH",
+      mode: "no-cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(answer),
+    }).then(setRender(true));
 
     return;
   }
 
   return (
-    <section>
-      <Heading>CS50 Stage</Heading>
+    <section className="m-5">
+      <Heading className="text-4xl font-bold mb-5">CS50 & Scratch</Heading>
       <br></br>
       <Text>
         CS50 is Harvard's free online course which serves as a great

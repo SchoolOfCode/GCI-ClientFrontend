@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Amplify from "aws-amplify";
 import awsconfig from "../aws-exports";
 import {
@@ -8,7 +8,6 @@ import {
 } from "@aws-amplify/ui-react";
 import {
   ChakraProvider,
-  Heading,
   Tabs,
   TabList,
   TabPanels,
@@ -25,12 +24,18 @@ import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
+import Result from "../components/Result";
+import Faq from "../components/Faq";
 import { Learn } from "../components/Learn";
+// import Testlearn from "../components/Testlearn";
 import "./index.css";
 Amplify.configure(awsconfig);
 
 // markup
 const IndexPage = () => {
+  const [userId, setUserId] = useState("");
+  const [currentStage, setCurrentStage] = useState(1);
+
   return (
     <ChakraProvider>
       <AmplifyAuthenticator>
@@ -52,7 +57,7 @@ const IndexPage = () => {
           <AmplifySignIn headerText="Sign in to access your SoC application" />
         </div>
 
-        <Header bgColor="#000818" textColor="white" />
+        <Header className="bg-gcinavy text-white" />
         <Tabs
           className="m-20"
           variant="line"
@@ -76,6 +81,7 @@ const IndexPage = () => {
               <p className="stage1">Stage 1</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } === 2 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -83,6 +89,7 @@ const IndexPage = () => {
               <p className="stage2">Stage 2</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } === 3 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -90,6 +97,7 @@ const IndexPage = () => {
               <p className="stage3">Stage 3</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } === 4 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -97,6 +105,7 @@ const IndexPage = () => {
               <p className="stage4">Stage 4</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } === 5 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -104,6 +113,7 @@ const IndexPage = () => {
               <p className="interview">Interview</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } === 6 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -111,6 +121,7 @@ const IndexPage = () => {
               <p className="result">Result</p>
             </Tab>
             <Tab
+              isDisabled={{ currentStage } >= 5 ? false : true}
               className="border-2 border-white text-white font-semibold"
               bg="#8896A3"
               _selected={{ color: "white", bg: "#4A90E2" }}
@@ -135,39 +146,38 @@ const IndexPage = () => {
 
           <TabPanels>
             <TabPanel>
-              <Welcome />
+              <Welcome userId={userId} setUserId={setUserId} />
             </TabPanel>
             <TabPanel>
-              <StageOne />
+              <StageOne setCurrentStage={setCurrentStage}/>
             </TabPanel>
             <TabPanel>
-              <StageTwo />
+              <StageTwo setCurrentStage={setCurrentStage} userId={userId}/>
             </TabPanel>
             <TabPanel>
-              <StageThree />
+              <StageThree setCurrentStage={setCurrentStage} userId={userId} />
             </TabPanel>
             <TabPanel>
-              <StageFour />
+              <StageFour userId={userId} />
             </TabPanel>
             <TabPanel>
               <Interview />
             </TabPanel>
             <TabPanel>
-              <Header text="Result"></Header>
+              <Result />
             </TabPanel>
             <TabPanel>
               <Learn />
-              {/* <ContactForm /> */}
             </TabPanel>
             <TabPanel>
-              <Heading>Frequently asked questions</Heading>
+              <Faq />
             </TabPanel>
-
             <TabPanel>
               <AmplifySignOut buttonText="Log out" />{" "}
             </TabPanel>
           </TabPanels>
         </Tabs>
+
         <Footer />
       </AmplifyAuthenticator>
     </ChakraProvider>

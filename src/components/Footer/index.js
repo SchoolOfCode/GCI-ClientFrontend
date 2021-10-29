@@ -1,10 +1,10 @@
 import React from "react";
 import { EmailIcon } from "@chakra-ui/icons";
-import "./index.css";
+
 
 export function Footer() {
   return (
-    <div className="footer flex flex-col items-center text-white justify-center w-full h-40 static bottom-0">
+    <div className="bg-gcinavy footer flex flex-col items-center text-white justify-center w-full h-40 static bottom-0 bg-primary-500">
       <p className="font-bold text-lg">
         Contact us by clicking the icon here{" "}
         <a href="mailto:info@schoolofcode.co.uk">
