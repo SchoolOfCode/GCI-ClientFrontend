@@ -1,52 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import { MainButton } from "../MainButton";
 import { WelcomeParagraph } from "../WelcomeParagraph";
-import { Auth } from "@aws-amplify/auth";
+const axios = require('axios').default;
+const setCurrentStage = require('../../pages')
 
-export function Welcome({ userId, setUserId, setCurrentStage }) {
-  const [email, setEmail] = useState("");
-
-  //Auth function to grab user email 
-
-  Auth.currentAuthenticatedUser()
-    .then((data) => setEmail(data.attributes.email))
-    .catch((err) => console.log(err));
+export function Welcome({ handleStateChange, email}) {
+  const [userId, setUserId] = useState("");
+ 
 
   //fetch request to check if user with that email already exists and return id if so
 
   useEffect(() => {
-    fetch(`${process.env.API_URL}/users?email=${email}`, {
-      method: "GET",
-      mode: "no-cors",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    axios.get(`https://gci-backend.herokuapp.com/users?email=${email}`)
+    .then((result) => {setUserId(result.data.payload[0].id)})
+    .catch(function (error) {
+      // handle error
+      console.log(error);
     })
-      .then((response) => response.json())
-      .then((result) => setUserId(result.payload))
-      .catch((err) => console.log(err, "This person doesn't exist"));
   }, []);
 
   // fetch request to use the ID (if it exists) to return the current stage of the user. if not user exists it will do nothing and throw an err
-
-  useEffect(() => {
-    fetch(`${process.env.API_URL}/users/${userId}?column=current_stage`, {
-      method: "GET",
-      mode: "no-cors",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    })
-      .then((response) => response.json())
-      .then((result) => setCurrentStage(result.payload))
-      .catch((err) => console.log(err, "No ID"));
-  }, []);
+  setTimeout(function () { axios.get(`https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`)
+  .then((result) => {console.log(userId); handleStateChange(result.data)})
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })},2000)
+  
 
   return (
     <section className="m-5">

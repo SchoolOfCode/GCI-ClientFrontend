@@ -26,6 +26,7 @@ import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
 import Result from "../components/Result";
 import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestions";
+import { Auth } from "@aws-amplify/auth";
 import { Learn } from "../components/Learn";
 // import Testlearn from "../components/Testlearn";
 import "./index.css";
@@ -33,8 +34,15 @@ Amplify.configure(awsconfig);
 
 // markup
 const IndexPage = () => {
-  const [userId, setUserId] = useState("");
   const [currentStage, setCurrentStage] = useState(1);
+  const [email, setEmail] = useState("");
+  const handleStateChange = (state) => {setCurrentStage(state)}
+
+  //Auth function to grab user email 
+
+  Auth.currentAuthenticatedUser()
+    .then((data) => {setEmail(data.attributes.email)})
+    .catch((err) => console.log(err));
 
   return (
     <ChakraProvider>
@@ -146,19 +154,19 @@ const IndexPage = () => {
 
           <TabPanels>
             <TabPanel>
-              <Welcome userId={userId} setUserId={setUserId} />
+              <Welcome email={email} />
             </TabPanel>
             <TabPanel>
-              <StageOne setCurrentStage={setCurrentStage}/>
+              <StageOne handleStateChange={handleStateChange}/>
             </TabPanel>
             <TabPanel>
-              <StageTwo setCurrentStage={setCurrentStage} userId={userId}/>
+              <StageTwo handleStateChange={handleStateChange} />
             </TabPanel>
             <TabPanel>
-              <StageThree setCurrentStage={setCurrentStage} userId={userId} />
+              <StageThree handleStateChange={handleStateChange}  />
             </TabPanel>
             <TabPanel>
-              <StageFour userId={userId} />
+              <StageFour  />
             </TabPanel>
             <TabPanel>
               <Interview />
