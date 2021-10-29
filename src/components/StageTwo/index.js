@@ -3,7 +3,24 @@ import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
 
-export function StageTwo() {
+export function StageTwo({ userId }) {
+  function handleClick() {
+    let answer = document.querySelector(".stage2question1").value;
+
+    fetch(`${process.env.API_URL}/users/${userId}`, {
+      method: "POST",
+      mode: "no-cors",
+      cache: "no-cache",
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(answer),
+    });
+  }
+
   return (
     <section id="stage2section" className="m-5">
       <Heading className="text-4xl font-bold mb-5">Character Creation</Heading>
@@ -84,20 +101,10 @@ export function StageTwo() {
       <GenericInput
         m="m-5"
         label="Please paste your username (from application.schoolofcode.io) here"
-        role="stage2text1"
+        role="stage2question1"
         placeholderText="Username..."
       />
-      <MainButton
-        m="m-5"
-        buttonText="Submit"
-        onClick={() => {
-          alert(
-            document.querySelector(".stage2text1").value +
-              " has been sent to the cloud!"
-          ); //
-          document.querySelector(".stage3").click();
-        }}
-      />
+      <MainButton m="m-5" buttonText="Submit" onClick={handleClick} />
     </section>
   );
 }
