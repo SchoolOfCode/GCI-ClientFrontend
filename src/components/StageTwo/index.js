@@ -2,6 +2,7 @@ import React from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
+import Auth from "@aws-amplify/auth";
 const axios = require("axios").default;
 
 export function StageTwo({ userId, setCurrentStage }) {
