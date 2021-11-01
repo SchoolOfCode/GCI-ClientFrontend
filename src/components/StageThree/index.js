@@ -24,7 +24,6 @@ export function StageThree({ userId, setCurrentStage }) {
       });
   }
 
-
   return (
     <section id="stage3section" className="m-5">
       <Heading className="text-4xl font-bold mb-5">

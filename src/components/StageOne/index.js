@@ -18,7 +18,7 @@ const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ setCurrentStage }) {
+export default function StageOne({ setCurrentStage, setCurrentId }) {
   function handleClick() {
     let answers = [];
     let requiredAnswers = [];
@@ -114,6 +114,18 @@ export default function StageOne({ setCurrentStage }) {
         .then((response) => {
           console.log("user added", response);
           setCurrentStage(2);
+
+          Auth.currentAuthenticatedUser()
+            .then((data) => {
+              axios
+                .get(
+                  `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
+                )
+                .then((result) => {
+                  setCurrentId(result.data.payload[0].id);
+                });
+            })
+            .catch((err) => console.log(err));
         })
         .catch(function (error) {
           console.log(error);
