@@ -1,4 +1,5 @@
 import React from "react";
+
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
@@ -13,11 +14,12 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
-const axios = require('axios').default;
+const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ handleStateChange }) {
+export default function StageOne({ setNewStage}) {
+  
   function handleClick() {
     let answers = [];
     let requiredAnswers = [];
@@ -95,26 +97,26 @@ export default function StageOne({ handleStateChange }) {
       console.log("answers 3", answerObject[3], typeof answerObject[3]);
       //fetch request to add a new user to the database using the answers from their application form.
 
-      axios.post('https://gci-backend.herokuapp.com/users', {
-        username: answerObject[3],
-        current_stage: 2,
-        first_name: answerObject[1],
-        last_name: answerObject[2],
-        email: answerObject[3],
-        contact_number: answerObject[4],
-        created_at: new Date(),
-        stage_1: null,
-        stage_2: null,
-        stage_3: null,
-        stage_4: null,
-        interview: null,
-        final: null,
-      })
-      .then(handleStateChange(2)
-      )
-      .catch(function (error) {
-        console.log(error);
-      });
+      axios
+        .post("https://gci-backend.herokuapp.com/users", {
+          username: answerObject[3],
+          current_stage: 2,
+          first_name: answerObject[1],
+          last_name: answerObject[2],
+          email: answerObject[3],
+          contact_number: answerObject[4],
+          created_at: new Date(),
+          stage_1: null,
+          stage_2: null,
+          stage_3: null,
+          stage_4: null,
+          interview: null,
+          final: null,
+        })
+        .then((response) => {console.log("user added", response); setNewStage(2)})
+        .catch(function (error) {
+          console.log(error);
+        });
 
       // fetch(`https://gci-backend.herokuapp.com/users`, {
       //   method: 'POST', // or 'PUT'
@@ -153,6 +155,7 @@ export default function StageOne({ handleStateChange }) {
   //returns form with 33 questions from application & demographics form
 
   return (
+    
     <div className="m-5">
       <Heading className="text-4xl font-bold mb-5">
         Application form & Demographics survey
