@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Heading } from "@chakra-ui/react";
 
-export function WelcomeParagraph({ name = "there" }) {
+export function WelcomeParagraph({ name = "there"}) {
   return (
     <section>
       <Heading className="text-4xl font-bold mb-5">

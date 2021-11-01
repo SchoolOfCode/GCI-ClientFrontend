@@ -49,6 +49,11 @@ export function Learn() {
               className: "list-disc ml-5",
             },
           },
+          code: {
+            props: {
+              className: "font-semibold ml-5",
+            },
+          },
           footer: {
             props: {
               className: "text-white",

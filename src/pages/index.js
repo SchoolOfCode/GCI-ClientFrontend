@@ -38,6 +38,8 @@ const IndexPage = () => {
   const [currentStage, setStage] = useState(1);
   const [id, setId] = useState();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("there")
+  const [margin, setMargin] = useState("m-20")
   const [width, height] = useWindowSize();
   const [menuAlignment, setMenuAlignment] = useState("vertical");
   const [contentAlignment, setContentAlignment] = useState("left");
@@ -47,10 +49,12 @@ const IndexPage = () => {
   if(width<=500){
     setMenuAlignment("horizontal");
     setContentAlignment("center");
+    setMargin("mt-5")
   } 
   if(width>500) {
     setMenuAlignment("vertical");
     setContentAlignment("left");
+    setMargin("m-20")
   }},[width])
 
 //this useEffect grabs the logged-in user's email from AMS Auth. 
@@ -77,6 +81,7 @@ const IndexPage = () => {
                 )
                 .then((result) => {
                   setStage(result.data.payload[0].current_stage);
+                  setName(result.data.payload[0].first_name)
                 })
                 .catch(function (error) {
                   // handle error
@@ -111,8 +116,9 @@ const IndexPage = () => {
           </div>
 
           <Header className="bg-gcinavy text-white" />
+          <main className="wrapper">
           <Tabs
-            className="m-20"
+            className={margin}
             variant="line"
             align={contentAlignment}
             orientation={menuAlignment}
@@ -217,11 +223,11 @@ const IndexPage = () => {
 
             <TabPanels>
               <TabPanel>
-                <Welcome />
+                <Welcome name={name}/>
               </TabPanel>
               {currentStage === 1 && (
                 <TabPanel>
-                  <StageOne userId={id} setCurrentStage={setStage} setCurrentId={setId} email={email} />
+                  <StageOne userId={id} setCurrentStage={setStage} setCurrentId={setId} email={email} setName={setName} />
                 </TabPanel>
               )}
               {currentStage === 2 && (
@@ -268,7 +274,7 @@ const IndexPage = () => {
               </TabPanel>
             </TabPanels>
           </Tabs>
-
+          </main>
           <Footer />
         </AmplifyAuthenticator>
       </StageProvider>

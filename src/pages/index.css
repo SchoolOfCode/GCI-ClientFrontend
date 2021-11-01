@@ -9,28 +9,10 @@ amplify-authenticator {
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 .wrapper {
-  min-height: 94vh;
+  min-height: 70vh;
   margin-bottom: -100px;
   padding-bottom: 100px;
 }
-
-/* .second-header {
-  font-size: 16pt;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  padding: "3px";
-  margin-bottom: "20px";
-} */
-
-/* .stage-one {
-  align-items: center;
-  justify-content: center;
-  padding: "3px";
-  margin-bottom: "20px";
-}
-.form {
-  margin-left: "20px";
-} */
