@@ -24,18 +24,6 @@ export function StageThree({ userId, setCurrentStage }) {
       });
   }
 
-  //   fetch(`${process.env.API_URL}/users/${userId}`, {
-  //     method: "PATCH",
-  //     mode: "no-cors",
-  //     cache: "no-cache",
-  //     credentials: "same-origin",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     redirect: "follow",
-  //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  //     body: JSON.stringify(answer),
-  //   }).then(setCurrentStage(4))};
 
   return (
     <section id="stage3section" className="m-5">

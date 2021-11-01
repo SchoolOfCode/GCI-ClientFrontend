@@ -18,8 +18,7 @@ const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ setCurrentStage}) {
-  
+export default function StageOne({ setCurrentStage }) {
   function handleClick() {
     let answers = [];
     let requiredAnswers = [];
@@ -113,38 +112,13 @@ export default function StageOne({ setCurrentStage}) {
           interview: null,
           final: null,
         })
-        .then((response) => {console.log("user added", response); setCurrentStage(2);})
+        .then((response) => {
+          console.log("user added", response);
+          setCurrentStage(2);
+        })
         .catch(function (error) {
           console.log(error);
         });
-
-      // fetch(`https://gci-backend.herokuapp.com/users`, {
-      //   method: 'POST', // or 'PUT'
-      //   mode: "no-cors",
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     username: answerObject[3],
-      //     current_stage: 2,
-      //     first_name: answerObject[1],
-      //     last_name: answerObject[2],
-      //     email: answerObject[3],
-      //     contact_number: answerObject[4],
-      //     created_at: new Date(),
-      //     stage_1: null,
-      //     stage_2: null,
-      //     stage_3: null,
-      //     stage_4: null,
-      //     interview: null,
-      //     final: null,
-      //   })
-      // })
-      //   .then(setCurrentStage(2))
-      //   .then(document.querySelector(".stage2").click())
-      //   .catch((err) => console.log("this is the error", err));
-
-      // function to move the user on to the next page when they complete this page
     } else {
       alert(
         "please complete all required fields. These are marked with a red asterisk"
@@ -155,7 +129,6 @@ export default function StageOne({ setCurrentStage}) {
   //returns form with 33 questions from application & demographics form
 
   return (
-    
     <div className="m-5">
       <Heading className="text-4xl font-bold mb-5">
         Application form & Demographics survey

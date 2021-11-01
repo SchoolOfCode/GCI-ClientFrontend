@@ -41,19 +41,11 @@ const IndexPage = () => {
   const [currentStage, setStage] = useState(1);
   const [id, setId] = useState();
 
-  // const [email, setEmail] = useState("");
-  //Auth function to grab user email
-
-  // Auth.currentAuthenticatedUser()
-  //   .then((data) => {
-  //     setEmail(data.attributes.email);
-  //   })
-  //   .catch((err) => console.log(err));
-
-  // const [currentStage, setStage, decline] = useStageContext(1);
-  // console.log("front page stage", currentStage);
-
-  //function to get current stage and pass it down to the Welcome Page
+ 
+//this useEffect grabs the logged-in user's email from AMS Auth. 
+// it uses this to identify them in the DB and fetch their user id
+// we then use this to make a GET request to find their current stage
+//this is then used to determine which stage is displayed to them
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
@@ -272,5 +264,4 @@ const IndexPage = () => {
   );
 };
 
-//
 export default IndexPage;

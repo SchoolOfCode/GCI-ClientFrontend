@@ -48,6 +48,20 @@ export default function FrequentlyAskedQuestions() {
             invited for an interview.
           </AccordionPanel>
         </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box className="font-semibold" flex="1" textAlign="left">
+                What is love?
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            Baby don't hurt me.
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
     </section>
   );

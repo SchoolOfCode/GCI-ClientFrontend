@@ -15,6 +15,8 @@ const axios = require("axios").default;
 export default function StageFour({ userId, setCurrentStage }) {
   const [render, setRender] = useState(false);
 
+  //handleclick function makes a patch request to update stage_4 in our table with the applicant's answer
+
   function handleClick() {
     let answer = document.querySelector(".stage4question1").value;
 
@@ -26,6 +28,7 @@ export default function StageFour({ userId, setCurrentStage }) {
         }
       )
       .then(() => {
+        // this patch request then updates their current stage to 5
         axios.patch(
           `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
           { stage: 5 }
@@ -34,18 +37,7 @@ export default function StageFour({ userId, setCurrentStage }) {
         setRender(true);
       });
 
-    // fetch(`${process.env.API_URL}/users/${userId}`, {
-    //   method: "PATCH",
-    //   mode: "no-cors",
-    //   cache: "no-cache",
-    //   credentials: "same-origin",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   redirect: "follow",
-    //   referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    //   body: JSON.stringify(answer),
-    // }).then(setRender(true));
+  
   }
 
   return (

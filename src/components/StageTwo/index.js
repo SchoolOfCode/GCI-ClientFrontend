@@ -8,6 +8,7 @@ export function StageTwo({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage2question1").value;
     console.log("stage 2 id", userId);
+    
     //fetch to add the stage 2 answer to the DB
 
     axios
@@ -25,20 +26,6 @@ export function StageTwo({ userId, setCurrentStage }) {
         setCurrentStage(3);
       });
   }
-
-  //   fetch(`${process.env.API_URL}/users/${userId}`, {
-  //     method: "PATCH",
-  //     mode: "no-cors",
-  //     cache: "no-cache",
-  //     credentials: "same-origin",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     redirect: "follow",
-  //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-  //     body: JSON.stringify(answer),
-  //   }).then(setCurrentStage(3));
-  // }
 
   return (
     <section id="stage2section" className="m-5">
