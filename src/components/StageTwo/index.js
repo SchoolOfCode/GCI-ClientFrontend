@@ -13,14 +13,14 @@ export function StageTwo({ userId, setCurrentStage }) {
 
     axios
       .patch(
-        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_2`,
+        `${process.env.API_URL}/users/${userId}?column=stage_2`,
         {
           link: JSON.stringify(answer),
         }
       )
       .then(() => {
         axios.patch(
-          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+          `${process.env.API_URL}/users/${userId}?column=current_stage`,
           { stage: 3 }
         );
         setCurrentStage(3);

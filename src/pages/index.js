@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Amplify from "aws-amplify";
 import awsconfig from "../aws-exports";
-import { StageProvider, useStageContext } from "../components/StageContext";
+import { StageProvider } from "../components/StageContext";
 import {
   AmplifySignOut,
   AmplifyAuthenticator,
@@ -52,16 +52,16 @@ const IndexPage = () => {
       .then((data) => {
         axios
           .get(
-            `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
+            `${process.env.API_URL}/users?email=${data.attributes.email}`
           )
           .then((result) => {
             if (result.data.payload[0]) {
-              console.log("this is the id", result.data.payload[0].id);
+              // console.log("this is the id", result.data.payload[0].id);
               setId(result.data.payload[0].id);
 
               axios
                 .get(
-                  `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
+                  `${process.env.API_URL}/users/${result.data.payload[0].id}`
                 )
                 .then((result) => {
                   setStage(result.data.payload[0].current_stage);
@@ -70,7 +70,7 @@ const IndexPage = () => {
                   // handle error
                   console.log(error);
                 });
-            } else console.log("nothing!");
+            } else return;
           });
       })
       .catch((err) => console.log(err));

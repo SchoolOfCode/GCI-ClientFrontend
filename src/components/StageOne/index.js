@@ -97,7 +97,7 @@ export default function StageOne({ setCurrentStage }) {
       //fetch request to add a new user to the database using the answers from their application form.
 
       axios
-        .post("https://gci-backend.herokuapp.com/users", {
+        .post(`${process.env.API_URL}/users`, {
           username: answerObject[3],
           current_stage: 2,
           first_name: answerObject[1],
