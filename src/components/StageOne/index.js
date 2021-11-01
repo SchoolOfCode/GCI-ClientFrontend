@@ -1,4 +1,5 @@
 import React from "react";
+import Auth from "@aws-amplify/auth";
 
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
