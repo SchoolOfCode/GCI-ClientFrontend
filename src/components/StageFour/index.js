@@ -22,7 +22,7 @@ export default function StageFour({ userId, setCurrentStage }) {
 
     axios
       .patch(
-        `${process.env.API_URL}/users/${userId}?column=stage_4`,
+        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_4`,
         {
           link: JSON.stringify(answer),
         }

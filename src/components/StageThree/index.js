@@ -10,14 +10,14 @@ export function StageThree({ userId, setCurrentStage }) {
 
     axios
       .patch(
-        `${process.env.API_URL}/users/${userId}?column=stage_3`,
+        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_3`,
         {
           link: JSON.stringify(answer),
         }
       )
       .then(() => {
         axios.patch(
-          `${process.env.API_URL}/users/${userId}?column=current_stage`,
+          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
           { stage: 4 }
         );
         setCurrentStage(4);

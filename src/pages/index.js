@@ -52,7 +52,7 @@ const IndexPage = () => {
       .then((data) => {
         axios
           .get(
-            `${process.env.API_URL}/users?email=${data.attributes.email}`
+            `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
           )
           .then((result) => {
             if (result.data.payload[0]) {
@@ -61,7 +61,7 @@ const IndexPage = () => {
 
               axios
                 .get(
-                  `${process.env.API_URL}/users/${result.data.payload[0].id}`
+                  `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
                 )
                 .then((result) => {
                   setStage(result.data.payload[0].current_stage);
