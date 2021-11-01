@@ -15,11 +15,9 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
-
+import { useWindowSize } from "../hooks/useWindowSize";
 import Header from "../components/Header";
-
 import { Footer } from "../components/Footer";
-
 import { Welcome } from "../components/Welcome";
 import { StageTwo } from "../components/StageTwo";
 import { StageThree } from "../components/StageThree";
@@ -31,7 +29,6 @@ import Result from "../components/Result";
 import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestions";
 import { Auth } from "@aws-amplify/auth";
 import { Learn } from "../components/Learn";
-// import Testlearn from "../components/Testlearn";
 import "./index.css";
 const axios = require("axios").default;
 Amplify.configure(awsconfig);
@@ -41,8 +38,21 @@ const IndexPage = () => {
   const [currentStage, setStage] = useState(1);
   const [id, setId] = useState();
   const [email, setEmail] = useState("");
+  const [width, height] = useWindowSize();
+  const [menuAlignment, setMenuAlignment] = useState("vertical");
+  const [contentAlignment, setContentAlignment] = useState("left");
+  
+  // for mobile interface usage
+  useEffect(() => {
+  if(width<=500){
+    setMenuAlignment("horizontal");
+    setContentAlignment("center");
+  } 
+  if(width>500) {
+    setMenuAlignment("vertical");
+    setContentAlignment("left");
+  }},[width])
 
- 
 //this useEffect grabs the logged-in user's email from AMS Auth. 
 // it uses this to identify them in the DB and fetch their user id
 // we then use this to make a GET request to find their current stage
@@ -104,8 +114,8 @@ const IndexPage = () => {
           <Tabs
             className="m-20"
             variant="line"
-            align="left"
-            orientation="vertical"
+            align={contentAlignment}
+            orientation={menuAlignment}
             isLazy
           >
             <TabList>
