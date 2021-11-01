@@ -18,7 +18,7 @@ const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ setNewStage}) {
+export default function StageOne({ setCurrentStage}) {
   
   function handleClick() {
     let answers = [];
@@ -106,14 +106,14 @@ export default function StageOne({ setNewStage}) {
           email: answerObject[3],
           contact_number: answerObject[4],
           created_at: new Date(),
-          stage_1: null,
+          stage_1: JSON.stringify(answers),
           stage_2: null,
           stage_3: null,
           stage_4: null,
           interview: null,
           final: null,
         })
-        .then((response) => {console.log("user added", response); setNewStage(2)})
+        .then((response) => {console.log("user added", response); setCurrentStage(2);})
         .catch(function (error) {
           console.log(error);
         });
