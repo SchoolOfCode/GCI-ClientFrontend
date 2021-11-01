@@ -40,6 +40,7 @@ Amplify.configure(awsconfig);
 const IndexPage = () => {
   const [currentStage, setStage] = useState(1);
   const [id, setId] = useState();
+  const [email, setEmail] = useState("");
 
  
 //this useEffect grabs the logged-in user's email from AMS Auth. 
@@ -50,6 +51,7 @@ const IndexPage = () => {
   useEffect(() => {
     Auth.currentAuthenticatedUser()
       .then((data) => {
+        setEmail(data.attributes.email)
         axios
           .get(
             `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
@@ -209,22 +211,22 @@ const IndexPage = () => {
               </TabPanel>
               {currentStage === 1 && (
                 <TabPanel>
-                  <StageOne userId={id} setCurrentStage={setStage} />
+                  <StageOne userId={id} setCurrentStage={setStage} setCurrentId={setId} email={email} />
                 </TabPanel>
               )}
               {currentStage === 2 && (
                 <TabPanel>
-                  <StageTwo userId={id} setCurrentStage={setStage} />
+                  <StageTwo userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
                 </TabPanel>
               )}
               {currentStage === 3 && (
                 <TabPanel>
-                  <StageThree userId={id} setCurrentStage={setStage} />
+                  <StageThree userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
                 </TabPanel>
               )}
               {currentStage === 4 && (
                 <TabPanel>
-                  <StageFour userId={id} setCurrentStage={setStage} />
+                  <StageFour userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
                 </TabPanel>
               )}
               {currentStage === 6 && (

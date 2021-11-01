@@ -1,6 +1,4 @@
-import React from "react";
-import Auth from "@aws-amplify/auth";
-
+import React, {useState} from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
@@ -15,11 +13,13 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ setCurrentStage, setCurrentId }) {
+export default function StageOne({ setCurrentStage, setCurrentId,email }) {
+  const [state, setState] = useState(0);
   function handleClick() {
     let answers = [];
     let requiredAnswers = [];
@@ -79,7 +79,6 @@ export default function StageOne({ setCurrentStage, setCurrentId }) {
     requiredAnswers.push(document.querySelector(".stage1question32").value);
     answers.push(document.querySelector(".stage1question33").id);
     requiredAnswers.push(document.querySelector(".stage1question33").value);
-
     //validity check. This checks that all required questions have an answer
     let valid = !requiredAnswers.includes("");
     console.log("validity check", valid);
@@ -88,21 +87,21 @@ export default function StageOne({ setCurrentStage, setCurrentId }) {
     // criteria, the privacy notice and the Q&A
     //if they have, it then uses the validity check to confirm all required answers have a value
     // if all checks pass, it passes all of the answers into an object saved in a variable called 'answers'
-
+    
     if (document.querySelector(".stage1question1").id === "decline") {
       alert("please accept the eligibility criteria (question 1)");
     } else if (document.querySelector(".stage1question33").id === "decline") {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
       //fetch request to add a new user to the database using the answers from their application form.
-
+      
       axios
-        .post(`https://gci-backend.herokuapp.com/users`, {
+      .post(`https://gci-backend.herokuapp.com/users`, {
           username: answerObject[3],
           current_stage: 2,
           first_name: answerObject[1],
           last_name: answerObject[2],
-          email: answerObject[3],
+          email: email,
           contact_number: answerObject[4],
           created_at: new Date(),
           stage_1: JSON.stringify(answers),
@@ -114,34 +113,37 @@ export default function StageOne({ setCurrentStage, setCurrentId }) {
         })
         .then((response) => {
           console.log("user added", response);
-          setCurrentStage(2);
-
-          Auth.currentAuthenticatedUser()
-            .then((data) => {
-              axios
-                .get(
-                  `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
-                )
-                .then((result) => {
-                  setCurrentId(result.data.payload[0].id);
-                });
-            })
-            .catch((err) => console.log(err));
+          setState(state+1)
         })
         .catch(function (error) {
           console.log(error);
         });
-    } else {
-      alert(
-        "please complete all required fields. These are marked with a red asterisk"
-      );
-    }
-  }
 
-  //returns form with 33 questions from application & demographics form
+      } else {
+        alert(
+          "please complete all required fields. These are marked with a red asterisk"
+          );
+        }
+      }
+      
+      //returns form with 33 questions from application & demographics form
 
-  return (
-    <div className="m-5">
+      useEffect(()=>{  
+        axios
+        .get(
+        `https://gci-backend.herokuapp.com/users?email=${email}`
+      )
+      .then((result) => {
+        if(result.data.payload[0]){
+          setCurrentId(result.data.payload[0].id);
+          setCurrentStage(2);
+        } else return
+        
+      });},[state])
+      
+      
+      return (
+        <div className="m-5">
       <Heading className="text-4xl font-bold mb-5">
         Application form & Demographics survey
       </Heading>
