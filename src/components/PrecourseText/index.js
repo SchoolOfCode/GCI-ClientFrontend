@@ -33,7 +33,7 @@ export default function PrecourseText() {
         // m="m-5"
         buttonText="Go to pre-course"
         onClick={() => {
-          document.querySelector(".precourse").click();
+          document.querySelector(".learn").click();
         }}
       />
     </section>

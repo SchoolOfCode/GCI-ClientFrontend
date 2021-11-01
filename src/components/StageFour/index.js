@@ -10,27 +10,42 @@ import {
 import GenericInput from "../GenericInput";
 import { MainButton } from "../MainButton";
 import PrecourseText from "../PrecourseText";
+const axios = require("axios").default;
 
-export default function StageFour({ userId }) {
+export default function StageFour({ userId, setCurrentStage }) {
   const [render, setRender] = useState(false);
 
   function handleClick() {
     let answer = document.querySelector(".stage4question1").value;
 
-    fetch(`${process.env.API_URL}/users/${userId}`, {
-      method: "PATCH",
-      mode: "no-cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(answer),
-    }).then(setRender(true));
+    axios
+      .patch(
+        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_4`,
+        {
+          link: JSON.stringify(answer),
+        }
+      )
+      .then(() => {
+        axios.patch(
+          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+          { stage: 5 }
+        );
+        setCurrentStage(5);
+        setRender(true);
+      });
 
-    return;
+    // fetch(`${process.env.API_URL}/users/${userId}`, {
+    //   method: "PATCH",
+    //   mode: "no-cors",
+    //   cache: "no-cache",
+    //   credentials: "same-origin",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   redirect: "follow",
+    //   referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    //   body: JSON.stringify(answer),
+    // }).then(setRender(true));
   }
 
   return (

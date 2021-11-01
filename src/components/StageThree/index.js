@@ -2,24 +2,41 @@ import React from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading } from "@chakra-ui/layout";
+const axios = require("axios").default;
 
 export function StageThree({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage3question1").value;
 
-    fetch(`${process.env.API_URL}/users/${userId}`, {
-      method: "PATCH",
-      mode: "no-cors",
-      cache: "no-cache",
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(answer),
-    }).then(setCurrentStage(4));
+    axios
+      .patch(
+        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_3`,
+        {
+          link: JSON.stringify(answer),
+        }
+      )
+      .then(() => {
+        axios.patch(
+          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+          { stage: 4 }
+        );
+        setCurrentStage(4);
+      });
   }
+
+  //   fetch(`${process.env.API_URL}/users/${userId}`, {
+  //     method: "PATCH",
+  //     mode: "no-cors",
+  //     cache: "no-cache",
+  //     credentials: "same-origin",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     redirect: "follow",
+  //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+  //     body: JSON.stringify(answer),
+  //   }).then(setCurrentStage(4))};
+
   return (
     <section id="stage3section" className="m-5">
       <Heading className="text-4xl font-bold mb-5">
@@ -74,14 +91,7 @@ export function StageThree({ userId, setCurrentStage }) {
         role="stage3question1"
         placeholderText="Link here please..."
       />
-      <MainButton
-        m="m-5"
-        buttonText="Submit"
-        onClick={() => {
-          handleClick();
-          document.querySelector(".stage4").click();
-        }}
-      />
+      <MainButton m="m-5" buttonText="Submit" onClick={handleClick} />
     </section>
   );
 }

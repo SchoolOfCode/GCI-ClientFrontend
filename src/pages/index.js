@@ -26,6 +26,7 @@ import { StageThree } from "../components/StageThree";
 import StageOne from "../components/StageOne";
 import StageFour from "../components/StageFour";
 import Interview from "../components/Interview";
+import StageFive from "../components/Stage Five";
 import Result from "../components/Result";
 import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestions";
 import { Auth } from "@aws-amplify/auth";
@@ -157,7 +158,7 @@ const IndexPage = () => {
                   <p className="stage4">Stage 4</p>
                 </Tab>
               )}
-              {currentStage === 5 && (
+              {currentStage === 6 && (
                 <Tab
                   className="border-2 border-white text-white font-semibold"
                   bg="#8896A3"
@@ -166,7 +167,7 @@ const IndexPage = () => {
                   <p className="interview">Interview</p>
                 </Tab>
               )}
-              {currentStage === 6 && (
+              {currentStage === 7 && (
                 <Tab
                   className="border-2 border-white text-white font-semibold"
                   bg="#8896A3"
@@ -175,15 +176,25 @@ const IndexPage = () => {
                   <p className="result">Result</p>
                 </Tab>
               )}
+              {currentStage === 5 && (
+                <Tab
+                  className="border-2 border-white text-white font-semibold"
+                  bg="#8896A3"
+                  _selected={{ color: "white", bg: "#4A90E2" }}
+                >
+                  <p className="stage5">Stage 5</p>
+                </Tab>
+              )}
               {currentStage >= 5 && (
                 <Tab
                   className="border-2 border-white text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
-                  <p className="precourse">Learn</p>
+                  <p className="learn">Learn</p>
                 </Tab>
               )}
+
               <Tab
                 className="border-2 border-white text-white font-semibold"
                 bg="#8896A3"
@@ -224,14 +235,19 @@ const IndexPage = () => {
                   <StageFour userId={id} setCurrentStage={setStage} />
                 </TabPanel>
               )}
-              {currentStage === 5 && (
+              {currentStage === 6 && (
                 <TabPanel>
                   <Interview />
                 </TabPanel>
               )}
-              {currentStage === 6 && (
+              {currentStage === 7 && (
                 <TabPanel>
                   <Result />
+                </TabPanel>
+              )}
+              {currentStage === 5 && (
+                <TabPanel>
+                  <StageFive />
                 </TabPanel>
               )}
               {currentStage >= 5 && (
@@ -239,6 +255,7 @@ const IndexPage = () => {
                   <Learn />
                 </TabPanel>
               )}
+
               <TabPanel>
                 <FrequentlyAskedQuestions />
               </TabPanel>
