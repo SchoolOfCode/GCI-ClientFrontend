@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 const axios = require("axios").default;
 
@@ -27,6 +28,17 @@ export function StageTwo({ userId, setCurrentStage }) {
         setCurrentStage(3);
       });
   }
+
+  // for mobile interface usage
+  const [width, height] = useWindowSize();
+  const [style,setStyle] = useState("max-w-lg");
+   useEffect(() => {
+    if(width<=500){
+      setStyle("max-w-sm");
+    } 
+    if(width>500) {
+      setStyle("max-w-lg");
+    }},[width])
 
   return (
     <section id="stage2section" className="m-5">
@@ -69,13 +81,13 @@ export function StageTwo({ userId, setCurrentStage }) {
         </Text>
         <Text>Click on the room here...</Text>
         <Image
-          className="max-w-lg"
+          className={style}
           src="https://lh5.googleusercontent.com/GkFCBCaraux1R1ndd9TMzTQ9PJcfAnsdsjNXqz0i2lep7o8Or2x39YGbq8V1BIA3spthHxMWqlsS9zZVRcomU5WrnTItNH3cHM3yjSz6vX-OK3x2sjqV454NIE-HaGf_=w1600"
           alt="instruction describing joining a room"
         />
         <Text>And then click join to start coding!</Text>
         <img
-          className="max-w-lg"
+          className={style}
           src="https://lh4.googleusercontent.com/iiXyoTuzKTr44N_HpH2f9Tl_iVb05pptwxchERSwGC6_MhAeGbKIpOUgO97sSc_zocuqhiM9TmZQq8JLSZV3lpBwuDyHG2HVBwf8naqZ1Uw60G0mcQ_vm6FSlpBhDIix=w1600"
           alt="instruction describing joining a room"
         />

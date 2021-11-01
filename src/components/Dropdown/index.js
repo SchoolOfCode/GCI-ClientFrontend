@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Select, FormControl, FormLabel } from "@chakra-ui/react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 //takes in up to 6 options and placeholder text and props.
 // if more options are needed, then add more props here.
@@ -34,6 +35,17 @@ export default function Dropdown({
     setOption(e.target.value);
   };
 
+   // for mobile interface usage
+   const [width, height] = useWindowSize();
+   const [widthBox,setWidthBox] = useState("40%");
+    useEffect(() => {
+     if(width<=500){
+      setWidthBox("100%");
+     } 
+     if(width>500) {
+      setWidthBox("40%");
+     }},[width])
+
   let array = [
     first,
     second,
@@ -67,7 +79,7 @@ export default function Dropdown({
       <Select
         p="2"
         m="2"
-        width="container.sm"
+        width={widthBox}
         variant="filled"
         placeholder={placeholderText}
         onChange={handleSelect}

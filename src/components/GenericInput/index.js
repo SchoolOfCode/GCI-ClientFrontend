@@ -1,5 +1,6 @@
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 //takes in the label for the input as a prop. This can be just a label or a question to the user
 
@@ -7,7 +8,6 @@ export default function GenericInput({
   label,
   role,
   placeholderText = "Please type your answer here...",
-  width = "40%",
   m = "m-0",
   isRequired = true,
 }) {
@@ -19,6 +19,17 @@ export default function GenericInput({
     setText(e.target.value);
   };
 
+  // for mobile interface usage
+  const [width, height] = useWindowSize();
+  const [widthBox,setWidthBox] = useState("40%");
+   useEffect(() => {
+    if(width<=500){
+     setWidthBox("100%");
+    } 
+    if(width>500) {
+     setWidthBox("40%");
+    }},[width])
+
   return (
     <FormControl isRequired={isRequired} className={m}>
       <FormLabel>{label}</FormLabel>
@@ -29,7 +40,7 @@ export default function GenericInput({
         onChange={handleChange}
         className={role}
         size="md"
-        width={width}
+        width={widthBox}
       />
     </FormControl>
   );
