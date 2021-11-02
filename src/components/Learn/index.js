@@ -46,12 +46,12 @@ export function Learn() {
           },
           code: {
             props: {
-              className: "font-semibold ml-5 break-words",
+              className: "block whitespace-normal font-semibold ml-5 break-words",
             },
           },
           pre: {
             props: {
-              className: "font-semibold ml-5 break-words",
+              className: "block whitespace-normal font-semibold ml-5 break-words",
             },
           },
           footer: {
