@@ -39,33 +39,34 @@ const IndexPage = () => {
   const [currentStage, setStage] = useState(1);
   const [id, setId] = useState();
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("there")
-  const [margin, setMargin] = useState("m-20")
+  const [name, setName] = useState("there");
+  const [margin, setMargin] = useState("m-20");
   const [width, height] = useWindowSize();
   const [menuAlignment, setMenuAlignment] = useState("vertical");
   const [contentAlignment, setContentAlignment] = useState("left");
   // for mobile interface usage
   useEffect(() => {
-  if(width<=1080 ||detectMob()){
-    setMenuAlignment("horizontal");
-    setContentAlignment("center");
-    setMargin("mt-5")
-  } 
-  if(width>1080 ) {
-    setMenuAlignment("vertical");
-    setContentAlignment("left");
-    setMargin("m-20")
-  }},[width])
+    if (width <= 1080 || detectMob()) {
+      setMenuAlignment("horizontal");
+      setContentAlignment("center");
+      setMargin("mt-5");
+    }
+    if (width > 1080) {
+      setMenuAlignment("vertical");
+      setContentAlignment("left");
+      setMargin("m-20");
+    }
+  }, [width]);
 
-//this useEffect grabs the logged-in user's email from AMS Auth. 
-// it uses this to identify them in the DB and fetch their user id
-// we then use this to make a GET request to find their current stage
-//this is then used to determine which stage is displayed to them
+  //this useEffect grabs the logged-in user's email from AMS Auth.
+  // it uses this to identify them in the DB and fetch their user id
+  // we then use this to make a GET request to find their current stage
+  //this is then used to determine which stage is displayed to them
 
   useEffect(() => {
-    Auth.currentAuthenticatedUser()
+    Auth.currentUserInfo()
       .then((data) => {
-        setEmail(data.attributes.email)
+        setEmail(data.attributes.email);
         axios
           .get(
             `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
@@ -81,7 +82,7 @@ const IndexPage = () => {
                 .then((result) => {
                   console.log(result.data);
                   setStage(result.data.payload[0].current_stage);
-                  setName(result.data.payload[0].first_name)
+                  setName(result.data.payload[0].first_name);
                 })
                 .catch(function (error) {
                   // handle error
@@ -117,163 +118,181 @@ const IndexPage = () => {
 
           <Header className="bg-gcinavy text-white" />
           <main className="wrapper">
-          <Tabs
-            className={margin}
-            variant="line"
-            align={contentAlignment}
-            orientation={menuAlignment}
-            isLazy
-          >
-            <TabList>
-              <Tab
-                className="border-2 border-white text-white font-semibold"
-                bg="#8896A3"
-                _selected={{ color: "white", bg: "#4A90E2" }}
-              >
-                <p className="welcome">Welcome</p>
-              </Tab>
-              {currentStage === 1 && (
+            <Tabs
+              className={margin}
+              variant="line"
+              align={contentAlignment}
+              orientation={menuAlignment}
+              isLazy
+            >
+              <TabList>
                 <Tab
                   className="border-2 border-white text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
-                  <p className="stage1">Stage 1</p>
+                  <p className="welcome">Welcome</p>
                 </Tab>
-              )}
-              {currentStage === 2 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="stage2">Stage 2</p>
-                </Tab>
-              )}
-              {currentStage === 3 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="stage3">Stage 3</p>
-                </Tab>
-              )}
-              {currentStage === 4 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="stage4">Stage 4</p>
-                </Tab>
-              )}
-              {currentStage === 6 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="interview">Interview</p>
-                </Tab>
-              )}
-              {currentStage === 7 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="result">Result</p>
-                </Tab>
-              )}
-              {currentStage === 5 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="stage5">Stage 5</p>
-                </Tab>
-              )}
-              {currentStage >= 5 && (
-                <Tab
-                  className="border-2 border-white text-white font-semibold"
-                  bg="#8896A3"
-                  _selected={{ color: "white", bg: "#4A90E2" }}
-                >
-                  <p className="learn">Learn</p>
-                </Tab>
-              )}
+                {currentStage === 1 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="stage1">Stage 1</p>
+                  </Tab>
+                )}
+                {currentStage === 2 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="stage2">Stage 2</p>
+                  </Tab>
+                )}
+                {currentStage === 3 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="stage3">Stage 3</p>
+                  </Tab>
+                )}
+                {currentStage === 4 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="stage4">Stage 4</p>
+                  </Tab>
+                )}
+                {currentStage === 6 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="interview">Interview</p>
+                  </Tab>
+                )}
+                {currentStage === 7 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="result">Result</p>
+                  </Tab>
+                )}
+                {currentStage === 5 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="stage5">Stage 5</p>
+                  </Tab>
+                )}
+                {currentStage >= 5 && (
+                  <Tab
+                    className="border-2 border-white text-white font-semibold"
+                    bg="#8896A3"
+                    _selected={{ color: "white", bg: "#4A90E2" }}
+                  >
+                    <p className="learn">Learn</p>
+                  </Tab>
+                )}
 
-              <Tab
-                className="border-2 border-white text-white font-semibold"
-                bg="#8896A3"
-                _selected={{ color: "white", bg: "#4A90E2" }}
-              >
-                <p className="faq">F.A.Q.</p>
-              </Tab>
-              <Tab
-                className="border-2 border-white text-white font-semibold"
-                bg="#8896A3"
-                _selected={{ color: "white", bg: "#4A90E2" }}
-              >
-                Sign Out
-              </Tab>
-            </TabList>
+                <Tab
+                  className="border-2 border-white text-white font-semibold"
+                  bg="#8896A3"
+                  _selected={{ color: "white", bg: "#4A90E2" }}
+                >
+                  <p className="faq">F.A.Q.</p>
+                </Tab>
+                <Tab
+                  className="border-2 border-white text-white font-semibold"
+                  bg="#8896A3"
+                  _selected={{ color: "white", bg: "#4A90E2" }}
+                >
+                  Sign Out
+                </Tab>
+              </TabList>
 
-            <TabPanels>
-              <TabPanel>
-                <Welcome name={name}/>
-              </TabPanel>
-              {currentStage === 1 && (
+              <TabPanels>
                 <TabPanel>
-                  <StageOne userId={id} setCurrentStage={setStage} setCurrentId={setId} email={email} setName={setName} />
+                  <Welcome name={name} />
                 </TabPanel>
-              )}
-              {currentStage === 2 && (
-                <TabPanel>
-                  <StageTwo userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
-                </TabPanel>
-              )}
-              {currentStage === 3 && (
-                <TabPanel>
-                  <StageThree userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
-                </TabPanel>
-              )}
-              {currentStage === 4 && (
-                <TabPanel>
-                  <StageFour userId={id} setCurrentStage={setStage} setCurrentId={setId}/>
-                </TabPanel>
-              )}
-              {currentStage === 6 && (
-                <TabPanel>
-                  <Interview />
-                </TabPanel>
-              )}
-              {currentStage === 7 && (
-                <TabPanel>
-                  <Result />
-                </TabPanel>
-              )}
-              {currentStage === 5 && (
-                <TabPanel>
-                  <StageFive />
-                </TabPanel>
-              )}
-              {currentStage >= 5 && (
-                <TabPanel>
-                  <Learn />
-                </TabPanel>
-              )}
+                {currentStage === 1 && (
+                  <TabPanel>
+                    <StageOne
+                      userId={id}
+                      setCurrentStage={setStage}
+                      setCurrentId={setId}
+                      email={email}
+                      setName={setName}
+                    />
+                  </TabPanel>
+                )}
+                {currentStage === 2 && (
+                  <TabPanel>
+                    <StageTwo
+                      userId={id}
+                      setCurrentStage={setStage}
+                      setCurrentId={setId}
+                    />
+                  </TabPanel>
+                )}
+                {currentStage === 3 && (
+                  <TabPanel>
+                    <StageThree
+                      userId={id}
+                      setCurrentStage={setStage}
+                      setCurrentId={setId}
+                    />
+                  </TabPanel>
+                )}
+                {currentStage === 4 && (
+                  <TabPanel>
+                    <StageFour
+                      userId={id}
+                      setCurrentStage={setStage}
+                      setCurrentId={setId}
+                    />
+                  </TabPanel>
+                )}
+                {currentStage === 6 && (
+                  <TabPanel>
+                    <Interview />
+                  </TabPanel>
+                )}
+                {currentStage === 7 && (
+                  <TabPanel>
+                    <Result />
+                  </TabPanel>
+                )}
+                {currentStage === 5 && (
+                  <TabPanel>
+                    <StageFive />
+                  </TabPanel>
+                )}
+                {currentStage >= 5 && (
+                  <TabPanel>
+                    <Learn />
+                  </TabPanel>
+                )}
 
-              <TabPanel>
-                <FrequentlyAskedQuestions />
-              </TabPanel>
-              <TabPanel>
-                <AmplifySignOut buttonText="Log out" />{" "}
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
+                <TabPanel>
+                  <FrequentlyAskedQuestions />
+                </TabPanel>
+                <TabPanel>
+                  <AmplifySignOut buttonText="Log out" />{" "}
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </main>
           <Footer />
         </AmplifyAuthenticator>
