@@ -46,12 +46,12 @@ const IndexPage = () => {
   const [contentAlignment, setContentAlignment] = useState("left");
   // for mobile interface usage
   useEffect(() => {
-  if(width<=500||detectMob()){
+  if(width<=1080 ||detectMob()){
     setMenuAlignment("horizontal");
     setContentAlignment("center");
     setMargin("mt-5")
   } 
-  if(width>500) {
+  if(width>1080 ) {
     setMenuAlignment("vertical");
     setContentAlignment("left");
     setMargin("m-20")

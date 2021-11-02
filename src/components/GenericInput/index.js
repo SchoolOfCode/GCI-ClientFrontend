@@ -25,10 +25,10 @@ export default function GenericInput({
   const [widthBox,setWidthBox] = useState("40%");
   let isMobile = false;
    useEffect(() => {
-    if(width<=500||detectMob()){
+    if(width<=1080||detectMob()){
      setWidthBox("100%");
     } 
-    if(width>500) {
+    if(width>1080) {
      setWidthBox("40%");
     }},[width])
 

@@ -31,11 +31,11 @@ export function StageThree({ userId, setCurrentStage }) {
  const [vWidth,setvWidth] = useState("480");
  const [vHeight,setvHeight] = useState("270");
   useEffect(() => {
-   if(width<=500||detectMob()){
+   if(width<=1080||detectMob()){
     setvWidth("240");
     setvHeight("135");
    } 
-   if(width>500) {
+   if(width>1080) {
      setvWidth("480");
      setvHeight("270");
    }},[width])

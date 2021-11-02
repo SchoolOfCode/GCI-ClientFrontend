@@ -18,10 +18,10 @@ export default function GenericTextarea({ label, role, placeholderText="Please t
    const [width, height] = useWindowSize();
   const [widthBox,setWidthBox] = useState("40%");
    useEffect(() => {
-    if(width<=500||detectMob()){
+    if(width<=1080||detectMob()){
      setWidthBox("100%");
     } 
-    if(width>500) {
+    if(width>1080) {
      setWidthBox("40%");
     }},[width])
 

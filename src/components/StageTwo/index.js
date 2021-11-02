@@ -34,10 +34,10 @@ export function StageTwo({ userId, setCurrentStage }) {
    const [width, height] = useWindowSize();
   const [style,setStyle] = useState("max-w-lg");
    useEffect(() => {
-    if(width<=500||detectMob()){
+    if(width<=1080||detectMob()){
       setStyle("max-w-sm");
     } 
-    if(width>500) {
+    if(width>1080) {
       setStyle("max-w-lg");
     }},[width])
 

@@ -8,10 +8,10 @@ export function Welcome({name}) {
   const [style,setStyle] = useState("m-5");
    // for mobile interface usage
    useEffect(() => {
-    if(width<=500||detectMob()){
+    if(width<=1080||detectMob()){
       setStyle("m-0 break-words");
     } 
-    if(width>500) {
+    if(width>1080) {
       setStyle("m-5");
     }},[width])
   return (
