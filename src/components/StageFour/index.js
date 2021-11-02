@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Heading,
   Text,
@@ -10,6 +10,7 @@ import {
 import GenericInput from "../GenericInput";
 import { MainButton } from "../MainButton";
 import PrecourseText from "../PrecourseText";
+import {useWindowSize} from "../../hooks/useWindowSize";
 const axios = require("axios").default;
 
 export default function StageFour({ userId, setCurrentStage }) {
@@ -36,9 +37,21 @@ export default function StageFour({ userId, setCurrentStage }) {
         setCurrentStage(5);
         setRender(true);
       });
-
-  
   }
+
+   // for mobile interface usage
+ const [width, height] = useWindowSize();
+ const [vWidth,setvWidth] = useState("480");
+ const [vHeight,setvHeight] = useState("270");
+  useEffect(() => {
+   if(width<=500){
+    setvWidth("240");
+    setvHeight("135");
+   } 
+   if(width>500) {
+     setvWidth("480");
+     setvHeight("270");
+   }},[width])
 
   return (
     <section className="m-5">
@@ -53,8 +66,8 @@ export default function StageFour({ userId, setCurrentStage }) {
       </Text>
       <br></br>
       <iframe
-        width="480"
-        height="270"
+        width={vWidth}
+        height={vHeight}
         src="https://www.youtube.com/embed/YoXxevp1WRQ"
         title="YouTube video player"
         frameborder="0"

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading } from "@chakra-ui/layout";
+import {useWindowSize} from "../../hooks/useWindowSize";
 const axios = require("axios").default;
 
 export function StageThree({ userId, setCurrentStage }) {
@@ -24,6 +25,20 @@ export function StageThree({ userId, setCurrentStage }) {
       });
   }
 
+ // for mobile interface usage
+ const [width, height] = useWindowSize();
+ const [vWidth,setvWidth] = useState("480");
+ const [vHeight,setvHeight] = useState("270");
+  useEffect(() => {
+   if(width<=500){
+    setvWidth("240");
+    setvHeight("135");
+   } 
+   if(width>500) {
+     setvWidth("480");
+     setvHeight("270");
+   }},[width])
+
   return (
     <section id="stage3section" className="m-5">
       <Heading className="text-4xl font-bold mb-5">
@@ -39,8 +54,8 @@ export function StageThree({ userId, setCurrentStage }) {
       <Text>Watch the video below for more information.</Text>
       <br />
       <iframe
-        width="480"
-        height="270"
+        width={vWidth}
+        height={vHeight}
         src="https://www.youtube.com/embed/7RE2z1yEymU"
         title="YouTube video player"
         frameborder="0"

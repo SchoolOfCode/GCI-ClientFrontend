@@ -24,11 +24,6 @@ export function Learn() {
               className: "font-bold text-4xl",
             },
           },
-          // img: {
-          //   props: {
-          //     src: "https://i.imgur.com/TsMzmXK.png",
-          //   },
-          // },
           h2: {
             props: {
               className: "font-bold text-2xl pt-4",
