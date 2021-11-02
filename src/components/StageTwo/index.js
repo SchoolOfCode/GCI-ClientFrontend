@@ -31,11 +31,10 @@ export function StageTwo({ userId, setCurrentStage }) {
   }
 
   // for mobile interface usage
-   const isMobile = navigator.userAgentData.mobile;
    const [width, height] = useWindowSize();
   const [style,setStyle] = useState("max-w-lg");
    useEffect(() => {
-    if(width<=500||isMobile||detectMob()){
+    if(width<=500||detectMob()){
       setStyle("max-w-sm");
     } 
     if(width>500) {

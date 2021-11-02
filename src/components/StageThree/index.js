@@ -27,12 +27,11 @@ export function StageThree({ userId, setCurrentStage }) {
   }
 
  // for mobile interface usage
-   const isMobile = navigator.userAgentData.mobile;
    const [width, height] = useWindowSize();
  const [vWidth,setvWidth] = useState("480");
  const [vHeight,setvHeight] = useState("270");
   useEffect(() => {
-   if(width<=500||isMobile||detectMob()){
+   if(width<=500||detectMob()){
     setvWidth("240");
     setvHeight("135");
    } 

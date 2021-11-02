@@ -21,11 +21,11 @@ export default function GenericInput({
   };
 
   // for mobile interface usage
-   const isMobile = navigator.userAgentData.mobile;
    const [width, height] = useWindowSize();
   const [widthBox,setWidthBox] = useState("40%");
+  let isMobile = false;
    useEffect(() => {
-    if(width<=500||isMobile||detectMob()){
+    if(width<=500||detectMob()){
      setWidthBox("100%");
     } 
     if(width>500) {
