@@ -1,13 +1,15 @@
 import React, {useState,useEffect} from "react";
+import { detectMob } from "../../functions/detectMob";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { WelcomeParagraph } from "../WelcomeParagraph";
 
 export function Welcome({name}) {
-  const [width, height] = useWindowSize();
+   const isMobile = navigator.userAgentData.mobile;
+   const [width, height] = useWindowSize();
   const [style,setStyle] = useState("m-5");
    // for mobile interface usage
    useEffect(() => {
-    if(width<=500){
+    if(width<=500||isMobile||detectMob()){
       setStyle("m-0 break-words");
     } 
     if(width>500) {

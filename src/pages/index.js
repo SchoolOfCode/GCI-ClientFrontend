@@ -30,6 +30,7 @@ import FrequentlyAskedQuestions from "../components/FrequentlyAskedQuestions";
 import { Auth } from "@aws-amplify/auth";
 import { Learn } from "../components/Learn";
 import "./index.css";
+import { detectMob } from "../functions/detectMob";
 const axios = require("axios").default;
 Amplify.configure(awsconfig);
 
@@ -42,11 +43,12 @@ const IndexPage = () => {
   const [margin, setMargin] = useState("m-20")
   const [width, height] = useWindowSize();
   const [menuAlignment, setMenuAlignment] = useState("vertical");
-  const [contentAlignment, setContentAlignment] = useState("left");
+   const isMobile = navigator.userAgentData.mobile;
+   const [contentAlignment, setContentAlignment] = useState("left");
   
   // for mobile interface usage
   useEffect(() => {
-  if(width<=500){
+  if(width<=500||isMobile||detectMob()){
     setMenuAlignment("horizontal");
     setContentAlignment("center");
     setMargin("mt-5")
@@ -72,14 +74,14 @@ const IndexPage = () => {
           )
           .then((result) => {
             if (result.data.payload[0]) {
-              // console.log("this is the id", result.data.payload[0].id);
+              console.log("this is the id", result.data.payload[0].id);
               setId(result.data.payload[0].id);
-
               axios
                 .get(
                   `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
                 )
                 .then((result) => {
+                  console.log(result.data);
                   setStage(result.data.payload[0].current_stage);
                   setName(result.data.payload[0].first_name)
                 })

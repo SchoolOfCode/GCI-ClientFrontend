@@ -3,6 +3,7 @@ import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading } from "@chakra-ui/layout";
 import {useWindowSize} from "../../hooks/useWindowSize";
+import { detectMob } from "../../functions/detectMob";
 const axios = require("axios").default;
 
 export function StageThree({ userId, setCurrentStage }) {
@@ -26,11 +27,12 @@ export function StageThree({ userId, setCurrentStage }) {
   }
 
  // for mobile interface usage
- const [width, height] = useWindowSize();
+   const isMobile = navigator.userAgentData.mobile;
+   const [width, height] = useWindowSize();
  const [vWidth,setvWidth] = useState("480");
  const [vHeight,setvHeight] = useState("270");
   useEffect(() => {
-   if(width<=500){
+   if(width<=500||isMobile||detectMob()){
     setvWidth("240");
     setvHeight("135");
    } 

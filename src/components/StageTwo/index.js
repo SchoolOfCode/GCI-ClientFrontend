@@ -3,6 +3,7 @@ import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { detectMob } from "../../functions/detectMob";
 
 const axios = require("axios").default;
 
@@ -30,10 +31,11 @@ export function StageTwo({ userId, setCurrentStage }) {
   }
 
   // for mobile interface usage
-  const [width, height] = useWindowSize();
+   const isMobile = navigator.userAgentData.mobile;
+   const [width, height] = useWindowSize();
   const [style,setStyle] = useState("max-w-lg");
    useEffect(() => {
-    if(width<=500){
+    if(width<=500||isMobile||detectMob()){
       setStyle("max-w-sm");
     } 
     if(width>500) {

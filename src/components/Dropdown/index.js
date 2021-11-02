@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Select, FormControl, FormLabel } from "@chakra-ui/react";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { detectMob } from "../../functions/detectMob";
 
 //takes in up to 6 options and placeholder text and props.
 // if more options are needed, then add more props here.
@@ -36,10 +37,11 @@ export default function Dropdown({
   };
 
    // for mobile interface usage
+   const isMobile = navigator.userAgentData.mobile;
    const [width, height] = useWindowSize();
    const [widthBox,setWidthBox] = useState("40%");
     useEffect(() => {
-     if(width<=500){
+     if(width<=500||isMobile||detectMob()){
       setWidthBox("100%");
      } 
      if(width>500) {

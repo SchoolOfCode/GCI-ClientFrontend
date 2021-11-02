@@ -1,5 +1,6 @@
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
+import { detectMob } from "../../functions/detectMob";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
 //takes in the label for the input as a prop. This can be just a label or a question to the user
@@ -20,10 +21,11 @@ export default function GenericInput({
   };
 
   // for mobile interface usage
-  const [width, height] = useWindowSize();
+   const isMobile = navigator.userAgentData.mobile;
+   const [width, height] = useWindowSize();
   const [widthBox,setWidthBox] = useState("40%");
    useEffect(() => {
-    if(width<=500){
+    if(width<=500||isMobile||detectMob()){
      setWidthBox("100%");
     } 
     if(width>500) {
