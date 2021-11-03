@@ -88,6 +88,8 @@ const IndexPage = () => {
                   })
                   .catch(function (error) {
                     // handle error
+                    setStage(1);
+                    setName("there");
                     console.log(error);
                   });
               })
