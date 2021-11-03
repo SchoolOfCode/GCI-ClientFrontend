@@ -67,7 +67,7 @@ const IndexPage = () => {
         logger.info("user signed in");
         Auth.currentUserInfo({ bypassCache: true })
           .then((data) => {
-            console.log(data.attributes.email);
+            // console.log(data.attributes.email);
             setEmail(data.attributes.email);
             setId("nada");
             axios
@@ -75,31 +75,33 @@ const IndexPage = () => {
                 `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
               )
               .then((result) => {
-                console.log("this is the id", result.data.payload[0].id);
+                // console.log("this is the id", result.data.payload[0].id);
                 setId(result.data.payload[0].id);
                 axios
                   .get(
                     `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
                   )
                   .then((result) => {
-                    console.log(result.data);
+                    // console.log(result.data);
                     setStage(result.data.payload[0].current_stage);
                     setName(result.data.payload[0].first_name);
                   })
+
                   .catch(function (error) {
                     // handle error
                     setStage(1);
                     setName("there");
-                    console.log(error);
+                    // console.log(error);
                   });
               })
-              .catch((err) => console.log(err));
+              .then(() => document.querySelector(".welcome").click())
+              .catch((err) => document.querySelector(".welcome").click());
           })
           .catch(function (error) {
             // handle error
             setEmail("nada");
-            console.log(error);
-            console.log(email, " ", id); // this is where you check
+            // console.log(error);
+            // console.log(email, " ", id); // this is where you check
           });
         break;
       case "signUp":
@@ -128,6 +130,48 @@ const IndexPage = () => {
   // it uses this to identify them in the DB and fetch their user id
   // we then use this to make a GET request to find their current stage
   //this is then used to determine which stage is displayed to them
+
+  useEffect(() => {
+    Auth.currentUserInfo({ bypassCache: true })
+      .then((data) => {
+        // console.log(data.attributes.email);
+        setEmail(data.attributes.email);
+        setId("nada");
+        axios
+          .get(
+            `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
+          )
+          .then((result) => {
+            // console.log("this is the id", result.data.payload[0].id);
+            setId(result.data.payload[0].id);
+            axios
+              .get(
+                `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
+              )
+              .then((result) => {
+                // console.log(result.data);
+                setStage(result.data.payload[0].current_stage);
+                setName(result.data.payload[0].first_name);
+              })
+              .then(() => document.querySelector(".welcome").click())
+              .catch(function (error) {
+                // handle error
+                setStage(1);
+                setName("there");
+                // console.log(error);
+              });
+          })
+          .then(() => document.querySelector(".welcome").click())
+          .catch((err) => document.querySelector(".welcome").click());
+      })
+      .catch(function (error) {
+        // handle error
+        document.querySelector(".welcome").click();
+        setEmail("nada");
+        // console.log(error);
+        // console.log(email, " ", id); // this is where you check
+      });
+  }, []);
 
   return (
     <ChakraProvider>
@@ -163,11 +207,11 @@ const IndexPage = () => {
             >
               <TabList>
                 <Tab
-                  className="border-2 border-white text-white font-semibold"
+                  className="welcome border-2 border-white text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
-                  <p className="welcome">Welcome</p>
+                  <p className="w">Welcome</p>
                 </Tab>
                 {currentStage === 1 && (
                   <Tab
