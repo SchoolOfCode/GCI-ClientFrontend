@@ -63,36 +63,35 @@ const IndexPage = () => {
   // we then use this to make a GET request to find their current stage
   //this is then used to determine which stage is displayed to them
 
-  Auth.currentAuthenticatedUser({ bypassCache: true }).then(
-    (data) => {
-      setEmail(data.username);
+  Auth.currentAuthenticatedUser({ bypassCache: true }).then((data) => {
+    setEmail(data.username);
+  });
 
-      useEffect(() => {
-        axios
-          .get(`https://gci-backend.herokuapp.com/users?email=${data.username}`)
-          .then((result) => {
-            if (result.data.payload[0]) {
-              console.log("this is the id", result.data.payload[0].id);
-              setId(result.data.payload[0].id);
-              axios
-                .get(
-                  `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
-                )
-                .then((result) => {
-                  console.log(result.data);
-                  setStage(result.data.payload[0].current_stage);
-                  setName(result.data.payload[0].first_name);
-                })
-                .catch(function (error) {
-                  // handle error
-                  console.log(error);
-                });
-            } else return;
-          });
-      }).catch((err) => console.log(err));
-    },
-    [email]
-  );
+  useEffect(() => {
+    axios
+      .get(`https://gci-backend.herokuapp.com/users?email=${email}`)
+      .then((result) => {
+        if (result.data.payload[0]) {
+          console.log("this is the id", result.data.payload[0].id);
+          setId(result.data.payload[0].id);
+
+          axios
+            .get(
+              `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
+            )
+            .then((result) => {
+              console.log(result.data);
+              setStage(result.data.payload[0].current_stage);
+              setName(result.data.payload[0].first_name);
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            });
+        } else return;
+      })
+      .catch((err) => console.log(err));
+  }, [email]);
 
   return (
     <ChakraProvider>
