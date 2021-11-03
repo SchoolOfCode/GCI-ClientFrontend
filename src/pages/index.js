@@ -64,12 +64,12 @@ const IndexPage = () => {
   //this is then used to determine which stage is displayed to them
 
   useEffect(() => {
-    Auth.currentUserInfo()
+    Auth.currentSession()
       .then((data) => {
-        setEmail(data.attributes.email);
+        setEmail(data.idToken.payload.email);
         axios
           .get(
-            `https://gci-backend.herokuapp.com/users?email=${data.attributes.email}`
+            `https://gci-backend.herokuapp.com/users?email=${data.idToken.payload.email}`
           )
           .then((result) => {
             if (result.data.payload[0]) {
