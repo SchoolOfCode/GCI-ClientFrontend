@@ -90,7 +90,7 @@ const IndexPage = () => {
           });
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [name]);
 
   return (
     <ChakraProvider>
