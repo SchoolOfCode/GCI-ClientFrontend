@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import GenericInput from "../GenericInput";
 import Dropdown from "../Dropdown";
 import GenericTextarea from "../GenericTextarea";
@@ -18,7 +18,12 @@ const axios = require("axios").default;
 
 //This function collates all answers into an objects. It also tests whether the applicants answers are valid
 
-export default function StageOne({ setCurrentStage, setCurrentId,email,setName }) {
+export default function StageOne({
+  setCurrentStage,
+  setCurrentId,
+  email,
+  setName,
+}) {
   const [state, setState] = useState(0);
   function handleClick() {
     let answers = [];
@@ -87,16 +92,16 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
     // criteria, the privacy notice and the Q&A
     //if they have, it then uses the validity check to confirm all required answers have a value
     // if all checks pass, it passes all of the answers into an object saved in a variable called 'answers'
-    
+
     if (document.querySelector(".stage1question1").id === "decline") {
       alert("please accept the eligibility criteria (question 1)");
     } else if (document.querySelector(".stage1question33").id === "decline") {
       alert("please read and accept the Privacy Notice and the Q&A");
     } else if (valid) {
       //fetch request to add a new user to the database using the answers from their application form.
-      
+
       axios
-      .post(`https://gci-backend.herokuapp.com/users`, {
+        .post(`https://gci-backend.herokuapp.com/users`, {
           username: answerObject[3],
           current_stage: 2,
           first_name: answerObject[1],
@@ -113,38 +118,38 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
         })
         .then((response) => {
           console.log("user added", response);
-          setState(state+1)
+          setState(state + 1);
         })
         .catch(function (error) {
           console.log(error);
         });
 
-      } else {
-        alert(
-          "please complete all required fields. These are marked with a red asterisk"
-          );
-        }
-      }
-      
-      //returns form with 33 questions from application & demographics form
+      // new post for statistics / demographics
+      // https://gci-backend.herokuapp.com/stats - get old stats
+      // update the old stats with a patch doing a + 1 to the specific stat you need
+    } else {
+      alert(
+        "please complete all required fields. These are marked with a red asterisk"
+      );
+    }
+  }
 
-      useEffect(()=>{  
-        axios
-        .get(
-        `https://gci-backend.herokuapp.com/users?email=${email}`
-      )
+  //returns form with 33 questions from application & demographics form
+
+  useEffect(() => {
+    axios
+      .get(`https://gci-backend.herokuapp.com/users?email=${email}`)
       .then((result) => {
-        if(result.data.payload[0]){
+        if (result.data.payload[0]) {
           setCurrentId(result.data.payload[0].id);
-          setName(result.data.payload[0].first_name)
+          setName(result.data.payload[0].first_name);
           setCurrentStage(2);
-        } else return
-        
-      });},[state])
-      
-      
-      return (
-        <div className="m-5">
+        } else return;
+      });
+  }, [state]);
+
+  return (
+    <div className="m-5">
       <Heading className="text-4xl font-bold mb-5">
         Application form & Demographics survey
       </Heading>
