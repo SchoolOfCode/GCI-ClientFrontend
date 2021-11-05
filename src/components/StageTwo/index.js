@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading, Link, Image } from "@chakra-ui/react";
@@ -11,14 +11,14 @@ export function StageTwo({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage2question1").value;
     console.log("stage 2 id", userId);
-    
+
     //fetch to add the stage 2 answer to the DB
 
     axios
       .patch(
         `https://gci-backend.herokuapp.com/users/${userId}?column=stage_2`,
         {
-          link: JSON.stringify(answer),
+          link: answer,
         }
       )
       .then(() => {
@@ -31,15 +31,16 @@ export function StageTwo({ userId, setCurrentStage }) {
   }
 
   // for mobile interface usage
-   const [width, height] = useWindowSize();
-  const [style,setStyle] = useState("max-w-lg");
-   useEffect(() => {
-    if(width<=1080||detectMob()){
+  const [width, height] = useWindowSize();
+  const [style, setStyle] = useState("max-w-lg");
+  useEffect(() => {
+    if (width <= 1080 || detectMob()) {
       setStyle("max-w-sm");
-    } 
-    if(width>1080) {
+    }
+    if (width > 1080) {
       setStyle("max-w-lg");
-    }},[width])
+    }
+  }, [width]);
 
   return (
     <section id="stage2section" className="m-5">

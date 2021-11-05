@@ -273,7 +273,7 @@ const IndexPage = () => {
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
-                    <p className="stage5">Stage 5</p>
+                    <p className="stage5">Stage 4</p>
                   </Tab>
                 )}
                 {currentStage >= 5 && (
