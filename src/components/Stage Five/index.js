@@ -9,9 +9,7 @@ export default function StageFive() {
   return (
     <>
       <Heading className="text-4xl font-bold mb-5">All done for now!</Heading>
-      <PrecourseText
-        
-      />
+      <PrecourseText />
     </>
   );
 }

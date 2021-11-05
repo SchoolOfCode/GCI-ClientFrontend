@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { MainButton } from "../MainButton";
 import GenericInput from "../GenericInput";
 import { Text, Heading } from "@chakra-ui/layout";
-import {useWindowSize} from "../../hooks/useWindowSize";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import { detectMob } from "../../functions/detectMob";
 const axios = require("axios").default;
 
@@ -14,7 +14,7 @@ export function StageThree({ userId, setCurrentStage }) {
       .patch(
         `https://gci-backend.herokuapp.com/users/${userId}?column=stage_3`,
         {
-          link: JSON.stringify(answer),
+          link: answer,
         }
       )
       .then(() => {
@@ -26,19 +26,20 @@ export function StageThree({ userId, setCurrentStage }) {
       });
   }
 
- // for mobile interface usage
-   const [width, height] = useWindowSize();
- const [vWidth,setvWidth] = useState("480");
- const [vHeight,setvHeight] = useState("270");
+  // for mobile interface usage
+  const [width, height] = useWindowSize();
+  const [vWidth, setvWidth] = useState("480");
+  const [vHeight, setvHeight] = useState("270");
   useEffect(() => {
-   if(width<=1080||detectMob()){
-    setvWidth("240");
-    setvHeight("135");
-   } 
-   if(width>1080) {
-     setvWidth("480");
-     setvHeight("270");
-   }},[width])
+    if (width <= 1080 || detectMob()) {
+      setvWidth("240");
+      setvHeight("135");
+    }
+    if (width > 1080) {
+      setvWidth("480");
+      setvHeight("270");
+    }
+  }, [width]);
 
   return (
     <section id="stage3section" className="m-5">

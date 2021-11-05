@@ -10,7 +10,7 @@ import {
 import GenericInput from "../GenericInput";
 import { MainButton } from "../MainButton";
 import PrecourseText from "../PrecourseText";
-import {useWindowSize} from "../../hooks/useWindowSize";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import { detectMob } from "../../functions/detectMob";
 const axios = require("axios").default;
 
@@ -26,7 +26,7 @@ export default function StageFour({ userId, setCurrentStage }) {
       .patch(
         `https://gci-backend.herokuapp.com/users/${userId}?column=stage_4`,
         {
-          link: JSON.stringify(answer),
+          link: answer,
         }
       )
       .then(() => {
@@ -40,19 +40,20 @@ export default function StageFour({ userId, setCurrentStage }) {
       });
   }
 
-   // for mobile interface usage
-   const [width, height] = useWindowSize();
- const [vWidth,setvWidth] = useState("480");
- const [vHeight,setvHeight] = useState("270");
+  // for mobile interface usage
+  const [width, height] = useWindowSize();
+  const [vWidth, setvWidth] = useState("480");
+  const [vHeight, setvHeight] = useState("270");
   useEffect(() => {
-   if(width<=1080||detectMob()){
-    setvWidth("240");
-    setvHeight("135");
-   } 
-   if(width>1080) {
-     setvWidth("480");
-     setvHeight("270");
-   }},[width])
+    if (width <= 1080 || detectMob()) {
+      setvWidth("240");
+      setvHeight("135");
+    }
+    if (width > 1080) {
+      setvWidth("480");
+      setvHeight("270");
+    }
+  }, [width]);
 
   return (
     <section className="m-5">
