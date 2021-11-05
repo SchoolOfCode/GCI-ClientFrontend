@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Heading } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/layout";
 const axios = require("axios").default;
 
 export default function Result({ userId }) {
   const [result, setResult] = useState("");
-
-  axios
-    .get(`${process.env.API_URL}/users/${userId}`)
-    .then((response) => setResult(response.final));
+  useEffect(() => {
+    axios
+      .get(`${process.env.API_URL}/users/${userId}`)
+      .then((response) => setResult(response.final));
+  }, []);
 
   return (
     <section className="m-5">
