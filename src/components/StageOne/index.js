@@ -133,6 +133,7 @@ export default function StageOne({
           final: null,
           region: answerObject[14],
           assignee: "Not assigned",
+          status: "Pending",
         })
         .then((response) => {
           console.log("user added", response);
