@@ -8,7 +8,7 @@ export default function Result({ userId }) {
   useEffect(() => {
     axios
       .get(`${process.env.API_URL}/users/${userId}`)
-      .then((response) => setResult(response.final));
+      .then((response) => setResult(response.final.final));
   }, []);
 
   return (
