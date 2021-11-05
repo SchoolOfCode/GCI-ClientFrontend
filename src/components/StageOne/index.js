@@ -48,6 +48,7 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
     answers.push(document.querySelector(".stage1question13").value);
     requiredAnswers.push(document.querySelector(".stage1question13").value);
     answers.push(document.querySelector(".stage1question14").value);
+    requiredAnswers.push(document.querySelector(".stage1question14").value);
     answers.push(document.querySelector(".stage1question15").value);
     requiredAnswers.push(document.querySelector(".stage1question15").value);
     answers.push(document.querySelector(".stage1question16").value);
@@ -110,6 +111,7 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
           stage_4: null,
           interview: null,
           final: null,
+          region: answersObject[14],
         })
         .then((response) => {
           console.log("user added", response);
@@ -118,7 +120,7 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
         .catch(function (error) {
           console.log(error);
         });
-
+        
       } else {
         alert(
           "please complete all required fields. These are marked with a red asterisk"
