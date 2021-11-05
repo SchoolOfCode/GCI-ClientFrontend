@@ -4,11 +4,13 @@ import { Text } from "@chakra-ui/layout";
 const axios = require("axios").default;
 
 export default function Result({ userId }) {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("wow");
   useEffect(() => {
     axios
-      .get(`${process.env.API_URL}/users/${userId}`)
-      .then((response) => setResult(response.final.final));
+      .get(`https://gci-backend.herokuapp.com/users/${userId}`)
+      .then((response) => {
+        setResult(response.data.payload[0].final.final);
+      });
   }, []);
 
   return (

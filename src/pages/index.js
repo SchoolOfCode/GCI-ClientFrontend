@@ -351,7 +351,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 7 && (
                   <TabPanel>
-                    <Result />
+                    <Result userId={id} />
                   </TabPanel>
                 )}
                 {currentStage === 5 && (
