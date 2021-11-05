@@ -48,7 +48,6 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
     answers.push(document.querySelector(".stage1question13").value);
     requiredAnswers.push(document.querySelector(".stage1question13").value);
     answers.push(document.querySelector(".stage1question14").value);
-    requiredAnswers.push(document.querySelector(".stage1question14").value);
     answers.push(document.querySelector(".stage1question15").value);
     requiredAnswers.push(document.querySelector(".stage1question15").value);
     answers.push(document.querySelector(".stage1question16").value);
