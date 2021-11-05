@@ -111,10 +111,11 @@ export default function StageOne({ setCurrentStage, setCurrentId,email,setName }
           interview: null,
           final: null,
           region: answerObject[14],
+          assignee: "Not assigned",
         })
         .then((response) => {
           console.log("user added", response);
-          console.log("the region object", answerObject[14])
+          
           setState(state+1)
         })
         .catch(function (error) {
