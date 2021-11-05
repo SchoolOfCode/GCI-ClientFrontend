@@ -115,6 +115,8 @@ export default function StageOne({
           stage_4: null,
           interview: null,
           final: null,
+          assignee: "Not assigned",
+          status: "Pending",
         })
         .then((response) => {
           console.log("user added", response);
@@ -123,10 +125,6 @@ export default function StageOne({
         .catch(function (error) {
           console.log(error);
         });
-
-      // new post for statistics / demographics
-      // https://gci-backend.herokuapp.com/stats - get old stats
-      // update the old stats with a patch doing a + 1 to the specific stat you need
     } else {
       alert(
         "please complete all required fields. These are marked with a red asterisk"
