@@ -172,16 +172,16 @@ export default function StageOne({
         onChange={handleTabsChange}
       >
         <TabList>
-          <Tab className="bg-gcinavy text-white">Section 1</Tab>
-          <Tab className="bg-gcinavy text-white">Section 2</Tab>
-          <Tab className="bg-gcinavy text-white">Section 3</Tab>
-          <Tab className="bg-gcinavy text-white">Section 4</Tab>
-          <Tab className="bg-gcinavy text-white">Section 5</Tab>
-          <Tab className="bg-gcinavy text-white">Section 6</Tab>
-          <Tab className="bg-gcinavy text-white">Section 7</Tab>
-          <Tab className="bg-gcinavy text-white">Section 8</Tab>
-          <Tab className="bg-gcinavy text-white">Section 9</Tab>
-          <Tab className="bg-gcinavy text-white">Section 10</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 1</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 2</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 3</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 4</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 5</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 6</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 7</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 8</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 9</Tab>
+          <Tab className="bg-#4a90e2 text-white font-semibold">Section 10</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
