@@ -44,11 +44,7 @@ const IndexPage = () => {
   const [width, height] = useWindowSize();
   const [menuAlignment, setMenuAlignment] = useState("vertical");
   const [contentAlignment, setContentAlignment] = useState("left");
-<<<<<<< HEAD
-
-=======
   const [defIndex, setDefIndex] = useState(2);
->>>>>>> 7f2a949d85c6bc25584912790f943b1e91b297ff
   // for mobile interface usage
   useEffect(() => {
     if (width <= 1080 || detectMob()) {
@@ -134,29 +130,6 @@ const IndexPage = () => {
   // it uses this to identify them in the DB and fetch their user id
   // we then use this to make a GET request to find their current stage
   //this is then used to determine which stage is displayed to them
-<<<<<<< HEAD
-  setEmail("");
-  Auth.currentAuthenticatedUser({ bypassCache: true }).then((data) => {
-    console.log("this is the auth bit");
-    if (data.attributes) {
-      setEmail(data.attributes.email) 
-      console.log("emails", data.attributes.email, email);
-    } else {
-      console.log("no user");
-    }
-  });
-  // .catch((err) => console.log(err));
-
-
-    useEffect(() => {
-      axios
-        .get(`https://gci-backend.herokuapp.com/users?email=${email}`)
-        .then((result) => {
-          if (result.data.payload[0]) {
-            console.log("this is the user", result.data.payload[0]);
-            setId(result.data.payload[0].id);
-
-=======
 
   useEffect(() => {
     Auth.currentUserInfo({ bypassCache: true })
@@ -171,27 +144,11 @@ const IndexPage = () => {
           .then((result) => {
             // console.log("this is the id", result.data.payload[0].id);
             setId(result.data.payload[0].id);
->>>>>>> 7f2a949d85c6bc25584912790f943b1e91b297ff
             axios
               .get(
                 `https://gci-backend.herokuapp.com/users/${result.data.payload[0].id}`
               )
               .then((result) => {
-<<<<<<< HEAD
-                console.log(result.data);
-                setStage(result.data.payload[0].current_stage);
-                setName(result.data.payload[0].first_name);
-              })
-              .catch(function (error) {
-                // handle error
-                console.log(error);
-              });
-          } else return;
-        })
-        .catch((err) => console.log(err));
-    }, []);
-  
-=======
                 // console.log(result.data);
                 setStage(result.data.payload[0].current_stage);
                 setName(result.data.payload[0].first_name);
@@ -215,7 +172,6 @@ const IndexPage = () => {
         // console.log(email, " ", id); // this is where you check
       });
   }, []);
->>>>>>> 7f2a949d85c6bc25584912790f943b1e91b297ff
 
   return (
     <ChakraProvider>
