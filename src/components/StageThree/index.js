@@ -9,21 +9,24 @@ const axios = require("axios").default;
 export function StageThree({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage3question1").value;
-
-    axios
-      .patch(
-        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_3`,
-        {
-          link: answer,
-        }
-      )
-      .then(() => {
-        axios.patch(
-          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
-          { stage: 4 }
-        );
-        setCurrentStage(4);
-      });
+    if (
+      document.querySelector(".stage3question1").value !== "" &&
+      document.querySelector(".stage3question1").value !== undefined
+    )
+      axios
+        .patch(
+          `https://gci-backend.herokuapp.com/users/${userId}?column=stage_3`,
+          {
+            link: answer,
+          }
+        )
+        .then(() => {
+          axios.patch(
+            `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+            { stage: 4 }
+          );
+          setCurrentStage(4);
+        });
   }
 
   // for mobile interface usage

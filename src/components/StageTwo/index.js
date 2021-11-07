@@ -10,24 +10,25 @@ const axios = require("axios").default;
 export function StageTwo({ userId, setCurrentStage }) {
   function handleClick() {
     let answer = document.querySelector(".stage2question1").value;
-    console.log("stage 2 id", userId);
-
-    //fetch to add the stage 2 answer to the DB
-
-    axios
-      .patch(
-        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_2`,
-        {
-          link: answer,
-        }
-      )
-      .then(() => {
-        axios.patch(
-          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
-          { stage: 3 }
-        );
-        setCurrentStage(3);
-      });
+    if (
+      document.querySelector(".stage2question1").value !== "" &&
+      document.querySelector(".stage2question1").value !== undefined
+    )
+      //fetch to add the stage 2 answer to the DB
+      axios
+        .patch(
+          `https://gci-backend.herokuapp.com/users/${userId}?column=stage_2`,
+          {
+            link: answer,
+          }
+        )
+        .then(() => {
+          axios.patch(
+            `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+            { stage: 3 }
+          );
+          setCurrentStage(3);
+        });
   }
 
   // for mobile interface usage

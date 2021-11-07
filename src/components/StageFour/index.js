@@ -21,23 +21,26 @@ export default function StageFour({ userId, setCurrentStage }) {
 
   function handleClick() {
     let answer = document.querySelector(".stage4question1").value;
-
-    axios
-      .patch(
-        `https://gci-backend.herokuapp.com/users/${userId}?column=stage_4`,
-        {
-          link: answer,
-        }
-      )
-      .then(() => {
-        // this patch request then updates their current stage to 5
-        axios.patch(
-          `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
-          { stage: 5 }
-        );
-        setCurrentStage(5);
-        setRender(true);
-      });
+    if (
+      document.querySelector(".stage4question1").value !== "" &&
+      document.querySelector(".stage4question1").value !== undefined
+    )
+      axios
+        .patch(
+          `https://gci-backend.herokuapp.com/users/${userId}?column=stage_4`,
+          {
+            link: answer,
+          }
+        )
+        .then(() => {
+          // this patch request then updates their current stage to 5
+          axios.patch(
+            `https://gci-backend.herokuapp.com/users/${userId}?column=current_stage`,
+            { stage: 5 }
+          );
+          setCurrentStage(5);
+          setRender(true);
+        });
   }
 
   // for mobile interface usage

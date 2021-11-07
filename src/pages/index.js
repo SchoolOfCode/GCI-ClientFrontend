@@ -207,7 +207,7 @@ const IndexPage = () => {
             >
               <TabList>
                 <Tab
-                  className="welcome border-2 border-white text-white font-semibold"
+                  className="welcome m-1 text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
@@ -215,7 +215,7 @@ const IndexPage = () => {
                 </Tab>
                 {currentStage === 1 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -224,7 +224,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 2 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -233,7 +233,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 3 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -242,7 +242,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 4 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -251,7 +251,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 6 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -260,7 +260,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 7 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -269,7 +269,7 @@ const IndexPage = () => {
                 )}
                 {currentStage === 5 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -278,7 +278,7 @@ const IndexPage = () => {
                 )}
                 {currentStage >= 5 && (
                   <Tab
-                    className="border-2 border-white text-white font-semibold"
+                    className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}
                   >
@@ -287,14 +287,14 @@ const IndexPage = () => {
                 )}
 
                 <Tab
-                  className="border-2 border-white text-white font-semibold"
+                  className="m-1 text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
                   <p className="faq">F.A.Q.</p>
                 </Tab>
                 <Tab
-                  className="border-2 border-white text-white font-semibold"
+                  className="m-1 text-white font-semibold"
                   bg="#8896A3"
                   _selected={{ color: "white", bg: "#4A90E2" }}
                 >
