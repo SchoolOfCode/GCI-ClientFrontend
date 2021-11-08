@@ -17,7 +17,7 @@ export function WelcomeParagraph({ name = "there" }) {
         borderRadius="lg"
         overflow="hidden"
         borderColor="blue.400"
-        className="bg-gcinavy"
+        className="bg-blue-400"
       >
         <Text fontSize="lg" className="font-semibold text-white p-3">
           Stage 1
@@ -46,7 +46,7 @@ export function WelcomeParagraph({ name = "there" }) {
         borderRadius="lg"
         overflow="hidden"
         borderColor="blue.400"
-        className="bg-gcinavy"
+        className="bg-blue-400"
       >
         <Text fontSize="lg" className="font-semibold text-white p-3">
           Stage 3
@@ -72,35 +72,32 @@ export function WelcomeParagraph({ name = "there" }) {
      <div className="next-steps">
       <Box
         maxW="sm"
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-        borderColor="blue.400"
-        className="bg-gcinavy"
+      
+        
         
       >
-        <Text className="font-semibold text-white p-3">
+        <Text className="font-semibold p-3">
           More details of each stage will be given when you reach the stage.{" "}
         </Text>
-        <Text className="font-semibold text-white p-3">
+        <Text className="font-semibold p-3">
           You have 4 weeks from now on to complete Stages 1 to 4 - each new
           stage will unlock when you complete the current stage.
         </Text>
 
         <br></br>
-        <Text fontSize="lg" className="font-semibold text-white p-3">
+        <Text fontSize="lg" className="font-semibold p-3">
           1-1 Interview
         </Text>
-        <Text className="text-white p-3">
+        <Text className=" p-3">
           Once you have completed the 4 stages, your applicattion will be
           assessed and we will let you know if we would like to invite you to an
           interview. At this stage, the interview tab will be unlocked.
         </Text>
         <br></br>
-        <Text fontSize="lg" className=" text-white p-3 font-semibold">
+        <Text fontSize="lg" className="  p-3 font-semibold">
           Confirmation
         </Text>
-        <Text className=" text-white p-3">
+        <Text className="  p-3">
           If your application is successful, we'll send you confirmation. It's
           then time to congratulate yourself on making it through a highly
           competitive process

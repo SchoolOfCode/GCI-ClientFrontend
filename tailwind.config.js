@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gcinavy: "#000818"
+        gcinavy: "#000818",
+        socblue: 'rgb(50,164,221,0.5)'
       }
     },
   },
