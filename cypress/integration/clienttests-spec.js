@@ -47,7 +47,9 @@ describe("Result test", () => {
       cy.visit("http://localhost:8000/");
   
      
-      cy.contains("Result").click()
+      cy.get('.result').click()
+      cy.wait()
       cy.contains("bootcamper").should("be.visible")
     });
   });
+
