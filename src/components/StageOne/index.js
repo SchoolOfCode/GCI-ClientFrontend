@@ -200,8 +200,7 @@ export default function StageOne({
               valueOne="accept"
               valueTwo="decline"
             />
-            <MainButton m="m-3" buttonText="Back" onClick={decrement} />
-            <MainButton m="m-3" buttonText="Next" onClick={increment} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <GenericInput
@@ -242,16 +241,8 @@ export default function StageOne({
               fourth="Prefer not to say"
               fifth="Other"
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <Dropdown
@@ -531,9 +522,10 @@ export default function StageOne({
               valueTwo="decline"
             />
             <br></br>
-            <MainButton m="m-3" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+
             <MainButton
-              m="m-3"
+              m="mt-3 mr-1"
               buttonText="Submit your application!"
               onClick={handleClick}
             />
