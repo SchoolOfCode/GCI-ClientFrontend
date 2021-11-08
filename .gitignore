@@ -2,6 +2,7 @@ aws-exports.js
 node_modules/
 .cache/
 public
+cypress.env.json
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
