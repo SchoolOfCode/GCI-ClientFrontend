@@ -414,3 +414,29 @@ describe("correctly filling  out all stages of application test, expecting end r
     cy.wait(1000);
   });
 });
+// describe("Result test", () => {
+//     before(() => {
+//       cy.signIn();
+//     });
+
+//     after(() => {
+//       cy.clearLocalStorageSnapshot();
+//       cy.clearLocalStorage();
+//     });
+
+//     beforeEach(() => {
+//       cy.restoreLocalStorage();
+//     });
+
+//     afterEach(() => {
+//       cy.saveLocalStorage();
+//     });
+
+//     it("should log in, click on Result and see a positive result for an applicant who has been accepted", () => {
+//       cy.visit("http://localhost:8000/");
+
+//       cy.get('.result').click()
+//       cy.wait()
+//       cy.contains("bootcamper").should("be.visible")
+//     });
+//   });
