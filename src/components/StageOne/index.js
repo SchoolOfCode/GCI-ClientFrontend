@@ -172,17 +172,6 @@ export default function StageOne({
         index={tabIndex}
         onChange={handleTabsChange}
       >
-        <TabList>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 1</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 2</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 3</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 4</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 5</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 6</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 7</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 8</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 9</Tab>
-        </TabList>
         <TabPanels>
           <TabPanel>
             <Text fontWeight="bold">
