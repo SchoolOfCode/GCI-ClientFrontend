@@ -138,7 +138,7 @@ export default function StageFour({ userId, setCurrentStage }) {
         placeholderText="Please paste your link here..."
       />
       <br></br>
-      <MainButton buttonText="Submit" onClick={handleClick} />
+      <MainButton id="submitButton" buttonText="Submit" onClick={handleClick} />
       <br></br>
       {render ? <PrecourseText /> : null}
     </section>

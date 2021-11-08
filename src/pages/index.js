@@ -215,6 +215,7 @@ const IndexPage = () => {
                 </Tab>
                 {currentStage === 1 && (
                   <Tab
+                    id="stageOneTab"
                     className="m-1 text-white font-semibold"
                     bg="#8896A3"
                     _selected={{ color: "white", bg: "#4A90E2" }}

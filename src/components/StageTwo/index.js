@@ -126,7 +126,12 @@ export function StageTwo({ userId, setCurrentStage }) {
         role="stage2question1"
         placeholderText="Username..."
       />
-      <MainButton m="m-5" buttonText="Submit" onClick={handleClick} />
+      <MainButton
+        id="submitButton"
+        m="m-5"
+        buttonText="Submit"
+        onClick={handleClick}
+      />
     </section>
   );
 }

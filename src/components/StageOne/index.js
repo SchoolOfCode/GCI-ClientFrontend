@@ -182,7 +182,6 @@ export default function StageOne({
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 7</Tab>
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 8</Tab>
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 9</Tab>
- 
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -337,7 +336,7 @@ export default function StageOne({
             <Box className="box">
               <Dropdown
                 role="stage1question15"
-                label="15. Which region are your applying for?"
+                label="15. Which region are you applying for?"
                 placeholderText="Pick a region from the School of Code Bootcamp areas listed below"
                 first="North West"
                 second="West Midlands"
@@ -424,7 +423,7 @@ export default function StageOne({
               fifth="Bachelor's Degree"
               sixth="Master's Degree"
               seventh="Doctorate"
-              eight="Other"
+              eighth="Other"
             />
             <br></br>
             <GenericInput
@@ -482,7 +481,7 @@ export default function StageOne({
               fifth="Hinduism"
               sixth="Islam"
               seventh="Judaism"
-              eight="Sikhism"
+              eighth="Sikhism"
               ninth="Other"
             />
             <br></br>
@@ -502,7 +501,7 @@ export default function StageOne({
               fifth="Rent from private landlord"
               sixth="Homeless"
               seventh="Staying with friends or family"
-              eight="Other"
+              eighth="Other"
             />
             <br></br>
             <GenericInput
