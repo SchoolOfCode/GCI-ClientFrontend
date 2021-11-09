@@ -41,7 +41,7 @@ could review and give instant feedback any any application, including making a d
 Clone the project
 
 ```bash
-  git clone https://github.com/GCI-ClientFrontEnd
+  git clone https://github.com/SchoolofCode/GCI-ClientFrontEnd
 ```
 
 Go to the project directory
