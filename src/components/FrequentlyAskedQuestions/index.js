@@ -86,7 +86,7 @@ export default function FrequentlyAskedQuestions({
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={4}>
+            <AccordionPanel pb={4} className="flex flex-col">
               You can delete your information using the button below. Keep in
               mind, this will delete all existing information from our
               databases, but you will always still be able to log in to restart
@@ -98,10 +98,10 @@ export default function FrequentlyAskedQuestions({
               >
                 <PopoverTrigger>
                   <Button
-                    className="flex flex-col"
                     marginRight="2"
+                    className="max-w-xs"
                     _hover={{ bg: "#000818" }}
-                    size="lg"
+                    size="md"
                     bg="red"
                     color="white"
                     _active={{
