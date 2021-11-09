@@ -435,7 +435,7 @@ describe("correctly filling  out all stages of application test, expecting end r
 
     //deleteing user after test
     cy.get(".faq").click();
-    cy.wait(3000);
+    cy.wait(1000);
     cy.contains("delete").should("be.visible");
     cy.wait(1000);
     cy.contains("delete").click();
@@ -443,6 +443,6 @@ describe("correctly filling  out all stages of application test, expecting end r
     cy.contains("button", "Delete").click();
     cy.wait(1000);
     cy.contains("button", "Delete Application").click();
-    cy.wait(1000);
+    cy.wait(10000);
   });
 });
