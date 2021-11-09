@@ -429,7 +429,7 @@ export default function StageOne({
               fifth="Islam"
               sixth="Judaism"
               seventh="Sikhism"
-              eight="Other"
+              eighth="Other"
             />
             <br></br>
             <GenericInput
