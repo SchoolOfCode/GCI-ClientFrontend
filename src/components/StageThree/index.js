@@ -98,7 +98,12 @@ export function StageThree({ userId, setCurrentStage }) {
         role="stage3question1"
         placeholderText="Link here please..."
       />
-      <MainButton m="m-5" buttonText="Submit" onClick={handleClick} />
+      <MainButton
+        id="submitButton"
+        m="m-5"
+        buttonText="Submit"
+        onClick={handleClick}
+      />
     </section>
   );
 }
