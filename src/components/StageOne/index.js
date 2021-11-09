@@ -256,7 +256,7 @@ export default function StageOne({
               fifth="Mixed - White & Black African"
               sixth="Mixed - White & Asian"
               seventh="Mixed - any other Mixed background"
-              eight="Black or Black British - African"
+              eighth="Black or Black British - African"
               ninth="Black or Black British - Caribbean"
               tenth="Black or Black British - any other Black background"
               eleventh="Asian or Asian British - Indian"
@@ -340,7 +340,7 @@ export default function StageOne({
               fifth="finishing college/school and looking to start a career"
               sixth="graduating university and looking to start a career"
               seventh="leaving military service and looking for a new career"
-              eight="Current student, looking for a new career"
+              eighth="Current student, looking for a new career"
               ninth="Other"
             />
             <br></br>
@@ -477,7 +477,7 @@ export default function StageOne({
               fifth="Linkedin"
               sixth="Word of mouth (family/friends/colleagues)"
               seventh="Referral from a previous bootcamper"
-              eight="A blog post"
+              eighth="A blog post"
               ninth="Newspaper"
               tenth="Email newsletter"
               eleventh="Other"

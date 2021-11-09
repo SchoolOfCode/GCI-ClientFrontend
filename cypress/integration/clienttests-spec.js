@@ -432,5 +432,17 @@ describe("correctly filling  out all stages of application test, expecting end r
     //go to pre counterReset
     cy.contains("button", "Go to pre-course").click({ force: true });
     cy.wait(1000);
+
+    //deleteing user after test
+    cy.get(".faq").click();
+    cy.wait(3000);
+    cy.contains("delete").should("be.visible");
+    cy.wait(1000);
+    cy.contains("delete").click();
+    cy.wait(1000);
+    cy.contains("button", "Delete").click();
+    cy.wait(1000);
+    cy.contains("button", "Delete Application").click();
+    cy.wait(1000);
   });
 });
