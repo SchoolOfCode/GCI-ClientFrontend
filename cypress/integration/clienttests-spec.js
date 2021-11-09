@@ -443,6 +443,6 @@ describe("correctly filling  out all stages of application test, expecting end r
     cy.contains("button", "Delete").click();
     cy.wait(1000);
     cy.contains("button", "Delete Application").click();
-    cy.wait(10000);
+    cy.wait(1000);
   });
 });
