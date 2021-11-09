@@ -99,8 +99,9 @@ export default function FrequentlyAskedQuestions({
                 <PopoverTrigger>
                   <Button
                     marginRight="2"
+                    className="max-w-xs"
                     _hover={{ bg: "#000818" }}
-                    size="lg"
+                    size="md"
                     bg="red"
                     color="white"
                     _active={{
