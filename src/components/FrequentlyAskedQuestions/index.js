@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
+  Button,
   Heading,
   Accordion,
   AccordionItem,
@@ -7,9 +8,24 @@ import {
   AccordionIcon,
   Box,
   AccordionPanel,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
 } from "@chakra-ui/react";
 
-export default function FrequentlyAskedQuestions() {
+import DeleteButton from "../DeleteButton";
+
+export default function FrequentlyAskedQuestions({
+  currUserId,
+  theCurrentStage,
+}) {
+  const initialFocusRef = useRef();
+
   return (
     <section className="m-5">
       <Heading as="h3" className="text-xl font-bold mb-5">
@@ -58,10 +74,67 @@ export default function FrequentlyAskedQuestions() {
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
-            Baby don't hurt me.
-          </AccordionPanel>
+          <AccordionPanel pb={4}>Baby don't hurt me.</AccordionPanel>
         </AccordionItem>
+        {theCurrentStage > 1 && (
+          <AccordionItem>
+            <h2>
+              <AccordionButton>
+                <Box className="font-semibold" flex="1" textAlign="left">
+                  How can I delete my information?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel pb={4}>
+              You can delete your information using the button below. Keep in
+              mind, this will delete all existing information from our
+              databases, but you will always still be able to log in to restart
+              your application.
+              <Popover
+                initialFocusRef={initialFocusRef}
+                placement="start"
+                closeOnBlur={false}
+              >
+                <PopoverTrigger>
+                  <Button
+                    className="flex flex-col"
+                    marginRight="2"
+                    _hover={{ bg: "#000818" }}
+                    size="lg"
+                    bg="red"
+                    color="white"
+                    _active={{
+                      transform: "scale(0.75)",
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  color="white"
+                  bg="blue.800"
+                  borderColor="blue.800"
+                >
+                  <PopoverHeader pt={4} fontWeight="bold" border="0">
+                    CONFIRM
+                  </PopoverHeader>
+                  <PopoverArrow />
+                  <PopoverCloseButton />
+                  <PopoverBody>Please confirm deletion</PopoverBody>
+                  <PopoverFooter
+                    border="0"
+                    d="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                    pb={4}
+                  ></PopoverFooter>
+                  <DeleteButton userId={currUserId} />
+                </PopoverContent>
+              </Popover>
+            </AccordionPanel>
+          </AccordionItem>
+        )}
       </Accordion>
     </section>
   );
