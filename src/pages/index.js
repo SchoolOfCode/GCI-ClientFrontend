@@ -367,7 +367,10 @@ const IndexPage = () => {
                 )}
 
                 <TabPanel>
-                  <FrequentlyAskedQuestions />
+                  <FrequentlyAskedQuestions
+                    currUserId={id}
+                    theCurrentStage={currentStage}
+                  />
                 </TabPanel>
                 <TabPanel>
                   <AmplifySignOut buttonText="Log out" />{" "}
