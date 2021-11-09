@@ -118,7 +118,7 @@ export default function StageOne({
 
       axios
         .post(`https://gci-backend.herokuapp.com/users`, {
-          username: answerObject[3],
+          username: email,
           current_stage: 2,
           first_name: answerObject[1],
           last_name: answerObject[2],
@@ -172,6 +172,7 @@ export default function StageOne({
         index={tabIndex}
         onChange={handleTabsChange}
       >
+<<<<<<< HEAD
         <TabList>
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 1</Tab>
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 2</Tab>
@@ -183,6 +184,8 @@ export default function StageOne({
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 8</Tab>
           <Tab className="bg-#4a90e2 text-white font-semibold">Section 9</Tab>
         </TabList>
+=======
+>>>>>>> origin/main
         <TabPanels>
           <TabPanel>
             <Text fontWeight="bold">
@@ -211,8 +214,7 @@ export default function StageOne({
               valueOne="accept"
               valueTwo="decline"
             />
-            <MainButton className="m-3" buttonText="Back" onClick={decrement} />
-            <MainButton className="m-3" buttonText="Next" onClick={increment} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <GenericInput
@@ -253,16 +255,8 @@ export default function StageOne({
               fourth="Prefer not to say"
               fifth="Other"
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <Dropdown
@@ -320,16 +314,8 @@ export default function StageOne({
               label="14. If 'yes' please specify..."
               isRequired={false}
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             {" "}
@@ -353,16 +339,8 @@ export default function StageOne({
               />
               <br></br>
             </Box>
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <Dropdown
@@ -396,16 +374,8 @@ export default function StageOne({
               role="stage1question19"
               label="19. What is your current household annual income? (£)"
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <GenericInput
@@ -459,16 +429,8 @@ export default function StageOne({
               label="26. If 'Yes' how many?"
               isRequired={false}
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <Dropdown
@@ -478,11 +440,18 @@ export default function StageOne({
               second="Buddhism"
               third="Christianity"
               fourth="Hinduism"
+<<<<<<< HEAD
               fifth="Hinduism"
               sixth="Islam"
               seventh="Judaism"
               eighth="Sikhism"
               ninth="Other"
+=======
+              fifth="Islam"
+              sixth="Judaism"
+              seventh="Sikhism"
+              eight="Other"
+>>>>>>> origin/main
             />
             <br></br>
             <GenericInput
@@ -509,16 +478,8 @@ export default function StageOne({
               label="30. If 'Other' please specify..."
               isRequired={false}
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <GenericTextarea
@@ -543,16 +504,8 @@ export default function StageOne({
               tenth="Email newsletter"
               eleventh="Other"
             />
-            <MainButton
-              className="mt-3 mr-1"
-              buttonText="Back"
-              onClick={decrement}
-            />
-            <MainButton
-              className="mt-3 ml-1"
-              buttonText="Next"
-              onClick={increment}
-            />
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+            <MainButton m="mt-3 ml-1" buttonText="Next" onClick={increment} />
           </TabPanel>
           <TabPanel>
             <label className="form">
@@ -591,7 +544,10 @@ export default function StageOne({
               valueTwo="decline"
             />
             <br></br>
+            <MainButton m="mt-3 mr-1" buttonText="Back" onClick={decrement} />
+
             <MainButton
+              m="mt-3 mr-1"
               buttonText="Submit your application!"
               onClick={handleClick}
             />
