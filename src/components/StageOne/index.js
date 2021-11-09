@@ -172,20 +172,6 @@ export default function StageOne({
         index={tabIndex}
         onChange={handleTabsChange}
       >
-<<<<<<< HEAD
-        <TabList>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 1</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 2</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 3</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 4</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 5</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 6</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 7</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 8</Tab>
-          <Tab className="bg-#4a90e2 text-white font-semibold">Section 9</Tab>
-        </TabList>
-=======
->>>>>>> origin/main
         <TabPanels>
           <TabPanel>
             <Text fontWeight="bold">
@@ -440,18 +426,10 @@ export default function StageOne({
               second="Buddhism"
               third="Christianity"
               fourth="Hinduism"
-<<<<<<< HEAD
-              fifth="Hinduism"
-              sixth="Islam"
-              seventh="Judaism"
-              eighth="Sikhism"
-              ninth="Other"
-=======
               fifth="Islam"
               sixth="Judaism"
               seventh="Sikhism"
-              eight="Other"
->>>>>>> origin/main
+              eighth="Other"
             />
             <br></br>
             <GenericInput
