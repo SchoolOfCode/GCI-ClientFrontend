@@ -25,6 +25,92 @@ describe("FAQ test", () => {
   });
 });
 
+describe("incorrectly filling stages on application, expecting end result to show alert to user", () => {
+  before(() => {
+    cy.signIn();
+  });
+
+  after(() => {
+    cy.clearLocalStorageSnapshot();
+    cy.clearLocalStorage();
+  });
+
+  beforeEach(() => {
+    cy.restoreLocalStorage();
+  });
+
+  afterEach(() => {
+    cy.saveLocalStorage();
+  });
+
+  it("incorrectly filling stage one application, expecting end result to show alert to user", () => {
+    cy.visit("http://localhost:8000/");
+    cy.wait(3000);
+
+    //selecting stage one to start application
+    cy.get(".stage1").click();
+    cy.contains("be 19+ years of age").should("be.visible");
+    cy.wait(1000);
+
+    //accepting terms of service section 1
+    cy.contains("button", "Next").click();
+    cy.contains("What is your first name").should("be.visible");
+
+    //filling in section 2
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains(
+      "To which of the following groups do you feel you belong"
+    ).should("be.visible");
+
+    //filling in section 3
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("Which region are you applying for").should("be.visible");
+
+    //selection region in section 4
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("What best describes your current situation").should(
+      "be.visible"
+    );
+
+    //filling in section 5
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("What is your primary language").should("be.visible");
+
+    //filling in section 6
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("Do you practice a religion and if so, which one").should(
+      "be.visible"
+    );
+
+    //filling in section 7
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("Why do you want to join the School of Code").should(
+      "be.visible"
+    );
+
+    //filling in section 8
+    cy.contains("button", "Next").click({ force: true });
+    cy.wait(1000);
+    cy.contains("Please read this Privacy Notice").should("be.visible");
+
+    //section 9 submitting stage 1
+    cy.contains("button", "Submit your application!").click({ force: true });
+    cy.wait(1000);
+    cy.on("window:alert", (str) => {
+      expect(str).to.equal(
+        `please complete all required fields. These are marked with a red asterisk`
+      );
+    });
+    cy.wait(1000);
+  });
+});
+
 describe("correctly filling stages on application however not accepting the terms of service, expecting end result to show alert to user to accept ToS", () => {
   before(() => {
     cy.signIn();
@@ -170,92 +256,6 @@ describe("correctly filling stages on application however not accepting the term
     cy.on("window:alert", (str) => {
       expect(str).to.equal(
         `please accept the eligibility criteria (question 1)`
-      );
-    });
-    cy.wait(1000);
-  });
-});
-
-describe("incorrectly filling stages on application, expecting end result to show alert to user", () => {
-  before(() => {
-    cy.signIn();
-  });
-
-  after(() => {
-    cy.clearLocalStorageSnapshot();
-    cy.clearLocalStorage();
-  });
-
-  beforeEach(() => {
-    cy.restoreLocalStorage();
-  });
-
-  afterEach(() => {
-    cy.saveLocalStorage();
-  });
-
-  it("incorrectly filling stage one application, expecting end result to show alert to user", () => {
-    cy.visit("http://localhost:8000/");
-    cy.wait(3000);
-
-    //selecting stage one to start application
-    cy.get(".stage1").click();
-    cy.contains("be 19+ years of age").should("be.visible");
-    cy.wait(1000);
-
-    //accepting terms of service section 1
-    cy.contains("button", "Next").click();
-    cy.contains("What is your first name").should("be.visible");
-
-    //filling in section 2
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains(
-      "To which of the following groups do you feel you belong"
-    ).should("be.visible");
-
-    //filling in section 3
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("Which region are you applying for").should("be.visible");
-
-    //selection region in section 4
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("What best describes your current situation").should(
-      "be.visible"
-    );
-
-    //filling in section 5
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("What is your primary language").should("be.visible");
-
-    //filling in section 6
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("Do you practice a religion and if so, which one").should(
-      "be.visible"
-    );
-
-    //filling in section 7
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("Why do you want to join the School of Code").should(
-      "be.visible"
-    );
-
-    //filling in section 8
-    cy.contains("button", "Next").click({ force: true });
-    cy.wait(1000);
-    cy.contains("Please read this Privacy Notice").should("be.visible");
-
-    //section 9 submitting stage 1
-    cy.contains("button", "Submit your application!").click({ force: true });
-    cy.wait(1000);
-    cy.on("window:alert", (str) => {
-      expect(str).to.equal(
-        `please complete all required fields. These are marked with a red asterisk`
       );
     });
     cy.wait(1000);
